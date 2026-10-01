@@ -1,7 +1,7 @@
 extends RefCounted
 const LAND_SCALE := 3.0
 const SEABED_Y := -18.0
-const LAND_LIFT := 2.8
+const LAND_LIFT := 0.0
 const ISLANDS := ["food", "timber", "gold", "metal", "harbor-player", "harbor-enemy"]
 
 static func enlarge(model: Node3D, id: String) -> void:

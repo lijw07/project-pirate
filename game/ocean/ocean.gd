@@ -6,6 +6,8 @@ const GROUP := &"ocean"
 const SURFACE_CULL_MARGIN := 20.0
 const MAX_CALM_ZONES := 16
 const MAX_HULL_MASKS := 16
+const MAX_WAKE_POINTS := 96
+const WAKE_BREAK := Vector4(0.0, 0.0, 0.0, -1.0)
 
 @export var wave_settings: WaveSettings:
 	set(value):
@@ -32,6 +34,7 @@ const MAX_HULL_MASKS := 16
 		center_density = value
 		_rebuild_surface()
 @export_range(0.0, 1.0, 0.01) var calm_residual := 0.15
+@export_range(0.5, 30.0, 0.1, "suffix:s") var wake_lifetime := 7.0
 @export var follow_active_camera := true
 
 var time := 0.0
@@ -60,6 +63,7 @@ func _process(delta: float) -> void:
 		_follow(get_viewport().get_camera_3d())
 	_refresh_calm_zones()
 	_refresh_hull_masks()
+	_refresh_wakes()
 
 
 func height_at(world_position: Vector3) -> float:
@@ -123,13 +127,29 @@ func _refresh_hull_masks() -> void:
 
 func _nearest_hull_masks() -> Array[HullWaterMask]:
 	var masks: Array[HullWaterMask] = []
-	masks.assign(get_tree().get_nodes_in_group(HullWaterMask.GROUP))
-	if masks.size() <= MAX_HULL_MASKS:
-		return masks
-	var origin := _surface.global_position
-	masks.sort_custom(func(a: HullWaterMask, b: HullWaterMask) -> bool:
-		return a.global_position.distance_squared_to(origin) < b.global_position.distance_squared_to(origin))
+	masks.assign(_nearest_first(get_tree().get_nodes_in_group(HullWaterMask.GROUP)))
 	return masks.slice(0, MAX_HULL_MASKS)
+
+
+func _refresh_wakes() -> void:
+	var packed := PackedVector4Array()
+	for wake in _nearest_first(get_tree().get_nodes_in_group(WakeEmitter.GROUP)):
+		var room := MAX_WAKE_POINTS - packed.size() - 1
+		if room < 2:
+			break
+		packed.append_array((wake as WakeEmitter).shader_points().slice(0, room))
+		packed.append(WAKE_BREAK)
+	_push_parameter(&"wake_point_count", packed.size())
+	packed.resize(MAX_WAKE_POINTS)
+	_push_parameter(&"wake_points", packed)
+	_push_parameter(&"wake_lifetime", wake_lifetime)
+
+
+func _nearest_first(nodes: Array[Node]) -> Array[Node]:
+	var origin := _surface.global_position
+	nodes.sort_custom(func(a: Node3D, b: Node3D) -> bool:
+		return a.global_position.distance_squared_to(origin) < b.global_position.distance_squared_to(origin))
+	return nodes
 
 
 func _push_parameter(parameter: StringName, value: Variant) -> void:

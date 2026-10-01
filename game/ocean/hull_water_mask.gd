@@ -19,4 +19,11 @@ func to_shader_frame() -> Vector4:
 
 
 func to_shader_size() -> Vector4:
-	return Vector4(half_width, half_length, 0.0, 0.0)
+	return Vector4(half_width, half_length, _horizontal_speed(), 0.0)
+
+
+func _horizontal_speed() -> float:
+	var body := get_parent() as RigidBody3D
+	if body == null:
+		return 0.0
+	return Vector2(body.linear_velocity.x, body.linear_velocity.z).length()

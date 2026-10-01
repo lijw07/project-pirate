@@ -2,6 +2,7 @@ extends SceneTree
 
 const IslandGeometry = preload("res://tools/island_geometry.gd")
 const AssetPaths = preload("res://tools/asset_paths.gd")
+const SettlementLayout = preload("res://tools/settlement_layout.gd")
 const CALM_ZONE_INNER_SCALE := 1.25
 const CALM_ZONE_FALLOFF := 45.0
 var records: Array = []
@@ -87,6 +88,8 @@ func build_asset(id: String) -> void:
 	body.add_child(model)
 	if id in IslandGeometry.ISLANDS:
 		IslandGeometry.enlarge(model,id)
+		if SettlementLayout.available():
+			SettlementLayout.prepare_model(model,id)
 	# Imported GLBs have a scene wrapper around the actual assembly root.
 	if ship:
 		model.position.y = -0.6
@@ -152,6 +155,10 @@ func build_asset(id: String) -> void:
 			mask.half_width = 1.3 if id == "ship-scout" else 1.75
 			mask.half_length = 3.0 if id == "ship-scout" else 3.9
 			body.add_child(mask)
+		var wake := WakeEmitter.new()
+		wake.name = "WakeEmitter"
+		wake.position.z = 2.5 if id == "ship-scout" else 3.3
+		body.add_child(wake)
 		own(body, body)
 		body.add_to_group("camera_targets", true)
 	else:
@@ -289,6 +296,9 @@ func build_gallery() -> void:
 	world.free()
 
 func add_island_details(body: StaticBody3D, id: String) -> void:
+	if SettlementLayout.available():
+		SettlementLayout.populate(body,id)
+		return
 	var placements := {
 		"food": [["provision-store",-12,5],["food-crate",-9,7],["capture-standard",-12,10]],
 		"timber": [["timber-workshop",12,-4],["repair-bench",12,1]],

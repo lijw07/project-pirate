@@ -3,6 +3,9 @@ extends SceneTree
 const PLAYER_SHIP := "res://game/ships/ship_corsair.tscn"
 const DEFAULT_WAVES := "res://game/ocean/default_waves.tres"
 const MAX_TURN_HEEL_DEGREES := 10.0
+const MAX_AIRBORNE_SHARE := 0.02
+const MAX_RISE_SPEED := 3.0
+const ROUGH_SAILING_SECONDS := 60.0
 
 var _failures := 0
 
@@ -18,6 +21,7 @@ func _initialize() -> void:
 	check("lowering sails at a stop selects reverse", await lowering_at_stop_reverses())
 	check("reverse backs the ship up", await reverse_backs_up())
 	check("right rudder in reverse swings the bow left", await reverse_steering_flips())
+	check("ship stays in the water at full speed through waves", await stays_in_water_at_full_speed())
 	print("%d failure(s)" % _failures)
 	quit(_failures)
 
@@ -162,3 +166,23 @@ func reverse_steering_flips() -> bool:
 	print("    turned %.1f degrees while reversing" % turned)
 	despawn(movement)
 	return turned < -5.0
+
+
+func stays_in_water_at_full_speed() -> bool:
+	var movement := await spawn_ship()
+	var ship := movement.get_parent() as RigidBody3D
+	var buoyancy := movement.buoyancy
+	movement.set_sail_level(movement.highest_sail_level())
+	var ticks := roundi(ROUGH_SAILING_SECONDS * Engine.physics_ticks_per_second)
+	var airborne_ticks := 0
+	var fastest_rise := 0.0
+	for tick in ticks:
+		movement.steer(1.0 if (tick / 600) % 2 == 1 else 0.0)
+		await physics_frame
+		fastest_rise = maxf(fastest_rise, ship.linear_velocity.y)
+		if buoyancy.submerged_fraction == 0.0:
+			airborne_ticks += 1
+	var airborne_share := float(airborne_ticks) / ticks
+	print("    airborne %.1f%% of the time, fastest rise %.1f m/s" % [airborne_share * 100.0, fastest_rise])
+	despawn(movement)
+	return airborne_share < MAX_AIRBORNE_SHARE and fastest_rise < MAX_RISE_SPEED

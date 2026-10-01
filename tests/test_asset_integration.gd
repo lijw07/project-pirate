@@ -46,7 +46,7 @@ func run() -> void:
 			check(record.id+" enlarged land without scaling whole island",asset.get_meta("land_scale")==3.0 and asset.scale==Vector3.ONE)
 			var base: MeshInstance3D = asset.get_node("UnderwaterFoundation")
 			var bounds := base.mesh.get_aabb()
-			check(record.id+" foundation reaches seabed and meets shore",bounds.position.y<=-18.19 and bounds.end.y>=2.62)
+			check(record.id+" foundation reaches seabed and meets shore",bounds.position.y<=-18.19 and bounds.end.y>=-0.18)
 			for depth in [-1.0,-4.0,-12.0]:
 				var closed := true
 				for side in range(16):

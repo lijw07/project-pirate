@@ -1,0 +1,10 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/models/settlements/flowering_grass.glb" id="1_wl42a"]
+
+[node name="FloweringGrass" type="Node3D" unique_id=618507808 groups=["settlement_assets"]]
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="Visual" type="Node3D" parent="." unique_id=865339126 instance=ExtResource("1_wl42a")]

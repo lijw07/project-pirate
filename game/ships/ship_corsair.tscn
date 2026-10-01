@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" path="res://assets/models/pirate/ship_corsair_colormap.png" id="1_mhcdx"]
 [ext_resource type="Script" path="res://game/ocean/buoyancy.gd" id="2_06486"]
 [ext_resource type="Script" path="res://game/ocean/hull_water_mask.gd" id="3_fgks3"]
+[ext_resource type="Script" path="res://game/ocean/wake_emitter.gd" id="9_wake"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvpbd"]
 resource_name = "Dark iron"
@@ -2001,3 +2002,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
 script = ExtResource("3_fgks3")
 half_width = 1.75
 half_length = 3.9
+
+[node name="WakeEmitter" type="Node3D" parent="." unique_id=795425564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.3)
+script = ExtResource("9_wake")

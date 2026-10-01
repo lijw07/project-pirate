@@ -1,0 +1,10 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/models/settlements/fern_patch.glb" id="1_5dfr0"]
+
+[node name="FernPatch" type="Node3D" unique_id=262387751 groups=["settlement_assets"]]
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="Visual" type="Node3D" parent="." unique_id=101054856 instance=ExtResource("1_5dfr0")]

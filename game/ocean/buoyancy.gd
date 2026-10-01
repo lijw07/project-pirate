@@ -2,8 +2,9 @@ class_name Buoyancy
 extends Node3D
 
 @export_range(0.05, 10.0, 0.05, "suffix:m") var draft := 0.95
-@export_range(1.0, 10.0, 0.1) var max_submersion_ratio := 3.0
-@export_range(0.0, 10.0, 0.1, "suffix:1/s") var heave_damping := 2.5
+@export_range(1.0, 10.0, 0.1) var max_submersion_ratio := 2.0
+@export_range(0.0, 2.0, 0.05) var damping_ratio := 0.8
+@export_range(0.0, 5.0, 0.1) var airborne_gravity_boost := 1.5
 
 var submerged_fraction := 0.0
 
@@ -26,6 +27,7 @@ func _physics_process(_delta: float) -> void:
 		return
 	var mass_share := _body.mass / _probes.size()
 	var weight_share := mass_share * _gravity()
+	var damping := heave_damping()
 	var submerged := 0
 	for probe in _probes:
 		var point := probe.global_position
@@ -35,9 +37,19 @@ func _physics_process(_delta: float) -> void:
 		submerged += 1
 		var offset := point - _body.global_position
 		var vertical_speed := _point_velocity(offset).y
-		var force := Vector3.UP * (weight_share * lift - mass_share * heave_damping * vertical_speed)
+		var force := Vector3.UP * (weight_share * lift - mass_share * damping * vertical_speed)
 		_body.apply_force(force, offset)
 	submerged_fraction = float(submerged) / _probes.size()
+	_pull_back_into_water()
+
+
+func _pull_back_into_water() -> void:
+	var exposed := 1.0 - submerged_fraction
+	_body.apply_central_force(Vector3.DOWN * _body.mass * _gravity() * airborne_gravity_boost * exposed)
+
+
+func heave_damping() -> float:
+	return 2.0 * damping_ratio * sqrt(_gravity() / draft)
 
 
 func _probe_lift(point: Vector3) -> float:

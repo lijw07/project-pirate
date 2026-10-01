@@ -1,0 +1,1624 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://game/settlements/assets/castle_tower.tscn" id="1_11pqa"]
+[ext_resource type="PackedScene" path="res://game/settlements/assets/castle_wall.tscn" id="2_fknhc"]
+[ext_resource type="PackedScene" path="res://game/settlements/assets/castle_gatehouse.tscn" id="3_b8i0c"]
+[ext_resource type="PackedScene" path="res://game/settlements/assets/castle_keep.tscn" id="4_loane"]
+[ext_resource type="PackedScene" path="res://game/settlements/assets/quay_warehouse.tscn" id="5_e4j6t"]
+[ext_resource type="PackedScene" path="res://game/settlements/assets/iron_brazier.tscn" id="6_ltqx4"]
+[ext_resource type="PackedScene" path="res://game/settlements/assets/harbor_tavern.tscn" id="7_kdgsg"]
+[ext_resource type="PackedScene" path="res://game/settlements/assets/captains_house.tscn" id="8_84gy5"]
+[ext_resource type="PackedScene" path="res://game/settlements/assets/fisher_cottage.tscn" id="9_yrafk"]
+[ext_resource type="PackedScene" path="res://game/settlements/assets/produce_stall.tscn" id="10_fnnvf"]
+[ext_resource type="PackedScene" path="res://game/settlements/assets/village_well.tscn" id="11_pwyny"]
+[ext_resource type="PackedScene" path="res://game/props/shipyard_gantry.tscn" id="12_xx627"]
+[ext_resource type="PackedScene" path="res://game/props/harbor_lighthouse.tscn" id="13_p7dgg"]
+[ext_resource type="PackedScene" path="res://game/props/cargo_rack.tscn" id="14_la8gb"]
+[ext_resource type="PackedScene" path="res://game/settlements/assets/grass_tuft.tscn" id="15_vthya"]
+[ext_resource type="PackedScene" path="res://game/settlements/assets/flowering_grass.tscn" id="16_8qhf6"]
+[ext_resource type="PackedScene" path="res://game/settlements/assets/fern_patch.tscn" id="17_g1k8c"]
+[ext_resource type="PackedScene" path="res://game/settlements/assets/shrub_cluster.tscn" id="18_02u37"]
+[ext_resource type="PackedScene" path="res://game/settlements/assets/boulder_cluster.tscn" id="19_j7tva"]
+
+[node name="HarborPlayerSettlement" type="Node3D" unique_id=1523384573]
+metadata/source = "approved_blender_settlements_v1"
+
+[node name="CastleTower0" type="StaticBody3D" parent="." unique_id=67330804 groups=["settlement_assets"] instance=ExtResource("1_11pqa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.142, 1)
+collision_mask = 3
+metadata/asset_id = "castle-tower"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.725, 0, -1.725, 3.45, 5.6749997, 3.45)
+
+[node name="CastleTower1" type="StaticBody3D" parent="." unique_id=1092274055 groups=["settlement_assets"] instance=ExtResource("1_11pqa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.142, -14.8)
+collision_mask = 3
+metadata/asset_id = "castle-tower"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.725, 0, -1.725, 3.45, 5.6749997, 3.45)
+
+[node name="CastleWall2" type="StaticBody3D" parent="." unique_id=1971526943 groups=["settlement_assets"] instance=ExtResource("2_fknhc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8, 1.142, -2.5)
+collision_mask = 3
+metadata/asset_id = "castle-wall"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.125, 0, -0.65, 4.25, 3.825, 1.3)
+
+[node name="CastleWall3" type="StaticBody3D" parent="." unique_id=1176450391 groups=["settlement_assets"] instance=ExtResource("2_fknhc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8, 1.142, -6.6)
+collision_mask = 3
+metadata/asset_id = "castle-wall"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.125, 0, -0.65, 4.25, 3.825, 1.3)
+
+[node name="CastleWall4" type="StaticBody3D" parent="." unique_id=2098760062 groups=["settlement_assets"] instance=ExtResource("2_fknhc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8, 1.142, -10.7)
+collision_mask = 3
+metadata/asset_id = "castle-wall"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.125, 0, -0.65, 4.25, 3.825, 1.3)
+
+[node name="CastleTower5" type="StaticBody3D" parent="." unique_id=754102018 groups=["settlement_assets"] instance=ExtResource("1_11pqa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.142, 1)
+collision_mask = 3
+metadata/asset_id = "castle-tower"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.725, 0, -1.725, 3.45, 5.6749997, 3.45)
+
+[node name="CastleTower6" type="StaticBody3D" parent="." unique_id=1334843673 groups=["settlement_assets"] instance=ExtResource("1_11pqa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.142, -14.8)
+collision_mask = 3
+metadata/asset_id = "castle-tower"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.725, 0, -1.725, 3.45, 5.6749997, 3.45)
+
+[node name="CastleWall7" type="StaticBody3D" parent="." unique_id=423637327 groups=["settlement_assets"] instance=ExtResource("2_fknhc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13, 1.142, -2.5)
+collision_mask = 3
+metadata/asset_id = "castle-wall"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.125, 0, -0.65, 4.25, 3.825, 1.3)
+
+[node name="CastleWall8" type="StaticBody3D" parent="." unique_id=1343148796 groups=["settlement_assets"] instance=ExtResource("2_fknhc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13, 1.142, -6.6)
+collision_mask = 3
+metadata/asset_id = "castle-wall"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.125, 0, -0.65, 4.25, 3.825, 1.3)
+
+[node name="CastleWall9" type="StaticBody3D" parent="." unique_id=300463874 groups=["settlement_assets"] instance=ExtResource("2_fknhc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13, 1.142, -10.7)
+collision_mask = 3
+metadata/asset_id = "castle-wall"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.125, 0, -0.65, 4.25, 3.825, 1.3)
+
+[node name="CastleGatehouse10" type="StaticBody3D" parent="." unique_id=1101462743 groups=["settlement_assets"] instance=ExtResource("3_b8i0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.142, 1)
+collision_mask = 3
+metadata/asset_id = "castle-gatehouse"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.343108, 0, -1.025, 4.686216, 4.275, 2.1611023)
+
+[node name="CastleWall11" type="StaticBody3D" parent="." unique_id=1235876013 groups=["settlement_assets"] instance=ExtResource("2_fknhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6, 1.142, 1)
+collision_mask = 3
+metadata/asset_id = "castle-wall"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.125, 0, -0.65, 4.25, 3.825, 1.3)
+
+[node name="CastleWall12" type="StaticBody3D" parent="." unique_id=1333045028 groups=["settlement_assets"] instance=ExtResource("2_fknhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6, 1.142, 1)
+collision_mask = 3
+metadata/asset_id = "castle-wall"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.125, 0, -0.65, 4.25, 3.825, 1.3)
+
+[node name="CastleWall13" type="StaticBody3D" parent="." unique_id=678170534 groups=["settlement_assets"] instance=ExtResource("2_fknhc")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -1.2, 1.142, 1)
+collision_mask = 3
+metadata/asset_id = "castle-wall"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.125, 0, -0.65, 4.25, 3.825, 1.3)
+
+[node name="CastleWall14" type="StaticBody3D" parent="." unique_id=742995524 groups=["settlement_assets"] instance=ExtResource("2_fknhc")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 6.2, 1.142, 1)
+collision_mask = 3
+metadata/asset_id = "castle-wall"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.125, 0, -0.65, 4.25, 3.825, 1.3)
+
+[node name="CastleWall15" type="StaticBody3D" parent="." unique_id=483770447 groups=["settlement_assets"] instance=ExtResource("2_fknhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.142, -14.8)
+collision_mask = 3
+metadata/asset_id = "castle-wall"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.125, 0, -0.65, 4.25, 3.825, 1.3)
+
+[node name="CastleWall16" type="StaticBody3D" parent="." unique_id=907670535 groups=["settlement_assets"] instance=ExtResource("2_fknhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.142, -14.8)
+collision_mask = 3
+metadata/asset_id = "castle-wall"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.125, 0, -0.65, 4.25, 3.825, 1.3)
+
+[node name="CastleWall17" type="StaticBody3D" parent="." unique_id=691474594 groups=["settlement_assets"] instance=ExtResource("2_fknhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.142, -14.8)
+collision_mask = 3
+metadata/asset_id = "castle-wall"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.125, 0, -0.65, 4.25, 3.825, 1.3)
+
+[node name="CastleWall18" type="StaticBody3D" parent="." unique_id=912376988 groups=["settlement_assets"] instance=ExtResource("2_fknhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.142, -14.8)
+collision_mask = 3
+metadata/asset_id = "castle-wall"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.125, 0, -0.65, 4.25, 3.825, 1.3)
+
+[node name="CastleWall19" type="StaticBody3D" parent="." unique_id=1873016762 groups=["settlement_assets"] instance=ExtResource("2_fknhc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.142, -14.8)
+collision_mask = 3
+metadata/asset_id = "castle-wall"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.125, 0, -0.65, 4.25, 3.825, 1.3)
+
+[node name="CastleKeep20" type="StaticBody3D" parent="." unique_id=1279391479 groups=["settlement_assets"] instance=ExtResource("4_loane")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.142, -9)
+collision_mask = 3
+metadata/asset_id = "castle-keep"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-4.327141, 0, -3.63, 8.654282, 7.85, 7.26)
+
+[node name="QuayWarehouse21" type="StaticBody3D" parent="." unique_id=1325600637 groups=["settlement_assets"] instance=ExtResource("5_e4j6t")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.5, 1.142, -4)
+collision_mask = 3
+metadata/asset_id = "quay-warehouse"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-3.3256564, 0, -2.37, 6.651313, 5.215129, 4.74)
+
+[node name="IronBrazier22" type="StaticBody3D" parent="." unique_id=2077006438 groups=["settlement_assets"] instance=ExtResource("6_ltqx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 1.142, 3)
+collision_mask = 3
+metadata/asset_id = "iron-brazier"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-0.47552827, -0.0064171082, -0.5, 0.95105654, 1.9264172, 1)
+
+[node name="IronBrazier23" type="StaticBody3D" parent="." unique_id=628537067 groups=["settlement_assets"] instance=ExtResource("6_ltqx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 1.142, 3)
+collision_mask = 3
+metadata/asset_id = "iron-brazier"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-0.47552827, -0.0064171082, -0.5, 0.95105654, 1.9264172, 1)
+
+[node name="HarborTavern24" type="StaticBody3D" parent="." unique_id=1105740915 groups=["settlement_assets"] instance=ExtResource("7_kdgsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.142, 8)
+collision_mask = 3
+metadata/asset_id = "harbor-tavern"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.9, 0, -2.3700001, 6.525, 6.3082438, 6.22)
+
+[node name="CaptainsHouse25" type="StaticBody3D" parent="." unique_id=814272644 groups=["settlement_assets"] instance=ExtResource("8_84gy5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.142, 16)
+collision_mask = 3
+metadata/asset_id = "captains-house"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.5, 0, -2.22, 5, 7.005125, 5.92)
+
+[node name="QuayWarehouse26" type="StaticBody3D" parent="." unique_id=893296330 groups=["settlement_assets"] instance=ExtResource("5_e4j6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.142, 10)
+collision_mask = 3
+metadata/asset_id = "quay-warehouse"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-3.3256564, 0, -2.37, 6.651313, 5.215129, 4.74)
+
+[node name="FisherCottage27" type="StaticBody3D" parent="." unique_id=1187118834 groups=["settlement_assets"] instance=ExtResource("9_yrafk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.142, 17)
+collision_mask = 3
+metadata/asset_id = "fisher-cottage"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-2.2, 0, -1.8700001, 4.4, 4.308691, 5.22)
+
+[node name="ProduceStall28" type="StaticBody3D" parent="." unique_id=50769157 groups=["settlement_assets"] instance=ExtResource("10_fnnvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.142, 11)
+collision_mask = 3
+metadata/asset_id = "produce-stall"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.68, 0, -1.075, 3.36, 2.51, 2.15)
+
+[node name="ProduceStall29" type="StaticBody3D" parent="." unique_id=578844146 groups=["settlement_assets"] instance=ExtResource("10_fnnvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.142, 12)
+collision_mask = 3
+metadata/asset_id = "produce-stall"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.68, 0, -1.075, 3.36, 2.51, 2.15)
+
+[node name="VillageWell30" type="StaticBody3D" parent="." unique_id=1386771554 groups=["settlement_assets"] instance=ExtResource("11_pwyny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.142, 7)
+collision_mask = 3
+metadata/asset_id = "village-well"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.3856863, 0, -0.97, 2.7713726, 3.3102205, 1.94)
+
+[node name="ShipyardGantry31" type="StaticBody3D" parent="." unique_id=654213358 groups=["pirate_assets"] instance=ExtResource("12_xx627")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.142, 18)
+collision_mask = 3
+metadata/asset_id = "shipyard-gantry"
+metadata/visual_bounds = AABB(-2.6699889, -0.019307574, -1.1, 5.3399777, 4.919307, 2.2)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="HarborLighthouse32" type="StaticBody3D" parent="." unique_id=798664459 groups=["pirate_assets"] instance=ExtResource("13_p7dgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1.142, -4)
+collision_mask = 3
+metadata/asset_id = "harbor-lighthouse"
+metadata/visual_bounds = AABB(-1.45, 0, -1.45, 2.9, 6.21, 2.9)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="CargoRack33" type="StaticBody3D" parent="." unique_id=1603543170 groups=["pirate_assets"] instance=ExtResource("14_la8gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1.142, 5)
+collision_mask = 3
+metadata/asset_id = "cargo-rack"
+metadata/visual_bounds = AABB(-0.85, 0, -0.65000004, 1.7, 1.2447488, 1.3000001)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="GrassTuft34" type="Node3D" parent="." unique_id=1158026991 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.80437195, 0, 0.6492826, 0, 1.0337224, 0, -0.6492826, 0, -0.80437195, 21.233448, 1.142, 4.2013106)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft35" type="Node3D" parent="." unique_id=1599770322 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.06554342, 0, -1.1426387, 0, 1.144517, 0, 1.1426387, 0, 0.06554342, 17.165684, 1.142, -7.047555)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft36" type="Node3D" parent="." unique_id=1957878400 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.6419702, 0, 0.5934331, 0, 0.874236, 0, -0.5934331, 0, -0.6419702, 7.064008, 1.142, 16.356426)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft37" type="Node3D" parent="." unique_id=1147212505 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.9295266, 0, 0.29401827, 0, 0.9749187, 0, -0.29401827, 0, -0.9295266, 20.48906, 1.142, 7.814507)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft38" type="Node3D" parent="." unique_id=1409211861 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.2105253, 0, 1.0854613, 0, 1.1056885, 0, -1.0854613, 0, -0.2105253, -13.52107, 1.142, 15.413493)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft39" type="Node3D" parent="." unique_id=1277846931 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.14615087, 0, 1.1165682, 0, 1.1260927, 0, -1.1165682, 0, -0.14615087, 16.83754, 1.142, 0.9968188)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft40" type="Node3D" parent="." unique_id=1229218265 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.6141118, 0, -0.8362092, 0, 1.0374869, 0, 0.8362092, 0, 0.6141118, -23.75562, 1.142, 7.9761806)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft41" type="Node3D" parent="." unique_id=2042870068 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.7398741, 0, 0.61919606, 0, 0.9647888, 0, -0.61919606, 0, 0.7398741, -18.785519, 1.142, 11.761343)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft42" type="Node3D" parent="." unique_id=1706056135 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.9383222, 0, 0.18744045, 0, 0.9568607, 0, -0.18744045, 0, 0.9383222, -21.580816, 1.142, 8.00089)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft43" type="Node3D" parent="." unique_id=569782124 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.49354938, 0, 0.9062459, 0, 1.0319266, 0, -0.9062459, 0, -0.49354938, 23.460855, 1.142, 2.8224874)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft44" type="Node3D" parent="." unique_id=1897665894 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(1.1799221, 0, 0.4022464, 0, 1.2466027, 0, -0.4022464, 0, 1.1799221, 16.412535, 1.142, 13.594367)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft45" type="Node3D" parent="." unique_id=999693219 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.15931226, 0, 1.1907462, 0, 1.2013563, 0, -1.1907462, 0, 0.15931226, 16.75274, 1.142, -5.124684)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft46" type="Node3D" parent="." unique_id=948077749 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.91472554, 0, -0.39934528, 0, 0.9980979, 0, 0.39934528, 0, 0.91472554, 2.2336774, 1.142, 20.447456)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft47" type="Node3D" parent="." unique_id=356709297 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.84276026, 0, -0.678754, 0, 1.0821053, 0, 0.678754, 0, -0.84276026, -24.750334, 1.142, 2.24335)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft48" type="Node3D" parent="." unique_id=1355824650 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.77513236, 0, 0.78302103, 0, 1.101795, 0, -0.78302103, 0, -0.77513236, -25.25935, 1.142, -4.354282)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft49" type="Node3D" parent="." unique_id=989723653 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.9106985, 0, 0.058137946, 0, 0.91255236, 0, -0.058137946, 0, 0.9106985, 16.66106, 1.142, -14.963165)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft50" type="Node3D" parent="." unique_id=1683159694 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.7726328, 0, -0.5092476, 0, 0.9253619, 0, 0.5092476, 0, 0.7726328, 23.665522, 1.142, -18.581022)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft51" type="Node3D" parent="." unique_id=762339232 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.5445946, 0, 1.1124167, 0, 1.2385694, 0, -1.1124167, 0, -0.5445946, -25.397264, 1.142, -3.9764776)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft52" type="Node3D" parent="." unique_id=961281690 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.85857606, 0, -0.7733308, 0, 1.1555057, 0, 0.7733308, 0, -0.85857606, -10.773435, 1.142, 3.8322616)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft53" type="Node3D" parent="." unique_id=834607562 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.6357788, 0, -0.8052523, 0, 1.0259854, 0, 0.8052523, 0, 0.6357788, -24.107447, 1.142, 1.7170134)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft54" type="Node3D" parent="." unique_id=1012220730 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(1.2365559, 0, -0.014481312, 0, 1.2366407, 0, 0.014481312, 0, 1.2365559, 25.659441, 1.142, 9.935932)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft55" type="Node3D" parent="." unique_id=728641577 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.12610623, 0, 1.137134, 0, 1.1441051, 0, -1.137134, 0, 0.12610623, -2.3391416, 1.142, 4.3548083)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft56" type="Node3D" parent="." unique_id=1540698418 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.71461385, 0, -0.7196806, 0, 1.0142057, 0, 0.7196806, 0, -0.71461385, -6.530625, 1.142, 17.01625)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft57" type="Node3D" parent="." unique_id=180787801 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.3526188, 0, 0.98527014, 0, 1.046469, 0, -0.98527014, 0, -0.3526188, 20.497242, 1.142, 8.140528)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft58" type="Node3D" parent="." unique_id=1108958481 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.78545463, 0, 0.12161808, 0, 0.7948144, 0, -0.12161808, 0, 0.78545463, 23.805256, 1.142, -5.2265315)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft59" type="Node3D" parent="." unique_id=760974630 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.36216906, 0, -1.0372398, 0, 1.0986505, 0, 1.0372398, 0, 0.36216906, 24.81118, 1.142, 11.854373)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft60" type="Node3D" parent="." unique_id=588429364 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.9897032, 0, 0.19002268, 0, 1.0077802, 0, -0.19002268, 0, 0.9897032, -5.2992797, 1.142, 8.318028)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft61" type="Node3D" parent="." unique_id=723557340 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.49927872, 0, -0.76051897, 0, 0.9097628, 0, 0.76051897, 0, -0.49927872, 21.123686, 1.142, -10.416322)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft62" type="Node3D" parent="." unique_id=1484887244 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.9953304, 0, -0.6939624, 0, 1.2133698, 0, 0.6939624, 0, 0.9953304, -19.986246, 1.142, 7.642636)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft63" type="Node3D" parent="." unique_id=1831405226 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.6887351, 0, -0.84502506, 0, 1.0901483, 0, 0.84502506, 0, -0.6887351, -14.387408, 1.142, -3.9668148)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft64" type="Node3D" parent="." unique_id=1978171262 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.91022104, 0, 0.7715622, 0, 1.1932354, 0, -0.7715622, 0, 0.91022104, 25.393614, 1.142, -15.631133)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft65" type="Node3D" parent="." unique_id=494776635 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.637036, 0, 0.40632987, 0, 0.75559175, 0, -0.40632987, 0, 0.637036, 6.470956, 1.142, 11.877228)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft66" type="Node3D" parent="." unique_id=955360001 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-1.0530165, 0, 0.38643748, 0, 1.1216853, 0, -0.38643748, 0, -1.0530165, 16.796677, 1.142, 7.9046617)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft67" type="Node3D" parent="." unique_id=802791307 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.40817785, 0, -0.8885576, 0, 0.97782606, 0, 0.8885576, 0, -0.40817785, 25.821316, 1.142, 2.5536566)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft68" type="Node3D" parent="." unique_id=614481858 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.16610304, 0, 1.0301763, 0, 1.0434813, 0, -1.0301763, 0, 0.16610304, 7.3876896, 1.142, 15.860135)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft69" type="Node3D" parent="." unique_id=1406374851 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.5647636, 0, 1.063631, 0, 1.2042712, 0, -1.063631, 0, -0.5647636, -25.532963, 1.142, 3.311809)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft70" type="Node3D" parent="." unique_id=917845552 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.5445646, 0, -0.61967367, 0, 0.8249521, 0, 0.61967367, 0, -0.5445646, -13.92703, 1.142, -8.972087)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft71" type="Node3D" parent="." unique_id=434546418 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.7603891, 0, -0.020928293, 0, 0.76067704, 0, 0.020928293, 0, 0.7603891, 21.38233, 1.142, 7.88867)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft72" type="Node3D" parent="." unique_id=1398603254 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.44619218, 0, -0.8422961, 0, 0.953179, 0, 0.8422961, 0, 0.44619218, 9.117594, 1.142, -18.232813)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft73" type="Node3D" parent="." unique_id=744539465 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(1.1066607, 0, 0.5488605, 0, 1.2352917, 0, -0.5488605, 0, 1.1066607, -7.2011704, 1.142, -17.740993)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft74" type="Node3D" parent="." unique_id=623155169 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.103539936, 0, 0.82811946, 0, 0.8345672, 0, -0.82811946, 0, 0.103539936, 12.032679, 1.142, 13.866598)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft75" type="Node3D" parent="." unique_id=749412807 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.54763776, 0, 0.83707696, 0, 1.0003024, 0, -0.83707696, 0, 0.54763776, 5.5967064, 1.142, 17.19258)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft76" type="Node3D" parent="." unique_id=2142554382 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.83870703, 0, -0.7890113, 0, 1.151507, 0, 0.7890113, 0, -0.83870703, -25.58681, 1.142, -6.115884)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft77" type="Node3D" parent="." unique_id=1798674839 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.76920944, 0, 0.30958858, 0, 0.8291732, 0, -0.30958858, 0, 0.76920944, 17.787489, 1.142, 11.106292)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft78" type="Node3D" parent="." unique_id=1687488302 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.9402409, 0, 0.31912002, 0, 0.9929202, 0, -0.31912002, 0, 0.9402409, 22.38338, 1.142, -13.714797)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft79" type="Node3D" parent="." unique_id=706627309 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.99591935, 0, -0.7390806, 0, 1.2401998, 0, 0.7390806, 0, -0.99591935, 16.934183, 1.142, -13.707881)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft80" type="Node3D" parent="." unique_id=1372482306 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.810895, 0, -0.7048132, 0, 1.0743893, 0, 0.7048132, 0, -0.810895, -6.013269, 1.142, 16.540195)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft81" type="Node3D" parent="." unique_id=1318402186 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.07605719, 0, -0.7973122, 0, 0.8009316, 0, 0.7973122, 0, -0.07605719, -18.544693, 1.142, 2.4416049)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft82" type="Node3D" parent="." unique_id=1975400541 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.5074476, 0, -0.7440906, 0, 0.90065193, 0, 0.7440906, 0, 0.5074476, 25.873821, 1.142, -16.351826)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft83" type="Node3D" parent="." unique_id=15625654 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(1.209091, 0, 0.05431886, 0, 1.2103105, 0, -0.05431886, 0, 1.209091, 1.8411777, 1.142, 9.381792)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft84" type="Node3D" parent="." unique_id=1570899620 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-1.062482, 0, 0.04697439, 0, 1.06352, 0, -0.04697439, 0, -1.062482, 20.717054, 1.142, -10.231187)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft85" type="Node3D" parent="." unique_id=553844316 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.07967552, 0, 0.7550351, 0, 0.7592274, 0, -0.7550351, 0, 0.07967552, -17.69917, 1.142, 4.011507)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft86" type="Node3D" parent="." unique_id=636414646 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.6687172, 0, 0.5406734, 0, 0.8599479, 0, -0.5406734, 0, 0.6687172, 20.27911, 1.142, -9.336916)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft87" type="Node3D" parent="." unique_id=1265494065 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.082167596, 0, -1.1104728, 0, 1.1135086, 0, 1.1104728, 0, 0.082167596, 21.388779, 1.142, -16.151545)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft88" type="Node3D" parent="." unique_id=1596798840 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.6864276, 0, -0.4425328, 0, 0.8167118, 0, 0.4425328, 0, 0.6864276, -13.871193, 1.142, -5.2928286)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft89" type="Node3D" parent="." unique_id=1805272832 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.7791912, 0, 0.930048, 0, 1.2133129, 0, -0.930048, 0, -0.7791912, 23.69806, 1.142, -13.424667)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft90" type="Node3D" parent="." unique_id=563531161 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.7318864, 0, -0.35378414, 0, 0.81290895, 0, 0.35378414, 0, -0.7318864, -8.114589, 1.142, -18.579933)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft91" type="Node3D" parent="." unique_id=801902510 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.64168054, 0, 0.47652766, 0, 0.79927, 0, -0.47652766, 0, -0.64168054, 17.495638, 1.142, 7.747202)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft92" type="Node3D" parent="." unique_id=757365394 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.5155281, 0, 1.0343494, 0, 1.1557024, 0, -1.0343494, 0, 0.5155281, -25.086023, 1.142, -6.2630286)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft93" type="Node3D" parent="." unique_id=1930329893 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.77797884, 0, 0.33743548, 0, 0.8480058, 0, -0.33743548, 0, -0.77797884, 25.360733, 1.142, -16.488415)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft94" type="Node3D" parent="." unique_id=1544602173 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.69105077, 0, 0.71790797, 0, 0.99646527, 0, -0.71790797, 0, -0.69105077, 24.492046, 1.142, 2.8092484)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft95" type="Node3D" parent="." unique_id=716506896 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.689968, 0, -1.0404412, 0, 1.2484285, 0, 1.0404412, 0, 0.689968, 6.5952697, 1.142, 7.940754)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft96" type="Node3D" parent="." unique_id=853117104 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.5913425, 0, -0.8628393, 0, 1.0460294, 0, 0.8628393, 0, -0.5913425, -4.8412685, 1.142, 14.061669)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft97" type="Node3D" parent="." unique_id=1785780763 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.67111355, 0, -0.69199145, 0, 0.9639738, 0, 0.69199145, 0, -0.67111355, 17.442268, 1.142, -15.8784895)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft98" type="Node3D" parent="." unique_id=36903532 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.5977802, 0, 0.8417681, 0, 1.0324315, 0, -0.8417681, 0, -0.5977802, 8.544062, 1.142, -18.557552)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft99" type="Node3D" parent="." unique_id=209995097 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.7422423, 0, 0.5909275, 0, 0.94874597, 0, -0.5909275, 0, -0.7422423, 15.028404, 1.142, -20.614073)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft100" type="Node3D" parent="." unique_id=79518816 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.7877631, 0, 0.7259302, 0, 1.0712354, 0, -0.7259302, 0, -0.7877631, 9.856439, 1.142, 21.4496)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft101" type="Node3D" parent="." unique_id=673934964 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.13112801, 0, 0.84229356, 0, 0.8524394, 0, -0.84229356, 0, 0.13112801, 3.9849823, 1.142, 7.872425)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft102" type="Node3D" parent="." unique_id=1718406591 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.5211689, 0, -0.7272278, 0, 0.894694, 0, 0.7272278, 0, -0.5211689, 21.800537, 1.142, -11.161899)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft103" type="Node3D" parent="." unique_id=916424128 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.89661723, 0, -0.55941415, 0, 1.0568191, 0, 0.55941415, 0, 0.89661723, -3.6514378, 1.142, 3.9051213)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft104" type="Node3D" parent="." unique_id=1950240102 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.14169012, 0, 0.8279942, 0, 0.8400301, 0, -0.8279942, 0, 0.14169012, -24.73592, 1.142, -0.6135564)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft105" type="Node3D" parent="." unique_id=16858690 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.1333864, 0, -0.8401898, 0, 0.85071194, 0, 0.8401898, 0, -0.1333864, 23.904799, 1.142, -13.559721)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft106" type="Node3D" parent="." unique_id=993833174 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.39451134, 0, -1.1035706, 0, 1.1719673, 0, 1.1035706, 0, -0.39451134, -22.314198, 1.142, -2.1616604)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft107" type="Node3D" parent="." unique_id=1178068832 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.443688, 0, -1.0552644, 0, 1.1447453, 0, 1.0552644, 0, 0.443688, 24.469767, 1.142, 7.9803643)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft108" type="Node3D" parent="." unique_id=440210385 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.5147533, 0, -1.0600387, 0, 1.1784112, 0, 1.0600387, 0, -0.5147533, 12.901417, 1.142, -20.753002)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft109" type="Node3D" parent="." unique_id=2062740761 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.8789537, 0, -0.59841996, 0, 1.0633278, 0, 0.59841996, 0, -0.8789537, 23.13849, 1.142, 1.39978)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft110" type="Node3D" parent="." unique_id=915444816 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.80846363, 0, -0.5125758, 0, 0.9572604, 0, 0.5125758, 0, 0.80846363, -13.256869, 1.142, -7.2208176)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft111" type="Node3D" parent="." unique_id=1587117922 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.4426292, 0, 1.031937, 0, 1.12286, 0, -1.031937, 0, -0.4426292, 6.25497, 1.142, 14.177982)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft112" type="Node3D" parent="." unique_id=948437680 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.9193947, 0, -0.19319762, 0, 0.9394742, 0, 0.19319762, 0, 0.9193947, 6.636339, 1.142, 16.337023)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft113" type="Node3D" parent="." unique_id=1560552485 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(1.063338, 0, 0.5243811, 0, 1.1856067, 0, -0.5243811, 0, 1.063338, 21.978579, 1.142, 12.511343)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft114" type="Node3D" parent="." unique_id=1826670788 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.09470544, 0, -0.9776417, 0, 0.9822181, 0, 0.9776417, 0, -0.09470544, -18.643309, 1.142, 10.843534)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft115" type="Node3D" parent="." unique_id=1479874995 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.3659452, 0, -0.77085906, 0, 0.85331094, 0, 0.77085906, 0, 0.3659452, 0.32095727, 1.142, -18.45211)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft116" type="Node3D" parent="." unique_id=1889690424 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.9401524, 0, -0.72302425, 0, 1.186023, 0, 0.72302425, 0, -0.9401524, -9.687318, 1.142, 20.902288)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft117" type="Node3D" parent="." unique_id=931773787 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.7519119, 0, -0.10205085, 0, 0.7588055, 0, 0.10205085, 0, -0.7519119, -21.007917, 1.142, 7.8052683)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft118" type="Node3D" parent="." unique_id=605027163 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.9455315, 0, -0.751442, 0, 1.2077644, 0, 0.751442, 0, 0.9455315, 19.86944, 1.142, -0.6190261)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft119" type="Node3D" parent="." unique_id=1915080174 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-1.0458313, 0, -0.37971398, 0, 1.1126301, 0, 0.37971398, 0, -1.0458313, -18.939095, 1.142, 0.12904394)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft120" type="Node3D" parent="." unique_id=1835937791 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.3270924, 0, -1.0088105, 0, 1.0605131, 0, 1.0088105, 0, 0.3270924, 14.79125, 1.142, -20.175957)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft121" type="Node3D" parent="." unique_id=2037125802 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.8839871, 0, 0.2433461, 0, 0.91687, 0, -0.2433461, 0, 0.8839871, -9.359609, 1.142, 4.339291)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft122" type="Node3D" parent="." unique_id=1643714424 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.7729414, 0, 0.4503539, 0, 0.8945709, 0, -0.4503539, 0, 0.7729414, -2.655073, 1.142, -21.8326)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft123" type="Node3D" parent="." unique_id=1450699431 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(1.1295484, 0, -0.048734955, 0, 1.1305993, 0, 0.048734955, 0, 1.1295484, -25.03623, 1.142, -3.5447078)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft124" type="Node3D" parent="." unique_id=1167038458 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.19654365, 0, 1.1241409, 0, 1.1411933, 0, -1.1241409, 0, -0.19654365, -6.4926825, 1.142, -17.870108)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft125" type="Node3D" parent="." unique_id=1575322966 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.8102248, 0, -0.11533168, 0, 0.81839204, 0, 0.11533168, 0, -0.8102248, 19.68805, 1.142, 0.95039815)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft126" type="Node3D" parent="." unique_id=1141126668 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.9656682, 0, 0.5432913, 0, 1.1080074, 0, -0.5432913, 0, 0.9656682, 20.478052, 1.142, 10.2462635)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft127" type="Node3D" parent="." unique_id=1646063331 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.5788256, 0, 0.68999714, 0, 0.9006304, 0, -0.68999714, 0, -0.5788256, 11.973919, 1.142, -19.639383)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft128" type="Node3D" parent="." unique_id=54135619 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.55199474, 0, 0.83283675, 0, 0.99915725, 0, -0.83283675, 0, 0.55199474, 16.961365, 1.142, -1.0181521)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft129" type="Node3D" parent="." unique_id=779386089 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.21959606, 0, 1.1449888, 0, 1.1658566, 0, -1.1449888, 0, 0.21959606, 25.065586, 1.142, -0.45260146)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft130" type="Node3D" parent="." unique_id=695257161 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.9628624, 0, 0.37527785, 0, 1.0334105, 0, -0.37527785, 0, -0.9628624, -17.760265, 1.142, 11.01419)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft131" type="Node3D" parent="." unique_id=306812494 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(1.1498455, 0, -0.16643608, 0, 1.1618285, 0, 0.16643608, 0, 1.1498455, 21.948463, 1.142, 8.0292225)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft132" type="Node3D" parent="." unique_id=1967443594 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.7233934, 0, 0.87016773, 0, 1.1315874, 0, -0.87016773, 0, -0.7233934, 9.016563, 1.142, -17.088972)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft133" type="Node3D" parent="." unique_id=694910220 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.0050346414, 0, 0.8862716, 0, 0.8862859, 0, -0.8862716, 0, 0.0050346414, -12.677269, 1.142, -6.397579)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft134" type="Node3D" parent="." unique_id=188847258 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.67831534, 0, 0.39101794, 0, 0.7829474, 0, -0.39101794, 0, -0.67831534, 11.621926, 1.142, 21.67015)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft135" type="Node3D" parent="." unique_id=1724725764 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.05633148, 0, 1.1106137, 0, 1.1120414, 0, -1.1106137, 0, 0.05633148, 22.564981, 1.142, -0.77903867)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft136" type="Node3D" parent="." unique_id=769486279 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-1.0474367, 0, -0.44627306, 0, 1.1385444, 0, 0.44627306, 0, -1.0474367, -3.1679258, 1.142, 15.584196)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft137" type="Node3D" parent="." unique_id=1237990404 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-1.133212, 0, 0.22057384, 0, 1.1544791, 0, -0.22057384, 0, -1.133212, 19.502445, 1.142, -19.859016)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft138" type="Node3D" parent="." unique_id=844624209 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.9369484, 0, -0.68870115, 0, 1.1628335, 0, 0.68870115, 0, 0.9369484, 16.310915, 1.142, 0.11757532)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft139" type="Node3D" parent="." unique_id=1518790341 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.64913064, 0, 0.66534907, 0, 0.92954826, 0, -0.66534907, 0, -0.64913064, 25.636307, 1.142, 3.6423635)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft140" type="Node3D" parent="." unique_id=1968295689 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(1.008714, 0, -0.4748369, 0, 1.1148874, 0, 0.4748369, 0, 1.008714, 17.39734, 1.142, -14.290341)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft141" type="Node3D" parent="." unique_id=759719643 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.05270969, 0, 0.91174, 0, 0.91326237, 0, -0.91174, 0, 0.05270969, -22.69163, 1.142, 2.4834018)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft142" type="Node3D" parent="." unique_id=677452773 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.10845117, 0, 1.0347601, 0, 1.0404278, 0, -1.0347601, 0, -0.10845117, -14.76554, 1.142, -8.664637)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft143" type="Node3D" parent="." unique_id=2139759308 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(1.1408519, 0, 0.011101799, 0, 1.1409059, 0, -0.011101799, 0, 1.1408519, 6.1265383, 1.142, -17.87996)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft144" type="Node3D" parent="." unique_id=2000268529 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.65730953, 0, -0.6960107, 0, 0.95733315, 0, 0.6960107, 0, -0.65730953, 7.574332, 1.142, 14.078373)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft145" type="Node3D" parent="." unique_id=1300221596 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.23189719, 0, 0.806072, 0, 0.838766, 0, -0.806072, 0, -0.23189719, -5.3955784, 1.142, -21.224865)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft146" type="Node3D" parent="." unique_id=1480305889 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.9591443, 0, 0.060661726, 0, 0.96106064, 0, -0.060661726, 0, 0.9591443, 22.832535, 1.142, 9.002961)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft147" type="Node3D" parent="." unique_id=1258230559 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.5877001, 0, -0.6162269, 0, 0.8515439, 0, 0.6162269, 0, 0.5877001, 5.551501, 1.142, -21.854578)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft148" type="Node3D" parent="." unique_id=1664883914 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.26574954, 0, 1.2033367, 0, 1.232332, 0, -1.2033367, 0, 0.26574954, 7.3221645, 1.142, 17.202488)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft149" type="Node3D" parent="." unique_id=53611056 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-1.231057, 0, -0.06848179, 0, 1.2329603, 0, 0.06848179, 0, -1.231057, 19.78086, 1.142, 2.2170143)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft150" type="Node3D" parent="." unique_id=1412985890 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(1.0497022, 0, -0.53647834, 0, 1.1788485, 0, 0.53647834, 0, 1.0497022, -13.063727, 1.142, 4.1077814)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft151" type="Node3D" parent="." unique_id=1825703097 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.34988043, 0, 1.0826869, 0, 1.1378169, 0, -1.0826869, 0, -0.34988043, -21.370173, 1.142, 8.630801)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft152" type="Node3D" parent="." unique_id=651311099 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.04499878, 0, 0.9992526, 0, 1.0002654, 0, -0.9992526, 0, -0.04499878, -10.47317, 1.142, -9.930273)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft153" type="Node3D" parent="." unique_id=1492219689 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.12642178, 0, 1.159493, 0, 1.1663646, 0, -1.159493, 0, 0.12642178, 7.6030164, 1.142, 17.887978)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft154" type="Node3D" parent="." unique_id=1528893703 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.50828385, 0, 0.61582446, 0, 0.79849374, 0, -0.61582446, 0, -0.50828385, -11.646677, 1.142, -5.7837796)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft155" type="Node3D" parent="." unique_id=1598142769 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(1.028146, 0, -0.054978214, 0, 1.0296149, 0, 0.054978214, 0, 1.028146, 17.523968, 1.142, -6.1559415)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft156" type="Node3D" parent="." unique_id=739863664 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.23138782, 0, -0.859798, 0, 0.8903892, 0, 0.859798, 0, 0.23138782, 23.074604, 1.142, -16.638428)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft157" type="Node3D" parent="." unique_id=1332247282 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(-0.6253021, 0, 0.8481209, 0, 1.0537133, 0, -0.8481209, 0, -0.6253021, 20.096882, 1.142, -11.643567)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="GrassTuft158" type="Node3D" parent="." unique_id=104416556 groups=["settlement_assets"] instance=ExtResource("15_vthya")]
+transform = Transform3D(0.52684003, 0, -0.8064316, 0, 0.9632717, 0, 0.8064316, 0, 0.52684003, 19.515844, 1.142, 14.297711)
+metadata/asset_id = "grass-tuft"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.36694995, 1.1605544, 0.77, 1.0443419)
+
+[node name="FloweringGrass159" type="Node3D" parent="." unique_id=618507808 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(0.8727499, 0, 0.64197534, 0, 1.083432, 0, -0.64197534, 0, 0.8727499, -18.013624, 1.142, -0.3995967)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass160" type="Node3D" parent="." unique_id=428352526 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(0.23640421, 0, -0.74001884, 0, 0.77686214, 0, 0.74001884, 0, 0.23640421, -16.316607, 1.142, -11.043874)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass161" type="Node3D" parent="." unique_id=439651437 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(0.40209103, 0, 0.6914287, 0, 0.79984426, 0, -0.6914287, 0, 0.40209103, -18.637615, 1.142, -6.8987775)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass162" type="Node3D" parent="." unique_id=1034100220 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(1.1643565, 0, -0.28634262, 0, 1.1990489, 0, 0.28634262, 0, 1.1643565, 23.414087, 1.142, -16.172876)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass163" type="Node3D" parent="." unique_id=1537762658 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(-1.1537292, 0, -0.107949376, 0, 1.1587684, 0, 0.107949376, 0, -1.1537292, 9.317489, 1.142, -17.860706)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass164" type="Node3D" parent="." unique_id=1525128161 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(-0.94181746, 0, -0.4760772, 0, 1.0553055, 0, 0.4760772, 0, -0.94181746, 2.6067061, 1.142, 15.49352)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass165" type="Node3D" parent="." unique_id=643220781 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(-0.393513, 0, 1.1821786, 0, 1.245953, 0, -1.1821786, 0, -0.393513, 15.924301, 1.142, -6.6756945)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass166" type="Node3D" parent="." unique_id=1203215466 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(-0.75196725, 0, 0.27767536, 0, 0.80159736, 0, -0.27767536, 0, -0.75196725, 4.8308682, 1.142, 20.347233)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass167" type="Node3D" parent="." unique_id=701846783 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(-0.92645556, 0, -0.11005385, 0, 0.9329693, 0, 0.11005385, 0, -0.92645556, 9.346431, 1.142, -20.907854)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass168" type="Node3D" parent="." unique_id=404254311 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(1.0133514, 0, 0.3105093, 0, 1.0598571, 0, -0.3105093, 0, 1.0133514, 18.807909, 1.142, -1.3210579)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass169" type="Node3D" parent="." unique_id=2099215309 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(-0.45058134, 0, 0.8979952, 0, 1.0046984, 0, -0.8979952, 0, -0.45058134, -25.23712, 1.142, 3.6311607)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass170" type="Node3D" parent="." unique_id=1871521283 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(-0.8060239, 0, 0.48714182, 0, 0.941797, 0, -0.48714182, 0, -0.8060239, 23.115656, 1.142, 11.168452)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass171" type="Node3D" parent="." unique_id=123253044 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(-1.0451313, 0, 0.51939887, 0, 1.1670796, 0, -0.51939887, 0, -1.0451313, 17.999182, 1.142, 13.536537)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass172" type="Node3D" parent="." unique_id=1201889309 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(0.62230027, 0, -0.69316816, 0, 0.93152547, 0, 0.69316816, 0, 0.62230027, 3.9411852, 1.142, 17.85439)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass173" type="Node3D" parent="." unique_id=416970280 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(0.2785127, 0, 0.76201075, 0, 0.81131357, 0, -0.76201075, 0, 0.2785127, 13.760226, 1.142, -19.45069)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass174" type="Node3D" parent="." unique_id=1533180469 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(-0.10141157, 0, -1.1155307, 0, 1.1201309, 0, 1.1155307, 0, -0.10141157, -22.696072, 1.142, -5.608986)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass175" type="Node3D" parent="." unique_id=409082332 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(-0.74661255, 0, 0.5227638, 0, 0.9114342, 0, -0.5227638, 0, -0.74661255, -13.60985, 1.142, 13.425302)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass176" type="Node3D" parent="." unique_id=1410194437 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(1.0130384, 0, -0.7201997, 0, 1.2429539, 0, 0.7201997, 0, 1.0130384, 24.433863, 1.142, -16.913439)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass177" type="Node3D" parent="." unique_id=1462954985 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(0.66516554, 0, -0.7998039, 0, 1.0402555, 0, 0.7998039, 0, 0.66516554, 21.342466, 1.142, 13.340835)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass178" type="Node3D" parent="." unique_id=612726517 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(-1.184058, 0, 0.24309821, 0, 1.2087555, 0, -0.24309821, 0, -1.184058, -12.2879925, 1.142, -3.986758)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass179" type="Node3D" parent="." unique_id=1630593051 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(0.2502536, 0, -1.0831724, 0, 1.1117057, 0, 1.0831724, 0, 0.2502536, 24.132309, 1.142, -2.3803875)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass180" type="Node3D" parent="." unique_id=1971316868 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(-0.7799669, 0, -0.37217027, 0, 0.86421007, 0, 0.37217027, 0, -0.7799669, 17.993444, 1.142, 7.550609)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass181" type="Node3D" parent="." unique_id=1531296909 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(-1.0109469, 0, -0.2754322, 0, 1.047796, 0, 0.2754322, 0, -1.0109469, 18.101734, 1.142, -12.310721)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass182" type="Node3D" parent="." unique_id=373135164 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(-0.8596608, 0, -0.33149728, 0, 0.92136157, 0, 0.33149728, 0, -0.8596608, -6.5524964, 1.142, 4.4103656)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass183" type="Node3D" parent="." unique_id=486021666 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(-0.7154175, 0, 0.2679574, 0, 0.7639525, 0, -0.2679574, 0, -0.7154175, -20.81621, 1.142, -6.627598)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass184" type="Node3D" parent="." unique_id=126378600 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(0.87358624, 0, 0.14504418, 0, 0.88554543, 0, -0.14504418, 0, 0.87358624, 14.919277, 1.142, 4.194939)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass185" type="Node3D" parent="." unique_id=1770527075 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(-0.12951346, 0, 0.85711944, 0, 0.8668492, 0, -0.85711944, 0, -0.12951346, 18.0303, 1.142, -9.101394)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass186" type="Node3D" parent="." unique_id=1929896392 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(0.018144837, 0, -1.2400109, 0, 1.2401437, 0, 1.2400109, 0, 0.018144837, 6.4250727, 1.142, -21.600706)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass187" type="Node3D" parent="." unique_id=603980761 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(-0.8545571, 0, -0.7597097, 0, 1.1434276, 0, 0.7597097, 0, -0.8545571, -2.8578973, 1.142, -20.417068)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass188" type="Node3D" parent="." unique_id=838586124 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(0.3393281, 0, 0.95073295, 0, 1.0094734, 0, -0.95073295, 0, 0.3393281, 17.30593, 1.142, -13.843679)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass189" type="Node3D" parent="." unique_id=1313098372 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(0.9769714, 0, -0.4522831, 0, 1.076584, 0, 0.4522831, 0, 0.9769714, -25.828741, 1.142, -8.64133)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass190" type="Node3D" parent="." unique_id=1681700911 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(-0.629064, 0, -0.76543915, 0, 0.9907667, 0, 0.76543915, 0, -0.629064, 25.960087, 1.142, 10.255919)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass191" type="Node3D" parent="." unique_id=1398264393 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(0.14741206, 0, 1.2187656, 0, 1.2276481, 0, -1.2187656, 0, 0.14741206, 19.68936, 1.142, -8.881833)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FloweringGrass192" type="Node3D" parent="." unique_id=1172285893 groups=["settlement_assets"] instance=ExtResource("16_8qhf6")]
+transform = Transform3D(0.5803711, 0, 0.5531172, 0, 0.8017289, 0, -0.5531172, 0, 0.5803711, 24.311472, 1.142, 2.6368835)
+metadata/asset_id = "flowering-grass"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.37929082, 1.1605544, 0.77, 1.0566828)
+
+[node name="FernPatch193" type="Node3D" parent="." unique_id=262387751 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(-0.06554523, 0, -1.0821447, 0, 1.0841279, 0, 1.0821447, 0, -0.06554523, 21.96793, 1.142, -19.549198)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch194" type="Node3D" parent="." unique_id=55826412 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(-1.0442157, 0, -0.27850944, 0, 1.0807191, 0, 0.27850944, 0, -1.0442157, -17.047535, 1.142, 8.038812)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch195" type="Node3D" parent="." unique_id=1816445195 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(0.53214985, 0, 0.64260596, 0, 0.8343416, 0, -0.64260596, 0, 0.53214985, 6.044012, 1.142, 8.925317)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch196" type="Node3D" parent="." unique_id=1185959191 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(-1.2130038, 0, 0.26524454, 0, 1.2416652, 0, -0.26524454, 0, -1.2130038, -2.7456663, 1.142, -18.039185)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch197" type="Node3D" parent="." unique_id=1305088996 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(-0.34972662, 0, 0.71671927, 0, 0.7974931, 0, -0.71671927, 0, -0.34972662, 16.143087, 1.142, -19.889538)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch198" type="Node3D" parent="." unique_id=2014407565 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(-0.55488575, 0, 0.79532206, 0, 0.9697605, 0, -0.79532206, 0, -0.55488575, -6.860695, 1.142, 21.597078)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch199" type="Node3D" parent="." unique_id=1359172836 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(0.17528966, 0, -0.8749414, 0, 0.89232785, 0, 0.8749414, 0, 0.17528966, 21.266592, 1.142, -21.892794)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch200" type="Node3D" parent="." unique_id=1172009771 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(-0.21303861, 0, -1.0774922, 0, 1.098351, 0, 1.0774922, 0, -0.21303861, 13.461201, 1.142, -21.860853)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch201" type="Node3D" parent="." unique_id=1500345082 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(-0.3724567, 0, 0.85255516, 0, 0.93036246, 0, -0.85255516, 0, -0.3724567, 24.762234, 1.142, -15.538117)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch202" type="Node3D" parent="." unique_id=1135824993 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(-0.7824108, 0, -0.25043193, 0, 0.8215125, 0, 0.25043193, 0, -0.7824108, -20.54426, 1.142, -6.8495197)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch203" type="Node3D" parent="." unique_id=596460557 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(0.34282035, 0, 0.99224156, 0, 1.0497948, 0, -0.99224156, 0, 0.34282035, 21.973927, 1.142, -16.662626)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch204" type="Node3D" parent="." unique_id=689821657 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(0.15708014, 0, -0.8683397, 0, 0.882433, 0, 0.8683397, 0, 0.15708014, -22.035532, 1.142, 0.9095468)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch205" type="Node3D" parent="." unique_id=1206819708 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(-1.0002968, 0, 0.48991865, 0, 1.1138285, 0, -0.48991865, 0, -1.0002968, 22.133945, 1.142, -16.985073)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch206" type="Node3D" parent="." unique_id=1830234327 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(-0.95404595, 0, 0.35805872, 0, 1.0190239, 0, -0.35805872, 0, -0.95404595, -12.794818, 1.142, -3.298083)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch207" type="Node3D" parent="." unique_id=770278971 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(-0.73870265, 0, -0.34377813, 0, 0.81477916, 0, 0.34377813, 0, -0.73870265, 7.4708695, 1.142, 16.748446)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch208" type="Node3D" parent="." unique_id=1507758046 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(0.66127884, 0, 0.74725795, 0, 0.9978397, 0, -0.74725795, 0, 0.66127884, 7.7717986, 1.142, 15.793042)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch209" type="Node3D" parent="." unique_id=1630322235 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(-0.15774189, 0, -0.9650628, 0, 0.97786945, 0, 0.9650628, 0, -0.15774189, 17.372171, 1.142, -19.43777)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch210" type="Node3D" parent="." unique_id=827665238 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(-0.025329575, 0, -1.1706092, 0, 1.1708832, 0, 1.1706092, 0, -0.025329575, 17.059174, 1.142, -13.611476)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch211" type="Node3D" parent="." unique_id=1772917780 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(-0.5545981, 0, -0.69422317, 0, 0.88855207, 0, 0.69422317, 0, -0.5545981, -15.700955, 1.142, -4.247002)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch212" type="Node3D" parent="." unique_id=1862066842 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(0.050523378, 0, 0.92236143, 0, 0.92374414, 0, -0.92236143, 0, 0.050523378, 9.636746, 1.142, -20.420853)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch213" type="Node3D" parent="." unique_id=731053181 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(-0.37384495, 0, -0.6985348, 0, 0.7922821, 0, 0.6985348, 0, -0.37384495, 9.966012, 1.142, -18.331131)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch214" type="Node3D" parent="." unique_id=729938456 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(0.7301216, 0, 0.34227017, 0, 0.8063662, 0, -0.34227017, 0, 0.7301216, -24.749683, 1.142, -4.4683166)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch215" type="Node3D" parent="." unique_id=688733868 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(0.48245707, 0, 1.1140685, 0, 1.2140484, 0, -1.1140685, 0, 0.48245707, -5.829487, 1.142, 18.085758)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch216" type="Node3D" parent="." unique_id=984145802 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(0.2521329, 0, -0.8346471, 0, 0.87189835, 0, 0.8346471, 0, 0.2521329, 2.5167117, 1.142, 8.929441)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch217" type="Node3D" parent="." unique_id=928977119 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(0.54518825, 0, -0.6949324, 0, 0.8832674, 0, 0.6949324, 0, 0.54518825, 5.710634, 1.142, 8.340257)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch218" type="Node3D" parent="." unique_id=273820157 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(0.97724324, 0, 0.053258236, 0, 0.97869337, 0, -0.053258236, 0, 0.97724324, -20.66631, 1.142, 10.55183)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch219" type="Node3D" parent="." unique_id=1408042985 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(-0.5207377, 0, 0.5468754, 0, 0.7551427, 0, -0.5468754, 0, -0.5207377, -15.397065, 1.142, 14.467098)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="FernPatch220" type="Node3D" parent="." unique_id=2087973842 groups=["settlement_assets"] instance=ExtResource("17_g1k8c")]
+transform = Transform3D(0.5161738, 0, 0.90401065, 0, 1.040995, 0, -0.90401065, 0, 0.5161738, 23.277483, 1.142, 1.7227575)
+metadata/asset_id = "fern-patch"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-0.52188456, 0, -0.64891386, 1.1605544, 0.77, 1.3263059)
+
+[node name="ShrubCluster221" type="Node3D" parent="." unique_id=1702608021 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(-0.76953655, 0, 0.2575539, 0, 0.81149274, 0, -0.2575539, 0, -0.76953655, 21.389086, 1.142, 11.932836)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster222" type="Node3D" parent="." unique_id=744079675 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(-1.1726493, 0, 0.42429414, 0, 1.2470492, 0, -0.42429414, 0, -1.1726493, 19.604582, 1.142, 11.281933)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster223" type="Node3D" parent="." unique_id=1159976363 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(-0.8523091, 0, 0.41834667, 0, 0.9494445, 0, -0.41834667, 0, -0.8523091, 3.70746, 1.142, 8.964152)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster224" type="Node3D" parent="." unique_id=1365729593 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(0.6292073, 0, -0.55390996, 0, 0.8382828, 0, 0.55390996, 0, 0.6292073, 16.44682, 1.142, 11.88682)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster225" type="Node3D" parent="." unique_id=723880976 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(-0.9390717, 0, -0.17697157, 0, 0.9556017, 0, 0.17697157, 0, -0.9390717, -17.11582, 1.142, 12.763491)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster226" type="Node3D" parent="." unique_id=298718922 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(0.71696836, 0, -0.9867346, 0, 1.2197086, 0, 0.9867346, 0, 0.71696836, -4.9544535, 1.142, 15.165701)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster227" type="Node3D" parent="." unique_id=1600035611 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(-0.37265044, 0, 0.90230083, 0, 0.97622496, 0, -0.90230083, 0, -0.37265044, 19.449863, 1.142, 14.58865)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster228" type="Node3D" parent="." unique_id=459370380 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(-0.93915206, 0, -0.24684949, 0, 0.97105163, 0, 0.24684949, 0, -0.93915206, 16.241135, 1.142, 10.8417425)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster229" type="Node3D" parent="." unique_id=395933130 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(1.0548837, 0, 0.48209918, 0, 1.1598272, 0, -0.48209918, 0, 1.0548837, 13.205466, 1.142, -19.792946)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster230" type="Node3D" parent="." unique_id=208829755 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(-0.307589, 0, 0.9685909, 0, 1.0162575, 0, -0.9685909, 0, -0.307589, 24.334654, 1.142, -2.5664892)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster231" type="Node3D" parent="." unique_id=535218073 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(-1.1268164, 0, 0.16424453, 0, 1.1387236, 0, -0.16424453, 0, -1.1268164, -13.9754505, 1.142, -7.3548603)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster232" type="Node3D" parent="." unique_id=707269948 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(-1.1540682, 0, -0.314767, 0, 1.196224, 0, 0.314767, 0, -1.1540682, 11.248995, 1.142, -21.182762)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster233" type="Node3D" parent="." unique_id=574272672 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(0.32079577, 0, -0.84058756, 0, 0.8997207, 0, 0.84058756, 0, 0.32079577, -20.811111, 1.142, -0.9339932)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster234" type="Node3D" parent="." unique_id=1725372305 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(0.12717135, 0, -1.0322297, 0, 1.0400339, 0, 1.0322297, 0, 0.12717135, 23.778767, 1.142, -16.899427)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster235" type="Node3D" parent="." unique_id=1446527634 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(-1.1830884, 0, 0.3671328, 0, 1.2387432, 0, -0.3671328, 0, -1.1830884, -14.336513, 1.142, -7.083)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster236" type="Node3D" parent="." unique_id=737695703 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(0.77029115, 0, 0.16415879, 0, 0.7875891, 0, -0.16415879, 0, 0.77029115, -4.7165284, 1.142, 20.519865)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster237" type="Node3D" parent="." unique_id=338154033 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(-1.2195674, 0, -0.19223891, 0, 1.2346257, 0, 0.19223891, 0, -1.2195674, -5.918527, 1.142, 4.3510804)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster238" type="Node3D" parent="." unique_id=303014839 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(1.0032321, 0, -0.5916833, 0, 1.1647162, 0, 0.5916833, 0, 1.0032321, -22.992126, 1.142, 2.2990832)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster239" type="Node3D" parent="." unique_id=1548531588 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(-0.7823015, 0, 0.12535748, 0, 0.79228157, 0, -0.12535748, 0, -0.7823015, -16.969923, 1.142, 3.4545088)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster240" type="Node3D" parent="." unique_id=310609788 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(-0.9939906, 0, 0.6756455, 0, 1.2018794, 0, -0.6756455, 0, -0.9939906, 7.6588545, 1.142, 17.142216)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster241" type="Node3D" parent="." unique_id=80982661 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(1.1654122, 0, 0.3851844, 0, 1.2274171, 0, -0.3851844, 0, 1.1654122, 20.663242, 1.142, 8.553354)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster242" type="Node3D" parent="." unique_id=265064831 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(-0.1369421, 0, -0.76402575, 0, 0.7762013, 0, 0.76402575, 0, -0.1369421, 20.333641, 1.142, -19.911491)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster243" type="Node3D" parent="." unique_id=1836509454 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(0.6504984, 0, -0.53365964, 0, 0.84139216, 0, 0.53365964, 0, 0.6504984, 24.697643, 1.142, 13.493488)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster244" type="Node3D" parent="." unique_id=1097649550 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(0.5144439, 0, 0.60677433, 0, 0.7955046, 0, -0.60677433, 0, 0.5144439, -21.707785, 1.142, 4.3335166)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster245" type="Node3D" parent="." unique_id=1584074028 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(-0.05028613, 0, 0.8732699, 0, 0.8747166, 0, -0.8732699, 0, -0.05028613, -14.474776, 1.142, -9.9760895)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="ShrubCluster246" type="Node3D" parent="." unique_id=690802246 groups=["settlement_assets"] instance=ExtResource("18_02u37")]
+transform = Transform3D(0.52331626, 0, 0.7925857, 0, 0.94976413, 0, -0.7925857, 0, 0.52331626, 3.5438673, 1.142, 7.9180446)
+metadata/asset_id = "shrub-cluster"
+metadata/collision_policy = "non_blocking_foliage"
+metadata/visual_bounds = AABB(-1.0760975, -0.16, -0.802916, 1.9574738, 1.12, 1.6207681)
+
+[node name="BoulderCluster247" type="StaticBody3D" parent="." unique_id=1423544487 groups=["settlement_assets"] instance=ExtResource("19_j7tva")]
+transform = Transform3D(0.42544413, 0, -0.9570513, 0, 1.0473537, 0, 0.9570513, 0, 0.42544413, 20.776215, 1.142, 8.904207)
+collision_mask = 3
+metadata/asset_id = "boulder-cluster"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.2155399, -0.20000002, -0.6083072, 2.152195, 1.2, 1.280512)
+
+[node name="BoulderCluster248" type="StaticBody3D" parent="." unique_id=1689871671 groups=["settlement_assets"] instance=ExtResource("19_j7tva")]
+transform = Transform3D(0.5075086, 0, -1.0865306, 0, 1.1992137, 0, 1.0865306, 0, 0.5075086, 17.457586, 1.142, -6.29988)
+collision_mask = 3
+metadata/asset_id = "boulder-cluster"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.2155399, -0.20000002, -0.6083072, 2.152195, 1.2, 1.280512)
+
+[node name="BoulderCluster249" type="StaticBody3D" parent="." unique_id=1236581112 groups=["settlement_assets"] instance=ExtResource("19_j7tva")]
+transform = Transform3D(0.32222965, 0, -0.7813757, 0, 0.84520996, 0, 0.7813757, 0, 0.32222965, -9.073313, 1.142, 21.595058)
+collision_mask = 3
+metadata/asset_id = "boulder-cluster"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.2155399, -0.20000002, -0.6083072, 2.152195, 1.2, 1.280512)
+
+[node name="BoulderCluster250" type="StaticBody3D" parent="." unique_id=1868327139 groups=["settlement_assets"] instance=ExtResource("19_j7tva")]
+transform = Transform3D(1.0899476, 0, -0.015763205, 0, 1.0900615, 0, 0.015763205, 0, 1.0899476, 7.1473436, 1.142, 20.799353)
+collision_mask = 3
+metadata/asset_id = "boulder-cluster"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.2155399, -0.20000002, -0.6083072, 2.152195, 1.2, 1.280512)
+
+[node name="BoulderCluster251" type="StaticBody3D" parent="." unique_id=591223355 groups=["settlement_assets"] instance=ExtResource("19_j7tva")]
+transform = Transform3D(-0.5012049, 0, 1.021791, 0, 1.1380963, 0, -1.021791, 0, -0.5012049, -12.521945, 1.142, -7.440774)
+collision_mask = 3
+metadata/asset_id = "boulder-cluster"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.2155399, -0.20000002, -0.6083072, 2.152195, 1.2, 1.280512)
+
+[node name="BoulderCluster252" type="StaticBody3D" parent="." unique_id=1216284482 groups=["settlement_assets"] instance=ExtResource("19_j7tva")]
+transform = Transform3D(0.008192946, 0, 0.9051453, 0, 0.90518236, 0, -0.9051453, 0, 0.008192946, -4.5929637, 1.142, -19.504892)
+collision_mask = 3
+metadata/asset_id = "boulder-cluster"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.2155399, -0.20000002, -0.6083072, 2.152195, 1.2, 1.280512)
+
+[node name="BoulderCluster253" type="StaticBody3D" parent="." unique_id=793581084 groups=["settlement_assets"] instance=ExtResource("19_j7tva")]
+transform = Transform3D(-0.9015195, 0, -0.009030828, 0, 0.9015647, 0, 0.009030828, 0, -0.9015195, -22.764574, 1.142, -7.220769)
+collision_mask = 3
+metadata/asset_id = "boulder-cluster"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.2155399, -0.20000002, -0.6083072, 2.152195, 1.2, 1.280512)
+
+[node name="BoulderCluster254" type="StaticBody3D" parent="." unique_id=1166609846 groups=["settlement_assets"] instance=ExtResource("19_j7tva")]
+transform = Transform3D(-0.78996927, 0, -0.54133946, 0, 0.9576533, 0, 0.54133946, 0, -0.78996927, 22.020645, 1.142, -0.7960263)
+collision_mask = 3
+metadata/asset_id = "boulder-cluster"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.2155399, -0.20000002, -0.6083072, 2.152195, 1.2, 1.280512)
+
+[node name="BoulderCluster255" type="StaticBody3D" parent="." unique_id=464675650 groups=["settlement_assets"] instance=ExtResource("19_j7tva")]
+transform = Transform3D(0.60335326, 0, -0.49630943, 0, 0.78125423, 0, 0.49630943, 0, 0.60335326, -14.012688, 1.142, 18.682268)
+collision_mask = 3
+metadata/asset_id = "boulder-cluster"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.2155399, -0.20000002, -0.6083072, 2.152195, 1.2, 1.280512)
+
+[node name="BoulderCluster256" type="StaticBody3D" parent="." unique_id=792260938 groups=["settlement_assets"] instance=ExtResource("19_j7tva")]
+transform = Transform3D(0.049567137, 0, 0.7835589, 0, 0.78512514, 0, -0.7835589, 0, 0.049567137, 23.545467, 1.142, -16.480864)
+collision_mask = 3
+metadata/asset_id = "boulder-cluster"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.2155399, -0.20000002, -0.6083072, 2.152195, 1.2, 1.280512)
+
+[node name="BoulderCluster257" type="StaticBody3D" parent="." unique_id=751490743 groups=["settlement_assets"] instance=ExtResource("19_j7tva")]
+transform = Transform3D(0.6930676, 0, -0.7140764, 0, 0.995112, 0, 0.7140764, 0, 0.6930676, -1.4952258, 1.142, -19.437202)
+collision_mask = 3
+metadata/asset_id = "boulder-cluster"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.2155399, -0.20000002, -0.6083072, 2.152195, 1.2, 1.280512)
+
+[node name="BoulderCluster258" type="StaticBody3D" parent="." unique_id=950277162 groups=["settlement_assets"] instance=ExtResource("19_j7tva")]
+transform = Transform3D(-0.34527183, 0, -1.1831015, 0, 1.2324536, 0, 1.1831015, 0, -0.34527183, 12.62567, 1.142, -21.55113)
+collision_mask = 3
+metadata/asset_id = "boulder-cluster"
+metadata/collision_policy = "static_solid_triangles"
+metadata/visual_bounds = AABB(-1.2155399, -0.20000002, -0.6083072, 2.152195, 1.2, 1.280512)

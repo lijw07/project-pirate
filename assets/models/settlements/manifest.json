@@ -1,0 +1,303 @@
+{
+  "status": "Approved by user for Godot integration on 2026-10-01",
+  "new_asset_count": 28,
+  "assets": [
+    {
+      "id": "fisher-cottage",
+      "title": "Fisher Cottage",
+      "category": "Buildings",
+      "bytes": 75420,
+      "sha256": "96ab94aa6a3e4de364e9cb3564c7cb1a4d0a24bcf019731535c0a7f4b45df7d6",
+      "model": "res://assets/models/settlements/fisher_cottage.glb",
+      "scene": "res://game/settlements/assets/fisher_cottage.tscn"
+    },
+    {
+      "id": "farm-longhouse",
+      "title": "Farm Longhouse",
+      "category": "Buildings",
+      "bytes": 75348,
+      "sha256": "65ee563825421aa8e3f2246ab105e481acb50fe20f36e1a1b371a6c545bbd3f6",
+      "model": "res://assets/models/settlements/farm_longhouse.glb",
+      "scene": "res://game/settlements/assets/farm_longhouse.tscn"
+    },
+    {
+      "id": "granary",
+      "title": "Raised Granary",
+      "category": "Buildings",
+      "bytes": 122336,
+      "sha256": "3b7d7c0af65478d7e227cce866c5067c9776adf4cb3585206a7d9afc89163851",
+      "model": "res://assets/models/settlements/granary.glb",
+      "scene": "res://game/settlements/assets/granary.tscn"
+    },
+    {
+      "id": "miners-barracks",
+      "title": "Miners Barracks",
+      "category": "Buildings",
+      "bytes": 65236,
+      "sha256": "ef88ca661699b9ae3ceb4b50aeb5d6a935e1fe2164e776c32f899c7231c1e264",
+      "model": "res://assets/models/settlements/miners_barracks.glb",
+      "scene": "res://game/settlements/assets/miners_barracks.tscn"
+    },
+    {
+      "id": "harbor-tavern",
+      "title": "Harbor Tavern",
+      "category": "Buildings",
+      "bytes": 111624,
+      "sha256": "7f70baeebce69d5a91b5c62474d5afdfb77d9ef05e8a484ef68269e4fa75a64d",
+      "model": "res://assets/models/settlements/harbor_tavern.glb",
+      "scene": "res://game/settlements/assets/harbor_tavern.tscn"
+    },
+    {
+      "id": "quay-warehouse",
+      "title": "Quay Warehouse",
+      "category": "Buildings",
+      "bytes": 65060,
+      "sha256": "189aa87c173dca4c20855ce843d517d1fb7cad7b416c8889f6702ee56fd850da",
+      "model": "res://assets/models/settlements/quay_warehouse.glb",
+      "scene": "res://game/settlements/assets/quay_warehouse.tscn"
+    },
+    {
+      "id": "captains-house",
+      "title": "Captains House",
+      "category": "Buildings",
+      "bytes": 94020,
+      "sha256": "db89edb14a6d23e9cf7ce76fcb3bc828617aad6fcea5ed740c0196f3c65fa8ad",
+      "model": "res://assets/models/settlements/captains_house.glb",
+      "scene": "res://game/settlements/assets/captains_house.tscn"
+    },
+    {
+      "id": "windmill",
+      "title": "Island Windmill",
+      "category": "Food",
+      "bytes": 39176,
+      "sha256": "fe60d2aca500b6ff239df12e37846e7f4c9c3e0a7014c6dbd9c999f3b26b032c",
+      "model": "res://assets/models/settlements/windmill.glb",
+      "scene": "res://game/settlements/assets/windmill.tscn"
+    },
+    {
+      "id": "produce-stall",
+      "title": "Produce Market Stall",
+      "category": "Food",
+      "bytes": 155504,
+      "sha256": "5fce07e13c26147d16b898304bda1b23b8fbcfebe4d6070407bd9d589f8d40aa",
+      "model": "res://assets/models/settlements/produce_stall.glb",
+      "scene": "res://game/settlements/assets/produce_stall.tscn"
+    },
+    {
+      "id": "cultivated-field",
+      "title": "Cultivated Field",
+      "category": "Food",
+      "bytes": 84632,
+      "sha256": "2519d88d981e73a7cdde3b03b8dbeaf0083aa3e3037457abb610769678193850",
+      "model": "res://assets/models/settlements/cultivated_field.glb",
+      "scene": "res://game/settlements/assets/cultivated_field.tscn"
+    },
+    {
+      "id": "citrus-tree",
+      "title": "Citrus Orchard Tree",
+      "category": "Food",
+      "bytes": 38368,
+      "sha256": "e5c42b438bc54277165b5fcfa3cf27c1b9e11dd40c1caea15880b20364c59983",
+      "model": "res://assets/models/settlements/citrus_tree.glb",
+      "scene": "res://game/settlements/assets/citrus_tree.tscn"
+    },
+    {
+      "id": "log-shed",
+      "title": "Lumber Drying Shed",
+      "category": "Timber",
+      "bytes": 91500,
+      "sha256": "2bc7f872f8559205d0ea110d1dba23802b77f428a7b75aa0ca663d976fb1a1bc",
+      "model": "res://assets/models/settlements/log_shed.glb",
+      "scene": "res://game/settlements/assets/log_shed.tscn"
+    },
+    {
+      "id": "sawmill",
+      "title": "Sawmill Workshop",
+      "category": "Timber",
+      "bytes": 80316,
+      "sha256": "cf08c99fc732c8cdad8f9e6fd48407ee66cf5a413fd90a05314bdc41746edf29",
+      "model": "res://assets/models/settlements/sawmill.glb",
+      "scene": "res://game/settlements/assets/sawmill.tscn"
+    },
+    {
+      "id": "timber-cart",
+      "title": "Timber Cart",
+      "category": "Timber",
+      "bytes": 27572,
+      "sha256": "0aca89cc58e6b9f0d201594af970f236fb7057094132dee2e3e013ebf8cc2376",
+      "model": "res://assets/models/settlements/timber_cart.glb",
+      "scene": "res://game/settlements/assets/timber_cart.tscn"
+    },
+    {
+      "id": "mine-headframe",
+      "title": "Mine Headframe",
+      "category": "Metal",
+      "bytes": 47896,
+      "sha256": "05e3c54cbfd55fc36e8a2bc4b30b51396e6df921ae94939b0c23f7dc5f494ecb",
+      "model": "res://assets/models/settlements/mine_headframe.glb",
+      "scene": "res://game/settlements/assets/mine_headframe.tscn"
+    },
+    {
+      "id": "ore-sorting-yard",
+      "title": "Ore Sorting Yard",
+      "category": "Metal",
+      "bytes": 41304,
+      "sha256": "c38fce74593fd4171330b299eb8884d496154f73e1f33ccf41d2dd3529ed6c74",
+      "model": "res://assets/models/settlements/ore_sorting_yard.glb",
+      "scene": "res://game/settlements/assets/ore_sorting_yard.tscn"
+    },
+    {
+      "id": "castle-wall",
+      "title": "Castle Curtain Wall",
+      "category": "Castle",
+      "bytes": 42208,
+      "sha256": "6ac9322e0d22b9a59e10e6860f255cae35493b42a6c622099b472e58b001cece",
+      "model": "res://assets/models/settlements/castle_wall.glb",
+      "scene": "res://game/settlements/assets/castle_wall.tscn"
+    },
+    {
+      "id": "castle-tower",
+      "title": "Castle Watchtower",
+      "category": "Castle",
+      "bytes": 52068,
+      "sha256": "e4624c66e6dd6f4f76ff6f7ed1fb8289fb52b5debde847e8687bb2d11482b033",
+      "model": "res://assets/models/settlements/castle_tower.glb",
+      "scene": "res://game/settlements/assets/castle_tower.tscn"
+    },
+    {
+      "id": "castle-gatehouse",
+      "title": "Arched Castle Gate",
+      "category": "Castle",
+      "bytes": 78824,
+      "sha256": "0226c844da06e812be7b94995949c8e8795302058534fee75346f3fd02cd5180",
+      "model": "res://assets/models/settlements/castle_gatehouse.glb",
+      "scene": "res://game/settlements/assets/castle_gatehouse.tscn"
+    },
+    {
+      "id": "castle-keep",
+      "title": "Island Castle Keep",
+      "category": "Castle",
+      "bytes": 89592,
+      "sha256": "5249d9dfd22009c29915b644dabef785fe8e9b2c794e4f5ec5fbe6ec043b0bb7",
+      "model": "res://assets/models/settlements/castle_keep.glb",
+      "scene": "res://game/settlements/assets/castle_keep.tscn"
+    },
+    {
+      "id": "village-well",
+      "title": "Village Well",
+      "category": "Scenery",
+      "bytes": 26156,
+      "sha256": "e9ea9c55302b41b8a7be9e54b41d5dda83ca37a38397529cd20e6e4206ffbb24",
+      "model": "res://assets/models/settlements/village_well.glb",
+      "scene": "res://game/settlements/assets/village_well.tscn"
+    },
+    {
+      "id": "iron-brazier",
+      "title": "Iron Brazier",
+      "category": "Scenery",
+      "bytes": 25864,
+      "sha256": "98d05a22f36f80323562104802d56e5b7de6eb4cc746c0d3a91e8727a3d18b31",
+      "model": "res://assets/models/settlements/iron_brazier.glb",
+      "scene": "res://game/settlements/assets/iron_brazier.tscn"
+    },
+    {
+      "id": "grass-tuft",
+      "title": "Coastal Grass",
+      "category": "Foliage",
+      "bytes": 1824,
+      "sha256": "cb154da548bbd57c05fcbad00579e06226afeed5bbff1a1cb1ab8f21746c07b5",
+      "model": "res://assets/models/settlements/grass_tuft.glb",
+      "scene": "res://game/settlements/assets/grass_tuft.tscn"
+    },
+    {
+      "id": "flowering-grass",
+      "title": "Flowering Grass",
+      "category": "Foliage",
+      "bytes": 15780,
+      "sha256": "322f86fabb595fbf718e71f0eee223836ac5e611bb04babbcd6b7cb3fe4bdf07",
+      "model": "res://assets/models/settlements/flowering_grass.glb",
+      "scene": "res://game/settlements/assets/flowering_grass.tscn"
+    },
+    {
+      "id": "fern-patch",
+      "title": "Fern Patch",
+      "category": "Foliage",
+      "bytes": 2136,
+      "sha256": "c4baf92d1e2ddd246dacb07da0ee69b9da6093dce6e66c6a7c4568809d78ba7f",
+      "model": "res://assets/models/settlements/fern_patch.glb",
+      "scene": "res://game/settlements/assets/fern_patch.tscn"
+    },
+    {
+      "id": "shrub-cluster",
+      "title": "Coastal Shrubs",
+      "category": "Foliage",
+      "bytes": 8960,
+      "sha256": "75c4e1ae021bddcba4e69678e0687ce5b9312a51dda07ab136125041b042792d",
+      "model": "res://assets/models/settlements/shrub_cluster.glb",
+      "scene": "res://game/settlements/assets/shrub_cluster.tscn"
+    },
+    {
+      "id": "boulder-cluster",
+      "title": "Coastal Boulders",
+      "category": "Scenery",
+      "bytes": 8772,
+      "sha256": "dfba96ef2f740bc6cae9a1532636bb8c9f0dc7afd92c0320e524ce5d0d3a9299",
+      "model": "res://assets/models/settlements/boulder_cluster.glb",
+      "scene": "res://game/settlements/assets/boulder_cluster.tscn"
+    },
+    {
+      "id": "path-stones",
+      "title": "Village Path Stones",
+      "category": "Scenery",
+      "bytes": 11484,
+      "sha256": "acfd03f71f5b0c8a1551065f928db934a7e2261ae6f9069a5c0733e45c7d1e9a",
+      "model": "res://assets/models/settlements/path_stones.glb",
+      "scene": "res://game/settlements/assets/path_stones.tscn"
+    }
+  ],
+  "source_references": [
+    "art-review/island-settlements-v1/Island_Settlements_Review.blend",
+    "art-review/pirate-art-v1/models",
+    "art-review/pirate-expansion-v1/models"
+  ],
+  "license_reference": "License-Kenney.txt",
+  "islands": [
+    "food",
+    "timber",
+    "gold",
+    "metal",
+    "harbor-player",
+    "harbor-enemy"
+  ],
+  "provenance": "28 original supplementary models authored locally in Blender to match the supplied Kenney Pirate Kit. Layout scenery reuses CC0 Kenney models from the earlier review.",
+  "layout_files": [
+    {
+      "path": "layouts/food_scenery.glb",
+      "sha256": "542aaa9dbfe7d5ce42a9a3be07f6738e73efac46477cbd9c20c5a3ff05286426"
+    },
+    {
+      "path": "layouts/gold_scenery.glb",
+      "sha256": "2ba40adbb01a3149a8739db9aaadeb49dcce3fa174f49896b47a7a94374e4eaf"
+    },
+    {
+      "path": "layouts/harbor_enemy_scenery.glb",
+      "sha256": "d2924d511dd124cebac38b6223d2196bb7d0e4edd337a72bc0f8542c2f98e5cd"
+    },
+    {
+      "path": "layouts/harbor_player_scenery.glb",
+      "sha256": "50e02611a6ddd5602247f9969cbc19d37ccd0f0d21b45305a9a7681afa39f167"
+    },
+    {
+      "path": "layouts/metal_scenery.glb",
+      "sha256": "b30c663fc1288e5b06e9c50f61642974507be2d89bd602d0fa6ff3010d572528"
+    },
+    {
+      "path": "layouts/placements.json",
+      "sha256": "b9074f95baf9d389885d857907271cbcfe058e5869e242ac9d57ca13395887fc"
+    },
+    {
+      "path": "layouts/timber_scenery.glb",
+      "sha256": "522c8523181c56fc2eeba881840f33f2723c05133c9643e18efda44343fcb4f1"
+    }
+  ]
+}
