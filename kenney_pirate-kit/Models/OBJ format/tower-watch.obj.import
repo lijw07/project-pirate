@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b0fla0aa28van"
+path="res://.godot/imported/tower-watch.obj-f809414cd82ef2c17d0846c3b4c4ba4e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tower-watch.obj-f809414cd82ef2c17d0846c3b4c4ba4e.mesh"]
+
+source_file="res://kenney_pirate-kit/Models/OBJ format/tower-watch.obj"
+dest_files=["res://.godot/imported/tower-watch.obj-f809414cd82ef2c17d0846c3b4c4ba4e.mesh", "res://.godot/imported/tower-watch.obj-f809414cd82ef2c17d0846c3b4c4ba4e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

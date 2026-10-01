@@ -1,0 +1,148 @@
+{
+  "status": "Original supplementary art for review; not engine integrated",
+  "style_reference": "Kenney Pirate Kit 2.1",
+  "geometry": "All twenty supplementary assemblies are newly modeled; no Kenney mesh geometry is copied in this pack. The separate water study uses existing approved review assets.",
+  "units": "meters; GLB Y-up; Blender Z-up",
+  "assets": [
+    {
+      "id": "provision-store",
+      "title": "Provision Store",
+      "category": "resource",
+      "bytes": 245252,
+      "sha256": "dc4463835cda68bff585f8c6d24fbf7c7bff9a5bbb8a23a47f5b2e8da0e9711d"
+    },
+    {
+      "id": "timber-workshop",
+      "title": "Timber Workshop",
+      "category": "resource",
+      "bytes": 87684,
+      "sha256": "e42cd5988f2497d6b221be0acd658c1496f4487a97cf789e064a86727879b24a"
+    },
+    {
+      "id": "iron-foundry",
+      "title": "Island Foundry",
+      "category": "resource",
+      "bytes": 69668,
+      "sha256": "b603520b54640663acd455252720aec4e7191f21d2b386add4b265057ff2b95f"
+    },
+    {
+      "id": "treasury-vault",
+      "title": "Treasury Vault",
+      "category": "resource",
+      "bytes": 67364,
+      "sha256": "9d996833fb4c45547fbaaca31cfd1b561e258ed3425113dcd9c0b9f370f31dcf"
+    },
+    {
+      "id": "shipyard-gantry",
+      "title": "Shipyard Gantry",
+      "category": "harbor",
+      "bytes": 40432,
+      "sha256": "a1e7cc707e21da7e63874b1bc94877ee33e4f618e0504a7880afba580dbffea7"
+    },
+    {
+      "id": "harbor-lighthouse",
+      "title": "Harbor Lighthouse",
+      "category": "harbor",
+      "bytes": 85524,
+      "sha256": "baefa787b28b4544763f413a32c5996732cb07699386008f294b26b57594244f"
+    },
+    {
+      "id": "dock-t-junction",
+      "title": "Dock T Junction",
+      "category": "harbor",
+      "bytes": 91944,
+      "sha256": "76cea345a0b7c502f8f392a2789e839498a67d84740bf9c1ef8338d209bf7591"
+    },
+    {
+      "id": "dock-corner",
+      "title": "Dock Corner",
+      "category": "harbor",
+      "bytes": 84344,
+      "sha256": "e7fbac6651a099c41130eba70607061bd565f591ad918ff95d0293fe0eb0bd1e"
+    },
+    {
+      "id": "mooring-bollard",
+      "title": "Mooring Bollard",
+      "category": "harbor",
+      "bytes": 46328,
+      "sha256": "2b0f0493d8b64c0438f103ac0e1388aae3c989a8c67c1e371235f65aae7260b0"
+    },
+    {
+      "id": "navigation-buoy",
+      "title": "Navigation Buoy",
+      "category": "harbor",
+      "bytes": 22000,
+      "sha256": "5bb8b53e0fa9ab6e0d4ba96bc43c595a571e38dfed8441a33e7a0eb1c72c247c"
+    },
+    {
+      "id": "swivel-gun",
+      "title": "Swivel Gun",
+      "category": "equipment",
+      "bytes": 17272,
+      "sha256": "dcb677c687a118c30bbdb2a00a61ce2146bdc93973163843f3ee324966becf20"
+    },
+    {
+      "id": "deck-mortar",
+      "title": "Deck Mortar",
+      "category": "equipment",
+      "bytes": 21400,
+      "sha256": "3dddd91b4e55a56db3bc50108ed71cc85b1c8b3e3b0016bb04fad4db7427af95"
+    },
+    {
+      "id": "harpoon-launcher",
+      "title": "Harpoon Launcher",
+      "category": "equipment",
+      "bytes": 52380,
+      "sha256": "d8ed43502e0d97f1834c4b4ec55a421ae6331c4a51330042c021e0897d11e426"
+    },
+    {
+      "id": "repair-bench",
+      "title": "Ship Repair Bench",
+      "category": "equipment",
+      "bytes": 29284,
+      "sha256": "95f9db59e8354277f1c9319591aead27d9577be0c8a08ada5c1c71530672d94e"
+    },
+    {
+      "id": "cargo-rack",
+      "title": "Secured Cargo Rack",
+      "category": "equipment",
+      "bytes": 69920,
+      "sha256": "00d130ee6aabcc20e031af68725d16fdd5f912711dd54ec3203e6a4ef085960b"
+    },
+    {
+      "id": "food-crate",
+      "title": "Food Crate",
+      "category": "props",
+      "bytes": 58588,
+      "sha256": "165ef5fe328b904137da4678ece434a615b252c3c6bb4644eb1e98eeb7f693d8"
+    },
+    {
+      "id": "ore-crate",
+      "title": "Ore Crate",
+      "category": "props",
+      "bytes": 35168,
+      "sha256": "f16c9dd1156409199d5e8376a095b4e0ed9fc6e04adc9b33dafd62302a236ce7"
+    },
+    {
+      "id": "gold-sacks",
+      "title": "Gold Sacks",
+      "category": "props",
+      "bytes": 53676,
+      "sha256": "29b24bde4dc85f3630633711aa3655aeee4aa6192fc515bbb66ff4234689aa7d"
+    },
+    {
+      "id": "cannonball-rack",
+      "title": "Cannonball Rack",
+      "category": "props",
+      "bytes": 71896,
+      "sha256": "7396dc512d7fbd38386d12a46d2e7d328c4fafd2c2ce229964e84fb4778125b4"
+    },
+    {
+      "id": "capture-standard",
+      "title": "Capture Standard",
+      "category": "props",
+      "bytes": 16396,
+      "sha256": "7cacd79ede49def3b4d6e456ad3d9cd42758a99271ed2b3c6dd7bc229c9024ed"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "ship": "Ship \u2022 warship",
+    "cannons": 6,
+    "source_geometry_intersections": []
+  },
+  {
+    "ship": "Ship \u2022 trader",
+    "cannons": 4,
+    "source_geometry_intersections": []
+  },
+  {
+    "ship": "Ship \u2022 corsair",
+    "cannons": 6,
+    "source_geometry_intersections": []
+  },
+  {
+    "ship": "Ship \u2022 scout",
+    "cannons": 2,
+    "source_geometry_intersections": []
+  },
+  {
+    "ship": "Ship \u2022 scout.001",
+    "cannons": 2,
+    "source_geometry_intersections": []
+  },
+  {
+    "ship": "Ship \u2022 warship.001",
+    "cannons": 6,
+    "source_geometry_intersections": []
+  },
+  {
+    "ship": "Ship \u2022 trader.001",
+    "cannons": 4,
+    "source_geometry_intersections": []
+  }
+]
