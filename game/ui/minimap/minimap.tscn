@@ -1,0 +1,91 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/ui/minimap/minimap.gd" id="1_mnmap"]
+[ext_resource type="Texture2D" path="res://assets/third_party/kenney_pirate_pack/PNG/Default size/Tiles/tile_73.png" id="2_water"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mask"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+corner_detail = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rim"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.4, 0.26, 0.15, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+corner_detail = 32
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_size = 6
+
+[node name="Minimap" type="Control"]
+custom_minimum_size = Vector2(220, 220)
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -236.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 236.0
+grow_horizontal = 0
+mouse_filter = 2
+script = ExtResource("1_mnmap")
+water_texture = ExtResource("2_water")
+
+[node name="Mask" type="Panel" parent="."]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mask")
+
+[node name="Canvas" type="Control" parent="Mask"]
+texture_filter = 4
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Rim" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rim")
+
+[node name="North" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 12.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.97, 0.88, 1)
+theme_override_colors/font_outline_color = Color(0.4, 0.26, 0.15, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 15
+text = "N"
+horizontal_alignment = 1

@@ -1,14 +1,14 @@
 extends SceneTree
 
 const ISLAND_SCENES := [
-	"res://scenes/assets/food.tscn",
-	"res://scenes/assets/timber.tscn",
-	"res://scenes/assets/gold.tscn",
-	"res://scenes/assets/metal.tscn",
-	"res://scenes/assets/harbor-player.tscn",
-	"res://scenes/assets/harbor-enemy.tscn",
+	"res://game/islands/food.tscn",
+	"res://game/islands/timber.tscn",
+	"res://game/islands/gold.tscn",
+	"res://game/islands/metal.tscn",
+	"res://game/islands/harbor_player.tscn",
+	"res://game/islands/harbor_enemy.tscn",
 ]
-const DEFAULT_WAVES := "res://resources/ocean/default_waves.tres"
+const DEFAULT_WAVES := "res://game/ocean/default_waves.tres"
 const SHORE_CLEARANCE := 5.0
 const OPEN_SEA_DISTANCE := 150.0
 const CALM_SHORE_RATIO := 0.3

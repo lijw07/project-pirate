@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cflvcmovsiikk"
+path="res://.godot/imported/flag-pennant.obj-a0224a415da8c777808f216463dc805f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/flag-pennant.obj-a0224a415da8c777808f216463dc805f.mesh"]
+
+source_file="res://assets/third_party/kenney_pirate_kit/Models/OBJ format/flag-pennant.obj"
+dest_files=["res://.godot/imported/flag-pennant.obj-a0224a415da8c777808f216463dc805f.mesh", "res://.godot/imported/flag-pennant.obj-a0224a415da8c777808f216463dc805f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

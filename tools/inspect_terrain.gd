@@ -1,7 +1,7 @@
 extends SceneTree
 func _initialize(): call_deferred("run")
 func run():
-	var model = load("res://assets/pirate/models/food.glb").instantiate()
+	var model = load("res://assets/models/pirate/food.glb").instantiate()
 	root.add_child(model)
 	for node in model.find_children("*","MeshInstance3D",true,false):
 		if "Wet sand" not in str(node.name) and "Beach" not in str(node.name): continue

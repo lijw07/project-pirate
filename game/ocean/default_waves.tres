@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="WaveSettings" format=3 uid="uid://bk1rw48cd5nvb"]
+
+[ext_resource type="Script" uid="uid://blhq2m2gifhlo" path="res://game/ocean/wave_settings.gd" id="1_ecy5k"]
+[ext_resource type="Script" uid="uid://ck5ucwvu4c03y" path="res://game/ocean/gerstner_wave.gd" id="2_0hls8"]
+
+[sub_resource type="Resource" id="Resource_4twb5"]
+script = ExtResource("2_0hls8")
+direction = Vector2(1, 0.35)
+steepness = 0.12
+wavelength = 64.0
+
+[sub_resource type="Resource" id="Resource_75pcy"]
+script = ExtResource("2_0hls8")
+direction = Vector2(0.55, 1)
+wavelength = 33.0
+
+[sub_resource type="Resource" id="Resource_4gyb0"]
+script = ExtResource("2_0hls8")
+direction = Vector2(-0.45, 0.85)
+steepness = 0.08
+wavelength = 18.0
+
+[sub_resource type="Resource" id="Resource_t7bkk"]
+script = ExtResource("2_0hls8")
+direction = Vector2(0.95, -0.4)
+steepness = 0.06
+wavelength = 10.0
+
+[sub_resource type="Resource" id="Resource_qykw8"]
+script = ExtResource("2_0hls8")
+direction = Vector2(0.2, -1)
+steepness = 0.05
+wavelength = 6.5
+
+[resource]
+script = ExtResource("1_ecy5k")
+waves = Array[ExtResource("2_0hls8")]([SubResource("Resource_4twb5"), SubResource("Resource_75pcy"), SubResource("Resource_4gyb0"), SubResource("Resource_t7bkk"), SubResource("Resource_qykw8")])

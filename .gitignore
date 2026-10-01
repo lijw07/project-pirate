@@ -22,6 +22,10 @@ mono_crash.*.json
 *.blend
 *.blend[0-9]
 
+# Local notes and generated test reports
+/docs/
+/tests/reports/
+
 # OS and editor clutter
 .DS_Store
 Thumbs.db

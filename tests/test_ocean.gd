@@ -1,8 +1,8 @@
 extends SceneTree
 
 const SETTLE_SECONDS := 6.0
-const FILLER_SHIP := "res://scenes/test/filler_ship.tscn"
-const DEFAULT_WAVES := "res://resources/ocean/default_waves.tres"
+const FILLER_SHIP := "res://game/ships/filler_ship.tscn"
+const DEFAULT_WAVES := "res://game/ocean/default_waves.tres"
 const DECK_HEIGHT_ABOVE_ORIGIN := 1.4
 const MIN_FREEBOARD := 0.6
 

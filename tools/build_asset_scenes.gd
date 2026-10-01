@@ -1,8 +1,7 @@
 extends SceneTree
 
 const IslandGeometry = preload("res://tools/island_geometry.gd")
-const ASSET_DIR := "res://assets/pirate/"
-const SCENE_DIR := "res://scenes/assets/"
+const AssetPaths = preload("res://tools/asset_paths.gd")
 const CALM_ZONE_INNER_SCALE := 1.25
 const CALM_ZONE_FALLOFF := 45.0
 var records: Array = []
@@ -37,7 +36,7 @@ func add_shape(body: CollisionObject3D, shape: Shape3D, label: String) -> void:
 	node.owner = body
 
 func build() -> void:
-	var manifest = JSON.parse_string(FileAccess.get_file_as_string(ASSET_DIR + "manifest.json"))
+	var manifest = JSON.parse_string(FileAccess.get_file_as_string(AssetPaths.MANIFEST_PATH))
 	records = manifest.assets
 	if "--islands-only" in OS.get_cmdline_user_args():
 		for record in records:
@@ -53,7 +52,7 @@ func build() -> void:
 		if record.id in IslandGeometry.ISLANDS: build_asset(record.id)
 	build_world()
 	build_gallery()
-	var file := FileAccess.open("res://docs/validation/asset-build.json", FileAccess.WRITE)
+	var file := FileAccess.open(AssetPaths.report_path("asset_build.json"), FileAccess.WRITE)
 	file.store_string(JSON.stringify(report, "\t"))
 	print("BUILT ", report.size(), " reusable asset scenes, ocean archipelago, and asset gallery")
 	await process_frame
@@ -82,7 +81,7 @@ func build_asset(id: String) -> void:
 	body.set_meta("asset_id", id)
 	body.add_to_group("pirate_assets", true)
 	root.add_child(body)
-	var model: Node3D = load(ASSET_DIR + "models/" + id + ".glb").instantiate()
+	var model: Node3D = load(AssetPaths.model_path(id)).instantiate()
 	model.scene_file_path = ""
 	model.name = "Visual"
 	body.add_child(model)
@@ -134,7 +133,7 @@ func build_asset(id: String) -> void:
 			add_shape(body, cabin, "AftCabinCollision")
 		var buoy := Node3D.new()
 		buoy.name = "Buoyancy"
-		buoy.set_script(load("res://scripts/ocean/buoyancy.gd"))
+		buoy.set_script(load("res://game/ocean/buoyancy.gd"))
 		buoy.draft = 0.25
 		# Build children before adding the buoyancy component to the live tree.
 		for z in [-2.8, 0.0, 2.8]:
@@ -145,10 +144,10 @@ func build_asset(id: String) -> void:
 				buoy.add_child(probe)
 		body.add_child(buoy)
 		# Reuse the same existing water exclusion component as the filler ship.
-		if ResourceLoader.exists("res://scripts/ocean/hull_water_mask.gd"):
+		if ResourceLoader.exists("res://game/ocean/hull_water_mask.gd"):
 			var mask := Node3D.new()
 			mask.name = "HullWaterMask"
-			mask.set_script(load("res://scripts/ocean/hull_water_mask.gd"))
+			mask.set_script(load("res://game/ocean/hull_water_mask.gd"))
 			mask.position.z = -0.2
 			mask.half_width = 1.3 if id == "ship-scout" else 1.75
 			mask.half_length = 3.0 if id == "ship-scout" else 3.9
@@ -168,19 +167,19 @@ func build_asset(id: String) -> void:
 		add_calm_zone(body, visible_bounds)
 	body.set_meta("visual_bounds", visible_bounds)
 	body.set_meta("collision_policy", "convex_hull_and_cabin" if ship else ("convex_solid_parts" if module else "static_solid_triangles"))
-	save_scene(body, SCENE_DIR + id + ".tscn")
+	save_scene(body, AssetPaths.scene_path(id))
 	report.append({"id":id,"body":body.get_class(),"colliders":body.find_children("*", "CollisionShape3D",true,false).size(),"decorative_meshes_excluded":excluded,"bounds_position":str(visible_bounds.position),"bounds_size":str(visible_bounds.size)})
 	body.free()
 
 func instance_asset(id: String, parent: Node3D, at: Vector3, yaw: float = 0.0) -> Node3D:
-	var node: Node3D = load(SCENE_DIR + id + ".tscn").instantiate()
+	var node: Node3D = load(AssetPaths.scene_path(id)).instantiate()
 	node.position = at
 	node.rotation.y = yaw
 	parent.add_child(node)
 	return node
 
 func build_world() -> void:
-	var world: Node3D = load("res://scenes/test/ocean_test.tscn").instantiate()
+	var world: Node3D = load("res://levels/sandbox/ocean_sandbox.tscn").instantiate()
 	# Replace just the previous display content, retaining ocean, lighting, and camera.
 	for label in ["Ships", "FillerIsland", "Islands", "Overview", "ReviewHUD", "Seabed"]:
 		var old := world.get_node_or_null(label)
@@ -192,7 +191,7 @@ func build_world() -> void:
 	ships.name = "Ships"
 	world.add_child(ships)
 	var ids := {"01":"food", "02":"timber", "03":"gold", "04":"metal", "05":"harbor-player", "06":"harbor-enemy"}
-	var layout: Array = JSON.parse_string(FileAccess.get_file_as_string("res://tools/blender-layout.json"))
+	var layout: Array = JSON.parse_string(FileAccess.get_file_as_string("res://tools/blender_layout.json"))
 	for item in layout:
 		var p: Array = item.position
 		var at := Vector3(p[0]*3.0, p[2], -p[1]*3.0)
@@ -219,7 +218,7 @@ func build_world() -> void:
 	camera.rotation = Vector3(deg_to_rad(-55),deg_to_rad(23),0)
 	# Always use the project's ocean scene without per-level wave or mesh overrides.
 	world.get_node("Ocean").free()
-	var ocean: Node3D = load("res://scenes/ocean/ocean.tscn").instantiate()
+	var ocean: Node3D = load("res://game/ocean/ocean.tscn").instantiate()
 	ocean.name = "Ocean"
 	world.add_child(ocean)
 	var env: Environment = world.get_node("WorldEnvironment").environment.duplicate(true)
@@ -241,7 +240,7 @@ func build_world() -> void:
 	label.add_theme_constant_override("shadow_offset_y", 2)
 	hud.add_child(label)
 	own(world,world)
-	save_scene(world, "res://scenes/test/ocean_test.tscn")
+	save_scene(world, "res://levels/sandbox/ocean_sandbox.tscn")
 	world.free()
 
 func build_gallery() -> void:
@@ -277,7 +276,7 @@ func build_gallery() -> void:
 	focus.position = Vector3(0,0,230)
 	world.add_child(focus)
 	var camera := Camera3D.new()
-	camera.set_script(load("res://scripts/camera/orbit_camera.gd"))
+	camera.set_script(load("res://game/camera/orbit_camera.gd"))
 	camera.target = focus
 	camera.distance = 780.0
 	camera.max_distance = 1200.0
@@ -286,7 +285,7 @@ func build_gallery() -> void:
 	camera.far = 1500
 	world.add_child(camera)
 	own(world,world)
-	save_scene(world,"res://scenes/test/asset_gallery.tscn")
+	save_scene(world,"res://levels/sandbox/asset_gallery.tscn")
 	world.free()
 
 func add_island_details(body: StaticBody3D, id: String) -> void:

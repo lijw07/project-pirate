@@ -1,6 +1,6 @@
 extends SceneTree
 
-const PLAYER_SHIP := "res://scenes/assets/ship-corsair.tscn"
+const PLAYER_SHIP := "res://game/ships/ship_corsair.tscn"
 const WALL_DISTANCE := 30.0
 const WALL_SIZE := Vector3(80.0, 12.0, 4.0)
 

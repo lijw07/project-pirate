@@ -1,7 +1,7 @@
 extends SceneTree
 
-const PLAYER_SHIP := "res://scenes/assets/ship-corsair.tscn"
-const DEFAULT_WAVES := "res://resources/ocean/default_waves.tres"
+const PLAYER_SHIP := "res://game/ships/ship_corsair.tscn"
+const DEFAULT_WAVES := "res://game/ocean/default_waves.tres"
 const MAX_TURN_HEEL_DEGREES := 10.0
 
 var _failures := 0

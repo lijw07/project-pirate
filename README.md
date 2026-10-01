@@ -25,9 +25,9 @@ Open `project.godot` in Godot 4.7.
 
 | Scene | What it shows | How to open |
 | --- | --- | --- |
-| `scenes/test/ocean_test.tscn` | Archipelago with all ships and islands floating on the ocean | Main scene: press F5 |
-| `scenes/test/ship_movement_test.tscn` | Sail the player ship around the islands | Open it and press F6 |
-| `scenes/test/asset_gallery.tscn` | Every pirate asset laid out for inspection | Open it and press F6 |
+| `levels/sandbox/ocean_sandbox.tscn` | Archipelago with all ships and islands floating on the ocean | Main scene: press F5 |
+| `levels/sandbox/ship_movement_sandbox.tscn` | Sail the player ship around the islands | Open it and press F6 |
+| `levels/sandbox/asset_gallery.tscn` | Every pirate asset laid out for inspection | Open it and press F6 |
 
 ### Ship controls
 
@@ -42,19 +42,25 @@ Arrow keys also raise, lower and steer.
 
 ## Project layout
 
+Folders and files use snake_case. Game code is grouped by feature: each folder in `game/` holds the scenes, scripts and resources for one system.
+
 | Folder | Contents |
 | --- | --- |
-| `assets/` | Imported art: custom pirate models, Kenney packs, water textures |
-| `art-review/` | Blender sources and review bundles; local only, ignored by Godot and git |
-| `docs/` | Design and system notes |
-| `resources/` | Shared resources: wave set, water material, environment |
-| `scenes/` | Ocean, asset, UI and test scenes |
-| `scripts/` | GDScript by system: `ocean/`, `ship/`, `camera/`, `ui/` |
-| `shaders/` | Ocean shader |
-| `tests/` | Headless test scripts |
-| `tools/` | Asset scene builder and island geometry generator |
-
-[docs/project-structure.md](docs/project-structure.md) explains each system and how to set up a new ship. [docs/asset-integration.md](docs/asset-integration.md) covers the pirate asset scenes, collision layers and the rebuild tools.
+| `assets/models/pirate/` | Custom pirate models (GLB), their textures and `manifest.json` |
+| `assets/third_party/` | Outside art: Kenney Pirate Kit (3D) and Pirate Pack (2D), both CC0; Boujie water textures (MIT) |
+| `game/ocean/` | Ocean scene, shader, wave set, water material, buoyancy, hull water masks, calm zones |
+| `game/ships/` | Ship scenes (`ship_corsair.tscn`...) and ship behavior: movement, input, sails, stuck detection, rescue |
+| `game/islands/` | Resource island and harbor scenes, each with its own calm zone |
+| `game/props/` | Docks, buildings, crates and deck equipment |
+| `game/modules/` | Ship fitting modules: cannons, armor, cargo, rigging |
+| `game/camera/` | `OverheadCamera` (player) and `OrbitCamera` (free debug camera) |
+| `game/ui/` | HUD, stuck prompt and minimap |
+| `game/environment/` | Shared sky, light and fog |
+| `levels/sandbox/` | Test levels: ocean sandbox (main scene), ship movement sandbox, asset gallery |
+| `tests/` | Headless test scripts; generated reports go to `tests/reports/` (not in git) |
+| `tools/` | Asset scene builder, island geometry and asset path helpers |
+| `art-review/` | Blender sources and review bundles (local only, not in git) |
+| `docs/` | Local design notes (not in git) |
 
 ## Tests
 
@@ -64,15 +70,17 @@ Each test exits with the number of failed checks.
 godot --headless -s res://tests/test_ocean.gd
 godot --headless --fixed-fps 60 -s res://tests/test_ship_movement.gd
 godot --headless --fixed-fps 60 -s res://tests/test_ship_stuck.gd
-godot --headless -s res://tests/test_island_calm_zones.gd
 godot --headless --fixed-fps 60 -s res://tests/test_overhead_camera.gd
+godot --headless -s res://tests/test_island_calm_zones.gd
+godot --headless -s res://tests/test_island_placement.gd
+godot --headless -s res://tests/test_minimap.gd
 godot --headless -s res://tests/test_asset_integration.gd
 ```
 
-`tests/capture_archipelago.gd` renders review screenshots and needs a graphical session.
+`tests/capture_archipelago.gd` and `tests/capture_island_placement.gd` render review screenshots into `tests/reports/` and need a graphical session.
 
 ## Credits
 
-- [Kenney](https://kenney.nl) Pirate Kit and Pirate Pack (CC0): `assets/kenney_pirate-kit/`, `assets/kenney_pirate-pack/`
-- [Boujie Water Shader](https://github.com/Chrisknyfe/boujie_water_shader) textures by Zach Bernal (MIT): `assets/boujie_water_shader/`
-- Custom pirate assets built on the Kenney Pirate Kit: `assets/pirate/`
+- [Kenney](https://kenney.nl) Pirate Kit and Pirate Pack (CC0): `assets/third_party/kenney_pirate_kit/`, `assets/third_party/kenney_pirate_pack/`
+- [Boujie Water Shader](https://github.com/Chrisknyfe/boujie_water_shader) textures by Zach Bernal (MIT): `assets/third_party/boujie_water/`
+- Custom pirate assets built on the Kenney Pirate Kit: `assets/models/pirate/`

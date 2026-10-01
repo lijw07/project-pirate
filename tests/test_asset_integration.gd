@@ -1,4 +1,6 @@
 extends SceneTree
+
+const AssetPaths = preload("res://tools/asset_paths.gd")
 var failures := 0
 var checks := 0
 var results: Array = []
@@ -12,7 +14,7 @@ func check(label: String, passed: bool) -> void:
 func ray(world: Node3D, x: float, z: float, top: float = 30.0) -> Dictionary:
 	return world.get_world_3d().direct_space_state.intersect_ray(PhysicsRayQueryParameters3D.create(Vector3(x,top,z),Vector3(x,-10,z),3))
 func run() -> void:
-	var records: Array = JSON.parse_string(FileAccess.get_file_as_string("res://assets/pirate/manifest.json")).assets
+	var records: Array = JSON.parse_string(FileAccess.get_file_as_string(AssetPaths.MANIFEST_PATH)).assets
 	check("34 approved assets have a scene",records.size()==34)
 	for record in records:
 		var asset: PhysicsBody3D = load(record.scene).instantiate()
@@ -55,12 +57,12 @@ func run() -> void:
 				check(record.id+" solid underwater perimeter at "+str(depth)+"m",closed)
 		asset.queue_free()
 		await process_frame
-	var scene: Node3D = load("res://scenes/test/ocean_test.tscn").instantiate()
+	var scene: Node3D = load("res://levels/sandbox/ocean_sandbox.tscn").instantiate()
 	root.add_child(scene)
 	await physics_frame
 	check("six islands and harbors instantiated",scene.get_node("Islands").get_child_count()==6)
 	check("four physical ships instantiated",scene.get_node("Ships").get_child_count()==4)
-	check("ocean uses unchanged project wave preset",scene.get_node("Ocean").wave_settings.resource_path == "res://resources/ocean/default_waves.tres")
+	check("ocean uses unchanged project wave preset",scene.get_node("Ocean").wave_settings.resource_path == "res://game/ocean/default_waves.tres")
 	check("ocean uses original mesh settings",scene.get_node("Ocean").extent == 1600.0 and scene.get_node("Ocean").subdivisions == 220)
 	var ground_query := PhysicsRayQueryParameters3D.create(Vector3(500,0,500),Vector3(500,-30,500),1)
 	var ground_hit := scene.get_world_3d().direct_space_state.intersect_ray(ground_query)
@@ -97,7 +99,7 @@ func run() -> void:
 	scene.queue_free()
 	await process_frame
 	await process_frame
-	var f := FileAccess.open("res://docs/validation/asset-integration.json",FileAccess.WRITE)
+	var f := FileAccess.open(AssetPaths.report_path("asset_integration.json"),FileAccess.WRITE)
 	f.store_string(JSON.stringify({"checks":checks,"failures":failures,"results":results},"\t"))
 	print("ASSET INTEGRATION: ",checks," checks, ",failures," failures")
 	quit(failures)

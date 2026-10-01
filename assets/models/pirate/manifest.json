@@ -1,0 +1,209 @@
+{
+  "approval": "User approved art and requested Godot scenes and ocean integration on 2026-10-01",
+  "assets": [
+    {
+      "id": "food",
+      "source": "art-review/pirate-art-v1/models/food.glb",
+      "sha256": "115dd2f05fce0dcaf7857f94bf4ea36dd996179dc1606924074242e246841d54",
+      "scene": "res://game/islands/food.tscn"
+    },
+    {
+      "id": "gold",
+      "source": "art-review/pirate-art-v1/models/gold.glb",
+      "sha256": "9c2ec80a37feb9657d059d92451744a9a1ff0576a4aaa1a363dd4b15dfbc8ac7",
+      "scene": "res://game/islands/gold.tscn"
+    },
+    {
+      "id": "harbor-enemy",
+      "source": "art-review/pirate-art-v1/models/harbor-enemy.glb",
+      "sha256": "43aceefa97fbde61968c97c349c3a72573fd8baf1d3856ca593b5c1ce63c962c",
+      "scene": "res://game/islands/harbor_enemy.tscn"
+    },
+    {
+      "id": "harbor-player",
+      "source": "art-review/pirate-art-v1/models/harbor-player.glb",
+      "sha256": "2efe2bc231bc6398c803fcfba00d0030aedf65d9d52c0c7a6f2a5ddeb7d910f4",
+      "scene": "res://game/islands/harbor_player.tscn"
+    },
+    {
+      "id": "metal",
+      "source": "art-review/pirate-art-v1/models/metal.glb",
+      "sha256": "adfb05895f13edb6b38dfcb79785512e7fad5bc7262e45e3b0731836e52124f0",
+      "scene": "res://game/islands/metal.tscn"
+    },
+    {
+      "id": "module-armor",
+      "source": "art-review/pirate-art-v1/models/module-armor.glb",
+      "sha256": "f3f1803323049a4fcc1b34ef99243a210aef88b02e5dd02b4ec3a916e39466af",
+      "scene": "res://game/modules/module_armor.tscn"
+    },
+    {
+      "id": "module-cannons",
+      "source": "art-review/pirate-art-v1/models/module-cannons.glb",
+      "sha256": "fc2eaa927ee768bc476ddc99384ebeead06490c7cae3320f73d71d00212fd1a0",
+      "scene": "res://game/modules/module_cannons.tscn"
+    },
+    {
+      "id": "module-cargo",
+      "source": "art-review/pirate-art-v1/models/module-cargo.glb",
+      "sha256": "47a44fc9ae6acbc31f2f1b5f8da48de6c17ec9f9c48579c07b64c9f9e5604a68",
+      "scene": "res://game/modules/module_cargo.tscn"
+    },
+    {
+      "id": "module-rigging",
+      "source": "art-review/pirate-art-v1/models/module-rigging.glb",
+      "sha256": "8731ff978de9ba27f3e4c9576d7114e0b69329b04bbd6d1ae7558d4fc59d6e32",
+      "scene": "res://game/modules/module_rigging.tscn"
+    },
+    {
+      "id": "ship-corsair",
+      "source": "art-review/pirate-art-v1/models/ship-corsair.glb",
+      "sha256": "a48b55532a0e193076919ad09ffdbc4bffed8315e2eb20a8b2af7ffb5ae7019e",
+      "scene": "res://game/ships/ship_corsair.tscn"
+    },
+    {
+      "id": "ship-scout",
+      "source": "art-review/pirate-art-v1/models/ship-scout.glb",
+      "sha256": "e68a2b87809e8f59cc11f9643aaed3c58bbaff746dff69d95a7d679420e7076e",
+      "scene": "res://game/ships/ship_scout.tscn"
+    },
+    {
+      "id": "ship-trader",
+      "source": "art-review/pirate-art-v1/models/ship-trader.glb",
+      "sha256": "10a2a91a4075284d32ed4ff1c705ec659e9119cdcb9eacc38379a2c627a6eda1",
+      "scene": "res://game/ships/ship_trader.tscn"
+    },
+    {
+      "id": "ship-warship",
+      "source": "art-review/pirate-art-v1/models/ship-warship.glb",
+      "sha256": "6eac97f7767b6a3ab612e24ab9192bc26f12c599616c2f9062f86a9d821ad798",
+      "scene": "res://game/ships/ship_warship.tscn"
+    },
+    {
+      "id": "timber",
+      "source": "art-review/pirate-art-v1/models/timber.glb",
+      "sha256": "e6f875c0211d13452d51a97de4f41a11176225f3f9115575530925993a39e316",
+      "scene": "res://game/islands/timber.tscn"
+    },
+    {
+      "id": "cannonball-rack",
+      "source": "art-review/pirate-expansion-v1/models/cannonball-rack.glb",
+      "sha256": "7396dc512d7fbd38386d12a46d2e7d328c4fafd2c2ce229964e84fb4778125b4",
+      "scene": "res://game/props/cannonball_rack.tscn"
+    },
+    {
+      "id": "capture-standard",
+      "source": "art-review/pirate-expansion-v1/models/capture-standard.glb",
+      "sha256": "7cacd79ede49def3b4d6e456ad3d9cd42758a99271ed2b3c6dd7bc229c9024ed",
+      "scene": "res://game/props/capture_standard.tscn"
+    },
+    {
+      "id": "cargo-rack",
+      "source": "art-review/pirate-expansion-v1/models/cargo-rack.glb",
+      "sha256": "00d130ee6aabcc20e031af68725d16fdd5f912711dd54ec3203e6a4ef085960b",
+      "scene": "res://game/props/cargo_rack.tscn"
+    },
+    {
+      "id": "deck-mortar",
+      "source": "art-review/pirate-expansion-v1/models/deck-mortar.glb",
+      "sha256": "3dddd91b4e55a56db3bc50108ed71cc85b1c8b3e3b0016bb04fad4db7427af95",
+      "scene": "res://game/props/deck_mortar.tscn"
+    },
+    {
+      "id": "dock-corner",
+      "source": "art-review/pirate-expansion-v1/models/dock-corner.glb",
+      "sha256": "e7fbac6651a099c41130eba70607061bd565f591ad918ff95d0293fe0eb0bd1e",
+      "scene": "res://game/props/dock_corner.tscn"
+    },
+    {
+      "id": "dock-t-junction",
+      "source": "art-review/pirate-expansion-v1/models/dock-t-junction.glb",
+      "sha256": "76cea345a0b7c502f8f392a2789e839498a67d84740bf9c1ef8338d209bf7591",
+      "scene": "res://game/props/dock_t_junction.tscn"
+    },
+    {
+      "id": "food-crate",
+      "source": "art-review/pirate-expansion-v1/models/food-crate.glb",
+      "sha256": "165ef5fe328b904137da4678ece434a615b252c3c6bb4644eb1e98eeb7f693d8",
+      "scene": "res://game/props/food_crate.tscn"
+    },
+    {
+      "id": "gold-sacks",
+      "source": "art-review/pirate-expansion-v1/models/gold-sacks.glb",
+      "sha256": "29b24bde4dc85f3630633711aa3655aeee4aa6192fc515bbb66ff4234689aa7d",
+      "scene": "res://game/props/gold_sacks.tscn"
+    },
+    {
+      "id": "harbor-lighthouse",
+      "source": "art-review/pirate-expansion-v1/models/harbor-lighthouse.glb",
+      "sha256": "baefa787b28b4544763f413a32c5996732cb07699386008f294b26b57594244f",
+      "scene": "res://game/props/harbor_lighthouse.tscn"
+    },
+    {
+      "id": "harpoon-launcher",
+      "source": "art-review/pirate-expansion-v1/models/harpoon-launcher.glb",
+      "sha256": "d8ed43502e0d97f1834c4b4ec55a421ae6331c4a51330042c021e0897d11e426",
+      "scene": "res://game/props/harpoon_launcher.tscn"
+    },
+    {
+      "id": "iron-foundry",
+      "source": "art-review/pirate-expansion-v1/models/iron-foundry.glb",
+      "sha256": "b603520b54640663acd455252720aec4e7191f21d2b386add4b265057ff2b95f",
+      "scene": "res://game/props/iron_foundry.tscn"
+    },
+    {
+      "id": "mooring-bollard",
+      "source": "art-review/pirate-expansion-v1/models/mooring-bollard.glb",
+      "sha256": "2b0f0493d8b64c0438f103ac0e1388aae3c989a8c67c1e371235f65aae7260b0",
+      "scene": "res://game/props/mooring_bollard.tscn"
+    },
+    {
+      "id": "navigation-buoy",
+      "source": "art-review/pirate-expansion-v1/models/navigation-buoy.glb",
+      "sha256": "5bb8b53e0fa9ab6e0d4ba96bc43c595a571e38dfed8441a33e7a0eb1c72c247c",
+      "scene": "res://game/props/navigation_buoy.tscn"
+    },
+    {
+      "id": "ore-crate",
+      "source": "art-review/pirate-expansion-v1/models/ore-crate.glb",
+      "sha256": "f16c9dd1156409199d5e8376a095b4e0ed9fc6e04adc9b33dafd62302a236ce7",
+      "scene": "res://game/props/ore_crate.tscn"
+    },
+    {
+      "id": "provision-store",
+      "source": "art-review/pirate-expansion-v1/models/provision-store.glb",
+      "sha256": "dc4463835cda68bff585f8c6d24fbf7c7bff9a5bbb8a23a47f5b2e8da0e9711d",
+      "scene": "res://game/props/provision_store.tscn"
+    },
+    {
+      "id": "repair-bench",
+      "source": "art-review/pirate-expansion-v1/models/repair-bench.glb",
+      "sha256": "95f9db59e8354277f1c9319591aead27d9577be0c8a08ada5c1c71530672d94e",
+      "scene": "res://game/props/repair_bench.tscn"
+    },
+    {
+      "id": "shipyard-gantry",
+      "source": "art-review/pirate-expansion-v1/models/shipyard-gantry.glb",
+      "sha256": "a1e7cc707e21da7e63874b1bc94877ee33e4f618e0504a7880afba580dbffea7",
+      "scene": "res://game/props/shipyard_gantry.tscn"
+    },
+    {
+      "id": "swivel-gun",
+      "source": "art-review/pirate-expansion-v1/models/swivel-gun.glb",
+      "sha256": "dcb677c687a118c30bbdb2a00a61ce2146bdc93973163843f3ee324966becf20",
+      "scene": "res://game/props/swivel_gun.tscn"
+    },
+    {
+      "id": "timber-workshop",
+      "source": "art-review/pirate-expansion-v1/models/timber-workshop.glb",
+      "sha256": "e42cd5988f2497d6b221be0acd658c1496f4487a97cf789e064a86727879b24a",
+      "scene": "res://game/props/timber_workshop.tscn"
+    },
+    {
+      "id": "treasury-vault",
+      "source": "art-review/pirate-expansion-v1/models/treasury-vault.glb",
+      "sha256": "9d996833fb4c45547fbaaca31cfd1b561e258ed3425113dcd9c0b9f370f31dcf",
+      "scene": "res://game/props/treasury_vault.tscn"
+    }
+  ]
+}

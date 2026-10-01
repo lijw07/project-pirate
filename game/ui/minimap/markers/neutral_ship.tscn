@@ -1,0 +1,11 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/ui/minimap/minimap_marker.gd" id="1_marker"]
+[ext_resource type="Texture2D" path="res://assets/third_party/kenney_pirate_pack/PNG/Default size/Ships/ship (1).png" id="2_ship"]
+
+[node name="NeutralShipMarker" type="Node3D"]
+script = ExtResource("1_marker")
+texture = ExtResource("2_ship")
+screen_size = 22.0
+layer = 4
+rotates_with_heading = true

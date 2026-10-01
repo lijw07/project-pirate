@@ -1,8 +1,8 @@
 extends SceneTree
 
-const MINIMAP_SCENE := preload("res://scenes/ui/minimap/minimap.tscn")
-const SHIP_MARKER_SCENE := preload("res://scenes/ui/minimap/markers/player_ship.tscn")
-const HARBOR_MARKER_SCENE := preload("res://scenes/ui/minimap/markers/enemy_harbor.tscn")
+const MINIMAP_SCENE := preload("res://game/ui/minimap/minimap.tscn")
+const SHIP_MARKER_SCENE := preload("res://game/ui/minimap/markers/player_ship.tscn")
+const HARBOR_MARKER_SCENE := preload("res://game/ui/minimap/markers/enemy_harbor.tscn")
 
 var _failures := 0
 

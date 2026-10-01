@@ -1,0 +1,10 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game/ocean/ocean.gd" id="1_no58l"]
+[ext_resource type="Resource" path="res://game/ocean/default_waves.tres" id="2_gidh7"]
+[ext_resource type="Material" path="res://game/ocean/ocean_material.tres" id="3_6lupf"]
+
+[node name="Ocean" type="Node3D" unique_id=1829334843]
+script = ExtResource("1_no58l")
+wave_settings = ExtResource("2_gidh7")
+material = ExtResource("3_6lupf")
