@@ -1,0 +1,553 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/assets/food.tscn" id="1_k7fyj"]
+[ext_resource type="PackedScene" path="res://scenes/assets/gold.tscn" id="2_tjvms"]
+[ext_resource type="PackedScene" path="res://scenes/assets/harbor-enemy.tscn" id="3_t716p"]
+[ext_resource type="PackedScene" path="res://scenes/assets/harbor-player.tscn" id="4_qgv01"]
+[ext_resource type="PackedScene" path="res://scenes/assets/metal.tscn" id="5_14lt2"]
+[ext_resource type="PackedScene" path="res://scenes/assets/module-armor.tscn" id="6_8oyxf"]
+[ext_resource type="PackedScene" path="res://scenes/assets/module-cannons.tscn" id="7_tgu40"]
+[ext_resource type="PackedScene" path="res://scenes/assets/module-cargo.tscn" id="8_fkvsl"]
+[ext_resource type="PackedScene" path="res://scenes/assets/module-rigging.tscn" id="9_2d4bf"]
+[ext_resource type="PackedScene" path="res://scenes/assets/ship-corsair.tscn" id="10_rehiu"]
+[ext_resource type="PackedScene" path="res://scenes/assets/ship-scout.tscn" id="11_4aah5"]
+[ext_resource type="PackedScene" path="res://scenes/assets/ship-trader.tscn" id="12_230x3"]
+[ext_resource type="PackedScene" path="res://scenes/assets/ship-warship.tscn" id="13_nn8g0"]
+[ext_resource type="PackedScene" path="res://scenes/assets/timber.tscn" id="14_ftugd"]
+[ext_resource type="PackedScene" path="res://scenes/assets/cannonball-rack.tscn" id="15_y751m"]
+[ext_resource type="PackedScene" path="res://scenes/assets/capture-standard.tscn" id="16_4eqg8"]
+[ext_resource type="PackedScene" path="res://scenes/assets/cargo-rack.tscn" id="17_tjp13"]
+[ext_resource type="PackedScene" path="res://scenes/assets/deck-mortar.tscn" id="18_5io4o"]
+[ext_resource type="PackedScene" path="res://scenes/assets/dock-corner.tscn" id="19_hcxou"]
+[ext_resource type="PackedScene" path="res://scenes/assets/dock-t-junction.tscn" id="20_vtu1r"]
+[ext_resource type="PackedScene" path="res://scenes/assets/food-crate.tscn" id="21_1tpo7"]
+[ext_resource type="PackedScene" path="res://scenes/assets/gold-sacks.tscn" id="22_ju45a"]
+[ext_resource type="PackedScene" path="res://scenes/assets/harbor-lighthouse.tscn" id="23_oqiqx"]
+[ext_resource type="PackedScene" path="res://scenes/assets/harpoon-launcher.tscn" id="24_hewjy"]
+[ext_resource type="PackedScene" path="res://scenes/assets/iron-foundry.tscn" id="25_bta0n"]
+[ext_resource type="PackedScene" path="res://scenes/assets/mooring-bollard.tscn" id="26_o2c4j"]
+[ext_resource type="PackedScene" path="res://scenes/assets/navigation-buoy.tscn" id="27_13evk"]
+[ext_resource type="PackedScene" path="res://scenes/assets/ore-crate.tscn" id="28_3alak"]
+[ext_resource type="PackedScene" path="res://scenes/assets/provision-store.tscn" id="29_g35gb"]
+[ext_resource type="PackedScene" path="res://scenes/assets/repair-bench.tscn" id="30_vsmb2"]
+[ext_resource type="PackedScene" path="res://scenes/assets/shipyard-gantry.tscn" id="31_7pbhm"]
+[ext_resource type="PackedScene" path="res://scenes/assets/swivel-gun.tscn" id="32_x0t1a"]
+[ext_resource type="PackedScene" path="res://scenes/assets/timber-workshop.tscn" id="33_fj363"]
+[ext_resource type="PackedScene" path="res://scenes/assets/treasury-vault.tscn" id="34_w3yfx"]
+[ext_resource type="Script" path="res://scripts/camera/orbit_camera.gd" id="35_pk31f"]
+
+[sub_resource type="Environment" id="Environment_2re2u"]
+background_mode = 1
+background_color = Color(0.14117648, 0.27450982, 0.32156864, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.8352941, 0.9137255, 0.92941177, 1)
+ambient_light_energy = 0.7
+
+[node name="PirateAssetGallery" type="Node3D" unique_id=939064451]
+
+[node name="@WorldEnvironment@135" type="WorldEnvironment" parent="." unique_id=1960557304]
+environment = SubResource("Environment_2re2u")
+
+[node name="@DirectionalLight3D@136" type="DirectionalLight3D" parent="." unique_id=416292209]
+transform = Transform3D(0.81915206, 0.46984634, -0.32898995, 0, 0.57357645, 0.81915206, 0.57357645, -0.6710101, 0.46984634, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Food" type="StaticBody3D" parent="." unique_id=98765576 groups=["pirate_assets"] instance=ExtResource("1_k7fyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -250, 0, 0)
+collision_mask = 3
+metadata/asset_id = "food"
+metadata/land_scale = 3.0
+metadata/land_lift = 2.8
+metadata/foundation_depth = -18.2
+metadata/visual_bounds = AABB(-34.001064, 2.6, -27.615202, 68.00213, 5.870812, 60.538055)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@137" type="Label3D" parent="." unique_id=1432221793]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -250, 0.5, 44)
+pixel_size = 0.022
+text = "FOOD"
+font_size = 64
+
+[node name="Gold" type="StaticBody3D" parent="." unique_id=340666947 groups=["pirate_assets"] instance=ExtResource("2_tjvms")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 0, 0)
+collision_mask = 3
+metadata/asset_id = "gold"
+metadata/land_scale = 3.0
+metadata/land_lift = 2.8
+metadata/foundation_depth = -18.2
+metadata/visual_bounds = AABB(-34.001064, 2.6, -27.615202, 68.00213, 6.600001, 60.538055)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@138" type="Label3D" parent="." unique_id=114686434]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -150, 0.5, 44)
+pixel_size = 0.022
+text = "GOLD"
+font_size = 64
+
+[node name="HarborEnemy" type="StaticBody3D" parent="." unique_id=56289220 groups=["pirate_assets"] instance=ExtResource("3_t716p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, 0)
+collision_mask = 3
+metadata/asset_id = "harbor-enemy"
+metadata/land_scale = 3.0
+metadata/land_lift = 2.8
+metadata/foundation_depth = -18.2
+metadata/visual_bounds = AABB(-40.121258, 2.6, -32.585938, 80.242516, 11.25, 68.748795)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@139" type="Label3D" parent="." unique_id=1336280060]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -50, 0.5, 44)
+pixel_size = 0.022
+text = "HARBOR ENEMY"
+font_size = 64
+
+[node name="HarborPlayer" type="StaticBody3D" parent="." unique_id=1328395015 groups=["pirate_assets"] instance=ExtResource("4_qgv01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 0)
+collision_mask = 3
+metadata/asset_id = "harbor-player"
+metadata/land_scale = 3.0
+metadata/land_lift = 2.8
+metadata/foundation_depth = -18.2
+metadata/visual_bounds = AABB(-40.121258, 2.6, -32.585938, 80.242516, 11.25, 68.748795)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@140" type="Label3D" parent="." unique_id=1557025979]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 50, 0.5, 44)
+pixel_size = 0.022
+text = "HARBOR PLAYER"
+font_size = 64
+
+[node name="Metal" type="StaticBody3D" parent="." unique_id=1166935280 groups=["pirate_assets"] instance=ExtResource("5_14lt2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 0)
+collision_mask = 3
+metadata/asset_id = "metal"
+metadata/land_scale = 3.0
+metadata/land_lift = 2.8
+metadata/foundation_depth = -18.2
+metadata/visual_bounds = AABB(-34.001064, 2.6, -27.615202, 68.00213, 6.1999993, 60.538055)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@141" type="Label3D" parent="." unique_id=2073580000]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 150, 0.5, 44)
+pixel_size = 0.022
+text = "METAL"
+font_size = 64
+
+[node name="ModuleArmor" type="AnimatableBody3D" parent="." unique_id=461440045 groups=["pirate_assets"] instance=ExtResource("6_8oyxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250, 0, 0)
+collision_mask = 3
+sync_to_physics = false
+metadata/asset_id = "module-armor"
+metadata/visual_bounds = AABB(-1.425, 0.100000024, -0.15, 2.15, 1.8, 0.42655763)
+metadata/collision_policy = "convex_solid_parts"
+
+[node name="@Label3D@142" type="Label3D" parent="." unique_id=825184082]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 250, 0.5, 44)
+pixel_size = 0.022
+text = "MODULE ARMOR"
+font_size = 64
+
+[node name="ModuleCannons" type="AnimatableBody3D" parent="." unique_id=1830762749 groups=["pirate_assets"] instance=ExtResource("7_tgu40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -250, 0, 100)
+collision_mask = 3
+sync_to_physics = false
+metadata/asset_id = "module-cannons"
+metadata/visual_bounds = AABB(-1.3011875, 0.14999999, -0.95, 2.741399, 1.0546623, 2.340657)
+metadata/collision_policy = "convex_solid_parts"
+
+[node name="@Label3D@143" type="Label3D" parent="." unique_id=658073343]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -250, 0.5, 144)
+pixel_size = 0.022
+text = "MODULE CANNONS"
+font_size = 64
+
+[node name="ModuleCargo" type="AnimatableBody3D" parent="." unique_id=895068808 groups=["pirate_assets"] instance=ExtResource("8_fkvsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 0, 100)
+collision_mask = 3
+sync_to_physics = false
+metadata/asset_id = "module-cargo"
+metadata/visual_bounds = AABB(-1.0272999, 0.1, -0.90124416, 2.428544, 1.1062284, 1.3593942)
+metadata/collision_policy = "convex_solid_parts"
+
+[node name="@Label3D@144" type="Label3D" parent="." unique_id=1122140218]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -150, 0.5, 144)
+pixel_size = 0.022
+text = "MODULE CARGO"
+font_size = 64
+
+[node name="ModuleRigging" type="AnimatableBody3D" parent="." unique_id=1612334271 groups=["pirate_assets"] instance=ExtResource("9_2d4bf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, 100)
+collision_mask = 3
+sync_to_physics = false
+metadata/asset_id = "module-rigging"
+metadata/visual_bounds = AABB(-1.469199, 0.1, -0.7898564, 2.938397, 5.2685585, 1.2727262)
+metadata/collision_policy = "convex_solid_parts"
+
+[node name="@Label3D@145" type="Label3D" parent="." unique_id=2008622449]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -50, 0.5, 144)
+pixel_size = 0.022
+text = "MODULE RIGGING"
+font_size = 64
+
+[node name="ShipCorsair" type="RigidBody3D" parent="." unique_id=948970555 groups=["camera_targets", "pirate_assets", "ships"] instance=ExtResource("10_rehiu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 100)
+collision_layer = 2
+collision_mask = 3
+mass = 12000.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.5, 0)
+freeze = true
+continuous_cd = true
+metadata/asset_id = "ship-corsair"
+metadata/visual_bounds = AABB(-2.4099998, -0.6, -5.3, 4.8199997, 9.96352, 10.6)
+metadata/collision_policy = "convex_hull_and_cabin"
+
+[node name="@Label3D@146" type="Label3D" parent="." unique_id=155792316]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 50, 0.5, 144)
+pixel_size = 0.022
+text = "SHIP CORSAIR"
+font_size = 64
+
+[node name="ShipScout" type="RigidBody3D" parent="." unique_id=934392561 groups=["camera_targets", "pirate_assets", "ships"] instance=ExtResource("11_4aah5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 100)
+collision_layer = 2
+collision_mask = 3
+mass = 4500.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.5, 0)
+freeze = true
+continuous_cd = true
+metadata/asset_id = "ship-scout"
+metadata/visual_bounds = AABB(-2.41, -0.6, -3.9899998, 4.8199997, 9.465343, 8.359999)
+metadata/collision_policy = "convex_hull_and_cabin"
+
+[node name="@Label3D@147" type="Label3D" parent="." unique_id=700281598]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 150, 0.5, 144)
+pixel_size = 0.022
+text = "SHIP SCOUT"
+font_size = 64
+
+[node name="ShipTrader" type="RigidBody3D" parent="." unique_id=491172175 groups=["camera_targets", "pirate_assets", "ships"] instance=ExtResource("12_230x3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250, 0, 100)
+collision_layer = 2
+collision_mask = 3
+mass = 12000.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.5, 0)
+freeze = true
+continuous_cd = true
+metadata/asset_id = "ship-trader"
+metadata/visual_bounds = AABB(-2.4099998, -0.6, -5.3, 4.8199997, 9.96352, 10.6)
+metadata/collision_policy = "convex_hull_and_cabin"
+
+[node name="@Label3D@148" type="Label3D" parent="." unique_id=1300455365]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 250, 0.5, 144)
+pixel_size = 0.022
+text = "SHIP TRADER"
+font_size = 64
+
+[node name="ShipWarship" type="RigidBody3D" parent="." unique_id=1077817507 groups=["camera_targets", "pirate_assets", "ships"] instance=ExtResource("13_nn8g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -250, 0, 200)
+collision_layer = 2
+collision_mask = 3
+mass = 12000.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.5, 0)
+freeze = true
+continuous_cd = true
+metadata/asset_id = "ship-warship"
+metadata/visual_bounds = AABB(-2.4099998, -0.6, -5.3, 4.8199997, 9.96352, 10.6)
+metadata/collision_policy = "convex_hull_and_cabin"
+
+[node name="@Label3D@149" type="Label3D" parent="." unique_id=1331137053]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -250, 0.5, 244)
+pixel_size = 0.022
+text = "SHIP WARSHIP"
+font_size = 64
+
+[node name="Timber" type="StaticBody3D" parent="." unique_id=107476398 groups=["pirate_assets"] instance=ExtResource("14_ftugd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 0, 200)
+collision_mask = 3
+metadata/asset_id = "timber"
+metadata/land_scale = 3.0
+metadata/land_lift = 2.8
+metadata/foundation_depth = -18.2
+metadata/visual_bounds = AABB(-34.001064, 2.6, -27.615202, 68.00213, 6.934628, 60.538055)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@150" type="Label3D" parent="." unique_id=731636129]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -150, 0.5, 244)
+pixel_size = 0.022
+text = "TIMBER"
+font_size = 64
+
+[node name="CannonballRack" type="StaticBody3D" parent="." unique_id=1778774348 groups=["pirate_assets"] instance=ExtResource("15_y751m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, 200)
+collision_mask = 3
+metadata/asset_id = "cannonball-rack"
+metadata/visual_bounds = AABB(-0.65, 0, -0.45, 1.3, 0.74, 0.9)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@151" type="Label3D" parent="." unique_id=1641676238]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -50, 0.5, 244)
+pixel_size = 0.022
+text = "CANNONBALL RACK"
+font_size = 64
+
+[node name="CaptureStandard" type="StaticBody3D" parent="." unique_id=1213598368 groups=["pirate_assets"] instance=ExtResource("16_4eqg8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 200)
+collision_mask = 3
+metadata/asset_id = "capture-standard"
+metadata/visual_bounds = AABB(-0.52, 0, -0.52, 1.72, 3.75, 1.04)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@152" type="Label3D" parent="." unique_id=1026619983]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 50, 0.5, 244)
+pixel_size = 0.022
+text = "CAPTURE STANDARD"
+font_size = 64
+
+[node name="CargoRack" type="StaticBody3D" parent="." unique_id=1603543170 groups=["pirate_assets"] instance=ExtResource("17_tjp13")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 200)
+collision_mask = 3
+metadata/asset_id = "cargo-rack"
+metadata/visual_bounds = AABB(-0.85, 0, -0.65000004, 1.7, 1.2447488, 1.3000001)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@153" type="Label3D" parent="." unique_id=1659646163]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 150, 0.5, 244)
+pixel_size = 0.022
+text = "CARGO RACK"
+font_size = 64
+
+[node name="DeckMortar" type="StaticBody3D" parent="." unique_id=1732608995 groups=["pirate_assets"] instance=ExtResource("18_5io4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250, 0, 200)
+collision_mask = 3
+metadata/asset_id = "deck-mortar"
+metadata/visual_bounds = AABB(-0.675, 0, -0.625, 1.35, 1.4434494, 1.3513527)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@154" type="Label3D" parent="." unique_id=678983565]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 250, 0.5, 244)
+pixel_size = 0.022
+text = "DECK MORTAR"
+font_size = 64
+
+[node name="DockCorner" type="StaticBody3D" parent="." unique_id=490688604 groups=["pirate_assets"] instance=ExtResource("19_hcxou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -250, 0, 300)
+collision_mask = 3
+metadata/asset_id = "dock-corner"
+metadata/visual_bounds = AABB(-1.615, -0.25, -1.615, 3.23, 1.4, 3.23)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@155" type="Label3D" parent="." unique_id=608811555]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -250, 0.5, 344)
+pixel_size = 0.022
+text = "DOCK CORNER"
+font_size = 64
+
+[node name="DockTJunction" type="StaticBody3D" parent="." unique_id=1098587577 groups=["pirate_assets"] instance=ExtResource("20_vtu1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 0, 300)
+collision_mask = 3
+metadata/asset_id = "dock-t-junction"
+metadata/visual_bounds = AABB(-1.615, -0.25, -1.615, 3.23, 1.4, 3.23)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@156" type="Label3D" parent="." unique_id=1645301736]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -150, 0.5, 344)
+pixel_size = 0.022
+text = "DOCK T JUNCTION"
+font_size = 64
+
+[node name="FoodCrate" type="StaticBody3D" parent="." unique_id=1460154954 groups=["pirate_assets"] instance=ExtResource("21_1tpo7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, 300)
+collision_mask = 3
+metadata/asset_id = "food-crate"
+metadata/visual_bounds = AABB(-0.45, 0, -0.45, 0.9, 0.66899997, 0.9)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@157" type="Label3D" parent="." unique_id=1828886023]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -50, 0.5, 344)
+pixel_size = 0.022
+text = "FOOD CRATE"
+font_size = 64
+
+[node name="GoldSacks" type="StaticBody3D" parent="." unique_id=2081886288 groups=["pirate_assets"] instance=ExtResource("22_ju45a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 300)
+collision_mask = 3
+metadata/asset_id = "gold-sacks"
+metadata/visual_bounds = AABB(-0.77797604, -0.045000017, -0.756, 1.489378, 0.72, 1.361)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@158" type="Label3D" parent="." unique_id=2049170280]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 50, 0.5, 344)
+pixel_size = 0.022
+text = "GOLD SACKS"
+font_size = 64
+
+[node name="HarborLighthouse" type="StaticBody3D" parent="." unique_id=798664459 groups=["pirate_assets"] instance=ExtResource("23_oqiqx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 300)
+collision_mask = 3
+metadata/asset_id = "harbor-lighthouse"
+metadata/visual_bounds = AABB(-1.45, 0, -1.45, 2.9, 6.21, 2.9)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@159" type="Label3D" parent="." unique_id=973514533]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 150, 0.5, 344)
+pixel_size = 0.022
+text = "HARBOR LIGHTHOUSE"
+font_size = 64
+
+[node name="HarpoonLauncher" type="StaticBody3D" parent="." unique_id=1627650280 groups=["pirate_assets"] instance=ExtResource("24_hewjy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250, 0, 300)
+collision_mask = 3
+metadata/asset_id = "harpoon-launcher"
+metadata/visual_bounds = AABB(-0.89288, 0, -0.7591948, 1.7857602, 1.49, 2.5541947)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@160" type="Label3D" parent="." unique_id=1972470570]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 250, 0.5, 344)
+pixel_size = 0.022
+text = "HARPOON LAUNCHER"
+font_size = 64
+
+[node name="IronFoundry" type="StaticBody3D" parent="." unique_id=194440697 groups=["pirate_assets"] instance=ExtResource("25_bta0n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -250, 0, 400)
+collision_mask = 3
+metadata/asset_id = "iron-foundry"
+metadata/visual_bounds = AABB(-2.5, 0, -0.955, 4.8500004, 4.1425, 1.855)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@161" type="Label3D" parent="." unique_id=1713516004]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -250, 0.5, 444)
+pixel_size = 0.022
+text = "IRON FOUNDRY"
+font_size = 64
+
+[node name="MooringBollard" type="StaticBody3D" parent="." unique_id=609297855 groups=["pirate_assets"] instance=ExtResource("26_o2c4j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 0, 400)
+collision_mask = 3
+metadata/asset_id = "mooring-bollard"
+metadata/visual_bounds = AABB(-0.45, 0, -0.45, 1.5917971, 0.9200001, 0.9)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@162" type="Label3D" parent="." unique_id=601675027]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -150, 0.5, 444)
+pixel_size = 0.022
+text = "MOORING BOLLARD"
+font_size = 64
+
+[node name="NavigationBuoy" type="StaticBody3D" parent="." unique_id=730083207 groups=["pirate_assets"] instance=ExtResource("27_13evk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, 400)
+collision_mask = 3
+metadata/asset_id = "navigation-buoy"
+metadata/visual_bounds = AABB(-0.65, 0, -0.65, 1.3, 1.61, 1.3)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@163" type="Label3D" parent="." unique_id=800095771]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -50, 0.5, 444)
+pixel_size = 0.022
+text = "NAVIGATION BUOY"
+font_size = 64
+
+[node name="OreCrate" type="StaticBody3D" parent="." unique_id=1184821975 groups=["pirate_assets"] instance=ExtResource("28_3alak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 400)
+collision_mask = 3
+metadata/asset_id = "ore-crate"
+metadata/visual_bounds = AABB(-0.45, 0, -0.45, 0.9, 0.66899997, 0.9)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@164" type="Label3D" parent="." unique_id=685507785]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 50, 0.5, 444)
+pixel_size = 0.022
+text = "ORE CRATE"
+font_size = 64
+
+[node name="ProvisionStore" type="StaticBody3D" parent="." unique_id=1617672587 groups=["pirate_assets"] instance=ExtResource("29_g35gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 400)
+collision_mask = 3
+metadata/asset_id = "provision-store"
+metadata/visual_bounds = AABB(-1.8819764, 0, -1.595, 4.349577, 3.7122698, 4.139985)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@165" type="Label3D" parent="." unique_id=1448522086]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 150, 0.5, 444)
+pixel_size = 0.022
+text = "PROVISION STORE"
+font_size = 64
+
+[node name="RepairBench" type="StaticBody3D" parent="." unique_id=665865081 groups=["pirate_assets"] instance=ExtResource("30_vsmb2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250, 0, 400)
+collision_mask = 3
+metadata/asset_id = "repair-bench"
+metadata/visual_bounds = AABB(-0.75, -0.01, -0.4, 1.5, 0.96999997, 1.2897376)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@166" type="Label3D" parent="." unique_id=32981635]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 250, 0.5, 444)
+pixel_size = 0.022
+text = "REPAIR BENCH"
+font_size = 64
+
+[node name="ShipyardGantry" type="StaticBody3D" parent="." unique_id=654213358 groups=["pirate_assets"] instance=ExtResource("31_7pbhm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -250, 0, 500)
+collision_mask = 3
+metadata/asset_id = "shipyard-gantry"
+metadata/visual_bounds = AABB(-2.6699889, -0.019307574, -1.1, 5.3399777, 4.919307, 2.2)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@167" type="Label3D" parent="." unique_id=308130823]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -250, 0.5, 544)
+pixel_size = 0.022
+text = "SHIPYARD GANTRY"
+font_size = 64
+
+[node name="SwivelGun" type="StaticBody3D" parent="." unique_id=1074804358 groups=["pirate_assets"] instance=ExtResource("32_x0t1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 0, 500)
+collision_mask = 3
+metadata/asset_id = "swivel-gun"
+metadata/visual_bounds = AABB(-0.42, 0, -0.42, 0.84, 1.4294515, 1.106013)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@168" type="Label3D" parent="." unique_id=447720223]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -150, 0.5, 544)
+pixel_size = 0.022
+text = "SWIVEL GUN"
+font_size = 64
+
+[node name="TimberWorkshop" type="StaticBody3D" parent="." unique_id=1075021977 groups=["pirate_assets"] instance=ExtResource("33_fj363")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, 500)
+collision_mask = 3
+metadata/asset_id = "timber-workshop"
+metadata/visual_bounds = AABB(-1.9338582, 0, -3.09, 3.8677163, 3.7112668, 4.71)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@169" type="Label3D" parent="." unique_id=653691490]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -50, 0.5, 544)
+pixel_size = 0.022
+text = "TIMBER WORKSHOP"
+font_size = 64
+
+[node name="TreasuryVault" type="StaticBody3D" parent="." unique_id=722210886 groups=["pirate_assets"] instance=ExtResource("34_w3yfx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 500)
+collision_mask = 3
+metadata/asset_id = "treasury-vault"
+metadata/visual_bounds = AABB(-1.9326022, 0, -1.62, 3.8652043, 3.9419444, 3.92)
+metadata/collision_policy = "static_solid_triangles"
+
+[node name="@Label3D@170" type="Label3D" parent="." unique_id=753972593]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 50, 0.5, 544)
+pixel_size = 0.022
+text = "TREASURY VAULT"
+font_size = 64
+
+[node name="@Marker3D@171" type="Marker3D" parent="." unique_id=1050662080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 230)
+
+[node name="@Camera3D@172" type="Camera3D" parent="." unique_id=93621293 node_paths=PackedStringArray("target")]
+far = 1500.0
+script = ExtResource("35_pk31f")
+target = NodePath("../@Marker3D@171")
+distance = 780.0
+max_distance = 1200.0
+pitch_degrees = -65.0
+yaw_degrees = 0.0

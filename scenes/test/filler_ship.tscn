@@ -1,0 +1,48 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/kenney_pirate-kit/Models/GLB format/ship-pirate-medium.glb" id="1_cecti"]
+[ext_resource type="Script" path="res://scripts/ocean/hull_water_mask.gd" id="2_kmnyi"]
+[ext_resource type="Script" path="res://scripts/ocean/buoyancy.gd" id="3_xqr0n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fy31x"]
+size = Vector3(4, 2.4, 9)
+
+[node name="FillerShip" type="RigidBody3D" unique_id=88923541 groups=["camera_targets"]]
+mass = 12000.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.5, 0)
+
+[node name="Model" parent="." instance=ExtResource("1_cecti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
+
+[node name="HullShape" type="CollisionShape3D" parent="." unique_id=472803600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.2)
+shape = SubResource("BoxShape3D_fy31x")
+
+[node name="HullWaterMask" type="Node3D" parent="." unique_id=1283573166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
+script = ExtResource("2_kmnyi")
+half_width = 1.75
+half_length = 3.9
+
+[node name="Buoyancy" type="Node3D" parent="." unique_id=231215696]
+script = ExtResource("3_xqr0n")
+draft = 0.25
+
+[node name="Probe0" type="Marker3D" parent="Buoyancy" unique_id=1001456604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, -3.2)
+
+[node name="Probe1" type="Marker3D" parent="Buoyancy" unique_id=370320046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, -3.2)
+
+[node name="Probe2" type="Marker3D" parent="Buoyancy" unique_id=1156001418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, 0)
+
+[node name="Probe3" type="Marker3D" parent="Buoyancy" unique_id=72238659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 0)
+
+[node name="Probe4" type="Marker3D" parent="Buoyancy" unique_id=1558017397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, 3)
+
+[node name="Probe5" type="Marker3D" parent="Buoyancy" unique_id=1567242937]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 3)

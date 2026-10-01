@@ -1,16 +1,30 @@
-# Godot 4+ specific ignores
+# Godot
 .godot/
-.nomedia
-
-# Godot-specific ignores
 .import/
+.nomedia
 export.cfg
 export_credentials.cfg
-
-# Imported translations (automatically generated from CSV files)
 *.translation
 
-# Mono-specific ignores
+# Mono / C#
 .mono/
 data_*/
 mono_crash.*.json
+
+# Build output
+/android/
+/build/
+/builds/
+/export/
+
+# Blender sources and art review bundles (kept locally, not on GitHub)
+/art-review/
+*.blend
+*.blend[0-9]
+
+# OS and editor clutter
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+*~

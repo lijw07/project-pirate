@@ -1,0 +1,25 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/minimap_marker.gd" id="1_marker"]
+[ext_resource type="Texture2D" path="res://resources/minimap/island_shallows.tres" id="2_shallows"]
+[ext_resource type="Texture2D" path="res://resources/minimap/island_sand.tres" id="3_island"]
+[ext_resource type="Texture2D" path="res://resources/minimap/badge_timber.tres" id="4_badge"]
+
+[node name="TimberIslandMarker" type="Node3D"]
+
+[node name="Shallows" type="Node3D" parent="."]
+script = ExtResource("1_marker")
+texture = ExtResource("2_shallows")
+world_size = 85.0
+
+[node name="Island" type="Node3D" parent="."]
+script = ExtResource("1_marker")
+texture = ExtResource("3_island")
+world_size = 52.0
+layer = 1
+
+[node name="Badge" type="Node3D" parent="."]
+script = ExtResource("1_marker")
+texture = ExtResource("4_badge")
+layer = 2
+screen_size = 22.0

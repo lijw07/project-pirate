@@ -1,0 +1,26 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/minimap_marker.gd" id="1_marker"]
+[ext_resource type="Texture2D" path="res://resources/minimap/island_shallows.tres" id="2_shallows"]
+[ext_resource type="Texture2D" path="res://resources/minimap/island_grass.tres" id="3_island"]
+[ext_resource type="Texture2D" path="res://assets/kenney_pirate-pack/PNG/Default size/Ship parts/sailLarge (8).png" id="4_sail"]
+
+[node name="EnemyHarborMarker" type="Node3D"]
+
+[node name="Shallows" type="Node3D" parent="."]
+script = ExtResource("1_marker")
+texture = ExtResource("2_shallows")
+world_size = 95.0
+
+[node name="Island" type="Node3D" parent="."]
+script = ExtResource("1_marker")
+texture = ExtResource("3_island")
+world_size = 60.0
+layer = 1
+
+[node name="Faction" type="Node3D" parent="."]
+script = ExtResource("1_marker")
+texture = ExtResource("4_sail")
+screen_size = 24.0
+layer = 3
+pinned_to_edge = true

@@ -1,0 +1,274 @@
+[
+	{
+		"body": "AnimatableBody3D",
+		"bounds_position": "(-1.425, 0.1, -0.15)",
+		"bounds_size": "(2.15, 1.8, 0.426558)",
+		"colliders": 9,
+		"decorative_meshes_excluded": 0,
+		"id": "module-armor"
+	},
+	{
+		"body": "AnimatableBody3D",
+		"bounds_position": "(-1.301188, 0.15, -0.95)",
+		"bounds_size": "(2.741399, 1.054662, 2.340657)",
+		"colliders": 7,
+		"decorative_meshes_excluded": 0,
+		"id": "module-cannons"
+	},
+	{
+		"body": "AnimatableBody3D",
+		"bounds_position": "(-1.0273, 0.1, -0.901244)",
+		"bounds_size": "(2.428544, 1.106228, 1.359394)",
+		"colliders": 3,
+		"decorative_meshes_excluded": 0,
+		"id": "module-cargo"
+	},
+	{
+		"body": "AnimatableBody3D",
+		"bounds_position": "(-1.469199, 0.1, -0.789856)",
+		"bounds_size": "(2.938397, 5.268559, 1.272726)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 3,
+		"id": "module-rigging"
+	},
+	{
+		"body": "RigidBody3D",
+		"bounds_position": "(-2.41, -0.6, -5.3)",
+		"bounds_size": "(4.82, 9.96352, 10.6)",
+		"colliders": 2,
+		"decorative_meshes_excluded": 21,
+		"id": "ship-corsair"
+	},
+	{
+		"body": "RigidBody3D",
+		"bounds_position": "(-2.41, -0.6, -3.99)",
+		"bounds_size": "(4.82, 9.465343, 8.359999)",
+		"colliders": 2,
+		"decorative_meshes_excluded": 3,
+		"id": "ship-scout"
+	},
+	{
+		"body": "RigidBody3D",
+		"bounds_position": "(-2.41, -0.6, -5.3)",
+		"bounds_size": "(4.82, 9.96352, 10.6)",
+		"colliders": 2,
+		"decorative_meshes_excluded": 5,
+		"id": "ship-trader"
+	},
+	{
+		"body": "RigidBody3D",
+		"bounds_position": "(-2.41, -0.6, -5.3)",
+		"bounds_size": "(4.82, 9.96352, 10.6)",
+		"colliders": 2,
+		"decorative_meshes_excluded": 21,
+		"id": "ship-warship"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-0.65, 0.0, -0.45)",
+		"bounds_size": "(1.3, 0.74, 0.9)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 0,
+		"id": "cannonball-rack"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-0.52, 0.0, -0.52)",
+		"bounds_size": "(1.72, 3.75, 1.04)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 2,
+		"id": "capture-standard"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-0.85, 0.0, -0.65)",
+		"bounds_size": "(1.7, 1.244749, 1.3)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 0,
+		"id": "cargo-rack"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-0.675, 0.0, -0.625)",
+		"bounds_size": "(1.35, 1.443449, 1.351353)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 0,
+		"id": "deck-mortar"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-1.615, -0.25, -1.615)",
+		"bounds_size": "(3.23, 1.4, 3.23)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 3,
+		"id": "dock-corner"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-1.615, -0.25, -1.615)",
+		"bounds_size": "(3.23, 1.4, 3.23)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 3,
+		"id": "dock-t-junction"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-0.45, 0.0, -0.45)",
+		"bounds_size": "(0.9, 0.669, 0.9)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 0,
+		"id": "food-crate"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-0.777976, -0.045, -0.756)",
+		"bounds_size": "(1.489378, 0.72, 1.361)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 3,
+		"id": "gold-sacks"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-1.45, 0.0, -1.45)",
+		"bounds_size": "(2.9, 6.21, 2.9)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 0,
+		"id": "harbor-lighthouse"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-0.89288, 0.0, -0.759195)",
+		"bounds_size": "(1.78576, 1.49, 2.554195)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 3,
+		"id": "harpoon-launcher"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-2.5, 0.0, -0.955)",
+		"bounds_size": "(4.85, 4.1425, 1.855)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 0,
+		"id": "iron-foundry"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-0.45, 0.0, -0.45)",
+		"bounds_size": "(1.591797, 0.92, 0.9)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 4,
+		"id": "mooring-bollard"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-0.65, 0.0, -0.65)",
+		"bounds_size": "(1.3, 1.61, 1.3)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 0,
+		"id": "navigation-buoy"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-0.45, 0.0, -0.45)",
+		"bounds_size": "(0.9, 0.669, 0.9)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 0,
+		"id": "ore-crate"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-1.881976, 0.0, -1.595)",
+		"bounds_size": "(4.349577, 3.71227, 4.139985)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 0,
+		"id": "provision-store"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-0.75, -0.01, -0.4)",
+		"bounds_size": "(1.5, 0.97, 1.289738)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 1,
+		"id": "repair-bench"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-2.669989, -0.019308, -1.1)",
+		"bounds_size": "(5.339978, 4.919307, 2.2)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 1,
+		"id": "shipyard-gantry"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-0.42, 0.0, -0.42)",
+		"bounds_size": "(0.84, 1.429451, 1.106013)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 0,
+		"id": "swivel-gun"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-1.933858, 0.0, -3.09)",
+		"bounds_size": "(3.867716, 3.711267, 4.71)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 0,
+		"id": "timber-workshop"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-1.932602, 0.0, -1.62)",
+		"bounds_size": "(3.865204, 3.941944, 3.92)",
+		"colliders": 1,
+		"decorative_meshes_excluded": 0,
+		"id": "treasury-vault"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-34.00106, 2.6, -27.6152)",
+		"bounds_size": "(68.00213, 5.870812, 60.53806)",
+		"colliders": 11,
+		"decorative_meshes_excluded": 36,
+		"id": "food"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-34.00106, 2.6, -27.6152)",
+		"bounds_size": "(68.00213, 6.600001, 60.53806)",
+		"colliders": 14,
+		"decorative_meshes_excluded": 7,
+		"id": "gold"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-40.12126, 2.6, -32.58594)",
+		"bounds_size": "(80.24252, 11.25, 68.74879)",
+		"colliders": 26,
+		"decorative_meshes_excluded": 15,
+		"id": "harbor-enemy"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-40.12126, 2.6, -32.58594)",
+		"bounds_size": "(80.24252, 11.25, 68.74879)",
+		"colliders": 29,
+		"decorative_meshes_excluded": 15,
+		"id": "harbor-player"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-34.00106, 2.6, -27.6152)",
+		"bounds_size": "(68.00213, 6.199999, 60.53806)",
+		"colliders": 14,
+		"decorative_meshes_excluded": 8,
+		"id": "metal"
+	},
+	{
+		"body": "StaticBody3D",
+		"bounds_position": "(-34.00106, 2.6, -27.6152)",
+		"bounds_size": "(68.00213, 6.934628, 60.53806)",
+		"colliders": 10,
+		"decorative_meshes_excluded": 7,
+		"id": "timber"
+	}
+]
