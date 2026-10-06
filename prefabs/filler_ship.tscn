@@ -21,7 +21,7 @@ shape = SubResource("BoxShape3D_hull")
 
 [node name="Buoyancy" type="Node3D" parent="." node_paths=PackedStringArray("editor_preview_target")]
 script = ExtResource("2_buoyancy")
-draft = 0.25
+draft = 0.6
 editor_preview_target = NodePath("../Model")
 
 [node name="Probe0" type="Marker3D" parent="Buoyancy"]

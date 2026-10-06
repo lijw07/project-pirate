@@ -8,7 +8,7 @@ const MIN_FIT_DETERMINANT := 1e-6
 @export_range(0.05, 10.0, 0.05, "suffix:m") var draft := 0.95
 @export_range(1.0, 10.0, 0.1) var max_submersion_ratio := 2.0
 @export_range(0.0, 2.0, 0.05) var damping_ratio := 0.8
-@export_range(0.0, 5.0, 0.1) var airborne_gravity_boost := 1.5
+@export_range(0.0, 5.0, 0.1) var airborne_gravity_boost := 3.0
 @export var editor_preview_target: Node3D
 
 var submerged_fraction := 0.0
@@ -16,6 +16,7 @@ var submerged_fraction := 0.0
 var _body: RigidBody3D
 var _ocean: Ocean
 var _probes: Array[Marker3D] = []
+var _previous_surface_heights := PackedFloat32Array()
 var _first_slot := OceanHeightSampler.NO_SLOT
 var _preview_rest := Transform3D.IDENTITY
 var _preview_offset := Transform3D.IDENTITY
@@ -87,41 +88,51 @@ func _process(delta: float) -> void:
 	_show_preview_pose()
 
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint() or not _acquire_ocean():
 		return
 	var mass_share := _body.mass / _probes.size()
 	var weight_share := mass_share * _gravity()
 	var damping := heave_damping()
 	var submerged := 0
+	var lift_shortfall := 0.0
 	for index in _probes.size():
 		var point := _probes[index].global_position
-		var lift := _probe_lift(index, point)
+		var surface := _surface_height(index, point)
+		var surface_speed := _surface_speed(index, surface, delta)
+		var lift := _lift_for_depth(surface - point.y)
+		lift_shortfall += 1.0 - minf(lift, 1.0)
 		if lift <= 0.0:
 			continue
 		submerged += 1
 		var offset := point - _body.global_position
-		var vertical_speed := _point_velocity(offset).y
-		var force := Vector3.UP * (weight_share * lift - mass_share * damping * vertical_speed)
+		var speed_through_surface := _point_velocity(offset).y - surface_speed
+		var force := Vector3.UP * (weight_share * lift - mass_share * damping * speed_through_surface)
 		_body.apply_force(force, offset)
 	submerged_fraction = float(submerged) / _probes.size()
-	_pull_back_into_water()
+	_pull_back_into_water(lift_shortfall / _probes.size())
 
 
 func heave_damping() -> float:
 	return 2.0 * damping_ratio * sqrt(_gravity() / draft)
 
 
-func _pull_back_into_water() -> void:
-	var exposed := 1.0 - submerged_fraction
-	_body.apply_central_force(Vector3.DOWN * _body.mass * _gravity() * airborne_gravity_boost * exposed)
+func _pull_back_into_water(riding_high: float) -> void:
+	_body.apply_central_force(Vector3.DOWN * _body.mass * _gravity() * airborne_gravity_boost * riding_high)
 
 
-func _probe_lift(index: int, point: Vector3) -> float:
-	var depth := _surface_height(index, point) - point.y
+func _lift_for_depth(depth: float) -> float:
 	if depth <= 0.0:
 		return 0.0
 	return minf(depth / draft, max_submersion_ratio)
+
+
+func _surface_speed(index: int, surface: float, delta: float) -> float:
+	var previous := _previous_surface_heights[index]
+	_previous_surface_heights[index] = surface
+	if is_nan(previous):
+		return 0.0
+	return (surface - previous) / delta
 
 
 func _surface_height(index: int, point: Vector3) -> float:
@@ -167,6 +178,8 @@ func _collect_probes() -> void:
 	for child in get_children():
 		if child is Marker3D:
 			_probes.append(child)
+	_previous_surface_heights.resize(_probes.size())
+	_previous_surface_heights.fill(NAN)
 
 
 func _on_probes_changed() -> void:

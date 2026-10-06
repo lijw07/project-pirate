@@ -7,11 +7,25 @@ global uniform float ocean_time;
 global uniform vec3 ocean_focus;
 
 group_uniforms Colors;
-uniform vec3 trough_color : source_color = vec3(0.13, 0.5, 0.8);
-uniform vec3 crest_color : source_color = vec3(0.2, 0.6, 0.855);
+uniform vec3 trough_color : source_color = vec3(0.12, 0.44, 0.75);
+uniform vec3 swell_color : source_color = vec3(0.2, 0.6, 0.855);
+uniform vec3 crest_color : source_color = vec3(0.36, 0.71, 0.92);
+uniform vec3 pattern_color : source_color = vec3(0.75, 0.9, 0.98);
 uniform vec3 shallow_color : source_color = vec3(0.518, 0.757, 0.914);
 uniform vec3 foam_color : source_color = vec3(0.97, 0.99, 1.0);
-uniform vec3 shadow_tint : source_color = vec3(0.62, 0.72, 0.9);
+uniform vec3 shadow_tint : source_color = vec3(0.5, 0.62, 0.88);
+group_uniforms;
+
+group_uniforms HeightBands;
+uniform float trough_band = -0.5;
+uniform float crest_band = 0.6;
+uniform float color_band_softness : hint_range(0.0, 0.5) = 0.08;
+group_uniforms;
+
+group_uniforms SurfacePattern;
+uniform float pattern_density = 0.7;
+uniform float pattern_threshold : hint_range(0.0, 1.0) = 0.94;
+uniform float pattern_strength : hint_range(0.0, 1.0) = 0.3;
 group_uniforms;
 
 group_uniforms ToonLighting;
@@ -132,11 +146,25 @@ float crisp(float edge, float value) {
 	return smoothstep(edge - foam_edge_softness, edge + foam_edge_softness, value);
 }
 
+float height_band(float edge) {
+	return smoothstep(edge - color_band_softness, edge + color_band_softness, height_ratio);
+}
+
+vec3 banded_water() {
+	vec3 water = mix(trough_color, swell_color, height_band(trough_band));
+	return mix(water, crest_color, height_band(crest_band));
+}
+
+float surface_pattern() {
+	float pattern = texture(foam_noise, foam_uv * pattern_density + vec2(0.37, 0.61)).a;
+	return pattern_strength * foam_fade * crisp(pattern_threshold, pattern);
+}
+
 void fragment() {
 	float noise = texture(foam_noise, foam_uv).a;
 	float depth = depth_below_surface(SCREEN_UV, INV_PROJECTION_MATRIX, VERTEX);
 
-	vec3 water = mix(trough_color, crest_color, smoothstep(-1.5, 1.5, height_ratio));
+	vec3 water = mix(banded_water(), pattern_color, surface_pattern());
 	water = mix(water, shallow_color, crisp(0.5, 1.0 - depth / shallow_depth));
 
 	float crest = whitecap_strength * foam_fade * smoothstep(whitecap_start_sigma, whitecap_full_sigma, height_ratio);
