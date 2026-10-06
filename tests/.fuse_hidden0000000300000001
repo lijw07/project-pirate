@@ -1,0 +1,60 @@
+extends SceneTree
+
+var failures := 0
+
+
+func _init() -> void:
+    var level: Node3D = load("res://levels/sandbox/open_water_test.tscn").instantiate()
+    root.add_child(level)
+    await process_frame
+    await process_frame
+
+    var ocean: Ocean = level.get_node("Ocean")
+    _check_meshes(ocean)
+    _check_wave_parameters(ocean)
+    _check_camera_follow(level, ocean)
+
+    print("ocean test failures: ", failures)
+    quit(failures)
+
+
+func _check(condition: bool, label: String) -> void:
+    if condition:
+        print("PASS ", label)
+        return
+    failures += 1
+    print("FAIL ", label)
+
+
+func _water(ocean: Ocean) -> ShaderMaterial:
+    return ocean.get_child(0).get_surface_override_material(0)
+
+
+func _check_meshes(ocean: Ocean) -> void:
+    var plane_count := (2 * ocean.levels_of_detail - 1) ** 2
+    _check(ocean.get_child_count() == plane_count + 2, "plane and farplane mesh count")
+    var all_have_geometry := true
+    for child in ocean.get_children():
+        var mesh: Mesh = child.mesh
+        all_have_geometry = all_have_geometry and mesh.get_surface_count() == 1
+    _check(all_have_geometry, "every ocean mesh has a surface")
+    _check(_water(ocean) != ocean.material, "runtime material is a copy")
+
+
+func _check_wave_parameters(ocean: Ocean) -> void:
+    var water := _water(ocean)
+    _check(water.get_shader_parameter("WaveCount") == 5, "height wave count")
+    _check(water.get_shader_parameter("FoamWaveCount") == 4, "foam wave count")
+    _check(water.get_shader_parameter("UVWaveCount") == 2, "uv wave count")
+    _check(water.get_shader_parameter("WaveSteepnesses").size() == 5, "height wave arrays sized")
+    _check(is_equal_approx(water.get_shader_parameter("distance_fade_max"), ocean.far_edge), "distance fade far")
+
+
+func _check_camera_follow(level: Node3D, ocean: Ocean) -> void:
+    var camera: Camera3D = level.get_node("Camera3D")
+    camera.global_position = Vector3(1000.0, 40.0, -700.0)
+    await process_frame
+    var snap := ocean.snap_unit
+    _check(is_equal_approx(ocean.global_position.x, snappedf(1000.0, snap)), "ocean snaps x to camera")
+    _check(is_equal_approx(ocean.global_position.z, snappedf(-700.0, snap)), "ocean snaps z to camera")
+    _check(is_equal_approx(ocean.global_position.y, 0.0), "ocean keeps height")

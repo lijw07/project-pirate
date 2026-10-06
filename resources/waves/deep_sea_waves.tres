@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="OceanWaveSet" format=3 uid="uid://cvmc6ix6u1aq5"]
+
+[ext_resource type="Script" path="res://scripts/ocean/gerstner_wave.gd" id="1_f3m5b"]
+[ext_resource type="Script" path="res://scripts/ocean/ocean_wave_set.gd" id="2_ppbwl"]
+
+[sub_resource type="Resource" id="Resource_tv7ka"]
+script = ExtResource("1_f3m5b")
+steepness = 36.0
+amplitude = 1.2
+frequency = 0.004
+speed = 0.497
+
+[sub_resource type="Resource" id="Resource_kjiv6"]
+script = ExtResource("1_f3m5b")
+steepness = 24.0
+amplitude = 1.2
+direction_degrees = 25.0
+frequency = 0.006
+speed = 0.608
+phase_degrees = 40.0
+
+[sub_resource type="Resource" id="Resource_6010m"]
+script = ExtResource("1_f3m5b")
+steepness = 18.0
+direction_degrees = 340.0
+frequency = 0.009
+speed = 0.745
+phase_degrees = 90.0
+
+[sub_resource type="Resource" id="Resource_csuej"]
+script = ExtResource("1_f3m5b")
+steepness = 12.0
+amplitude = 0.8
+direction_degrees = 60.0
+frequency = 0.014
+speed = 0.929
+phase_degrees = 160.0
+
+[sub_resource type="Resource" id="Resource_nd350"]
+script = ExtResource("1_f3m5b")
+steepness = 9.0
+amplitude = 0.65
+direction_degrees = 300.0
+frequency = 0.02
+speed = 1.11
+phase_degrees = 220.0
+
+[sub_resource type="Resource" id="Resource_gdk71"]
+script = ExtResource("1_f3m5b")
+steepness = 6.0
+amplitude = 0.5
+direction_degrees = 120.0
+frequency = 0.03
+speed = 1.36
+phase_degrees = 300.0
+
+[sub_resource type="Resource" id="Resource_xhi3e"]
+script = ExtResource("1_f3m5b")
+steepness = 0.09
+amplitude = 0.7
+direction_degrees = 315.0
+frequency = 0.9
+speed = 0.75
+
+[sub_resource type="Resource" id="Resource_vg6db"]
+script = ExtResource("1_f3m5b")
+steepness = 0.08
+amplitude = 0.5
+direction_degrees = 90.0
+frequency = 0.6
+speed = 0.375
+
+[resource]
+script = ExtResource("2_ppbwl")
+height_waves = Array[ExtResource("1_f3m5b")]([SubResource("Resource_tv7ka"), SubResource("Resource_kjiv6"), SubResource("Resource_6010m"), SubResource("Resource_csuej"), SubResource("Resource_nd350"), SubResource("Resource_gdk71")])
+uv_waves = Array[ExtResource("1_f3m5b")]([SubResource("Resource_xhi3e"), SubResource("Resource_vg6db")])

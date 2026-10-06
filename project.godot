@@ -59,3 +59,14 @@ ship_unstuck={
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+
+[shader_globals]
+
+ocean_time={
+"type": "float",
+"value": 0.0
+}
+ocean_focus={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}

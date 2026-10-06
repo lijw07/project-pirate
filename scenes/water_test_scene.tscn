@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cef6gk2tgt1b5"]
+
+[ext_resource type="PackedScene" path="res://prefabs/ocean.tscn" id="1_qqhbo"]
+[ext_resource type="Environment" uid="uid://dcwhk7c3s6lj3" path="res://resources/environments/sea_environment.tres" id="5_6vymu"]
+[ext_resource type="Script" uid="uid://b7u7wpk765vyn" path="res://scripts/camera/free_look_camera.gd" id="6_4pkgn"]
+
+[node name="WaterTestScene" type="Node3D" unique_id=706557746]
+
+[node name="Ocean" parent="." unique_id=366318774 instance=ExtResource("1_qqhbo")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=134250174]
+environment = ExtResource("5_6vymu")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=573484318]
+transform = Transform3D(0.8660254, -0.40957603, 0.28678823, 0, 0.57357645, 0.81915206, -0.5, -0.7094065, 0.49673176, 0, 10, 0)
+shadow_enabled = true
+
+[node name="FreeLookCamera" type="Camera3D" parent="." unique_id=852746991]
+transform = Transform3D(1, 0, 0, 0, 0.95105654, 0.309017, 0, -0.309017, 0.95105654, 0, 45, 90)
+script = ExtResource("6_4pkgn")

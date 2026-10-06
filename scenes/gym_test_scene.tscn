@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c17qvhswrlr8p"]
+
+[ext_resource type="PackedScene" path="res://prefabs/ocean.tscn" id="1_ocean"]
+[ext_resource type="Environment" uid="uid://dcwhk7c3s6lj3" path="res://resources/environments/sea_environment.tres" id="2_environment"]
+[ext_resource type="Script" uid="uid://b7u7wpk765vyn" path="res://scripts/camera/free_look_camera.gd" id="3_camera"]
+[ext_resource type="PackedScene" path="res://prefabs/filler_ship.tscn" id="4_ship"]
+
+[node name="GymTestScene" type="Node3D" unique_id=1388246845]
+
+[node name="Ocean" parent="." unique_id=366318774 instance=ExtResource("1_ocean")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1876306044]
+environment = ExtResource("2_environment")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=2046479627]
+transform = Transform3D(0.8660254, -0.40957603, 0.28678823, 0, 0.57357645, 0.81915206, -0.5, -0.7094065, 0.49673176, 0, 10, 0)
+shadow_enabled = true
+
+[node name="FreeLookCamera" type="Camera3D" parent="." unique_id=2006797328]
+transform = Transform3D(-0.99619466, -0.015134459, 0.08583178, 0, 0.9848077, 0.17364818, -0.08715588, 0.17298739, -0.9810602, 0, 10, -25)
+script = ExtResource("3_camera")
+
+[node name="FillerShip" parent="." unique_id=1534897299 instance=ExtResource("4_ship")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.2008247, 0)

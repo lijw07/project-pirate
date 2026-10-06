@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3]
+
+[ext_resource type="Shader" path="res://shaders/water.gdshader" id="1_shader"]
+[ext_resource type="Texture2D" path="res://assets/third_party/boujie_water/foam_2.png" id="2_foam"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_shader")
+shader_parameter/foam_noise = ExtResource("2_foam")
+shader_parameter/foam_noise_scale = 45.0
+shader_parameter/foam_edge_softness = 0.06
+shader_parameter/trough_color = Color(0.15, 0.5, 0.78, 1)
+shader_parameter/crest_color = Color(0.22, 0.62, 0.86, 1)
+shader_parameter/glint_size = 0.004
+shader_parameter/glint_strength = 0.35
+shader_parameter/light_band = 0.65

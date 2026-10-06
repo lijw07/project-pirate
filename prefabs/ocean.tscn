@@ -1,0 +1,10 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ocean/ocean.gd" id="1_uhf5b"]
+[ext_resource type="Material" path="res://materials/toon_water.tres" id="2_q7uom"]
+[ext_resource type="Resource" path="res://resources/waves/deep_sea_waves.tres" id="3_orldm"]
+
+[node name="Ocean" type="Node3D" unique_id=366318774]
+script = ExtResource("1_uhf5b")
+water_material = ExtResource("2_q7uom")
+wave_set = ExtResource("3_orldm")

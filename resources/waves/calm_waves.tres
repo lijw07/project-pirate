@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="OceanWaveSet" format=3 uid="uid://cmk34uhcdds3u"]
+
+[ext_resource type="Script" path="res://scripts/ocean/gerstner_wave.gd" id="1_02eas"]
+[ext_resource type="Script" path="res://scripts/ocean/ocean_wave_set.gd" id="2_lvw7m"]
+
+[sub_resource type="Resource" id="Resource_eknpk"]
+script = ExtResource("1_02eas")
+steepness = 0.6
+amplitude = 0.5
+direction_degrees = 20.0
+frequency = 0.03
+speed = 1.36
+
+[sub_resource type="Resource" id="Resource_vwcjv"]
+script = ExtResource("1_02eas")
+steepness = 0.4
+amplitude = 0.5
+direction_degrees = 300.0
+frequency = 0.05
+speed = 1.756
+phase_degrees = 70.0
+
+[sub_resource type="Resource" id="Resource_hmbh3"]
+script = ExtResource("1_02eas")
+steepness = 0.25
+amplitude = 0.4
+direction_degrees = 80.0
+frequency = 0.08
+speed = 2.221
+phase_degrees = 150.0
+
+[sub_resource type="Resource" id="Resource_cw3u3"]
+script = ExtResource("1_02eas")
+steepness = 0.09
+amplitude = 0.7
+direction_degrees = 315.0
+frequency = 0.9
+speed = 0.75
+
+[sub_resource type="Resource" id="Resource_58axa"]
+script = ExtResource("1_02eas")
+steepness = 0.08
+amplitude = 0.5
+direction_degrees = 90.0
+frequency = 0.6
+speed = 0.375
+
+[resource]
+script = ExtResource("2_lvw7m")
+height_waves = Array[ExtResource("1_02eas")]([SubResource("Resource_eknpk"), SubResource("Resource_vwcjv"), SubResource("Resource_hmbh3")])
+uv_waves = Array[ExtResource("1_02eas")]([SubResource("Resource_cw3u3"), SubResource("Resource_58axa")])
+whitecap_strength = 0.0
