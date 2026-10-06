@@ -2,6 +2,14 @@
 
 Run `res://scenes/main_menu_preview.tscn` with Godot 4.7. The project startup scene is not changed.
 
+## Pause menu
+
+Run `res://scenes/pause_menu_preview.tscn` to review the pause menu over the current buoyancy scene. The demo frames the ship and pauses after six seconds, unless you have already used Escape yourself. Resume or Escape returns to the running simulation. The scene offers Resume, Settings, Main Menu and Quit, with the same Harbor Sign art, readable settings fields, gold active-category state and pale-blue hover/focus state.
+
+`res://prefabs/ui/pause_menu.tscn` is the reusable overlay. It is instantiated only in the separate pause preview, leaving the base buoyancy and water test scenes unchanged. It shares the menu UI implementation without adding a second ocean, camera or ship. Its UI continues processing while SceneTree pause stops the scene's ocean clock, physics and camera. It releases the pointer on opening and restores the previous mouse mode on Resume. Settings Back/Escape returns to Pause; Escape during rebinding cancels capture first. Main Menu unpauses before changing scenes. The settings values remain the same session-only preview controls as the main-menu design.
+
+`tests/test_pause_menu.gd` passes headless and in native Metal: initial hidden state, paused ocean/ship/camera, responsive settings and keyboard input, Escape/Resume, mouse-mode restoration and Main Menu transition. The existing main-menu navigation harness also passes after sharing the interface with the pause overlay.
+
 This scene inherits `res://scenes/water_test_scene.tscn`. Its Ocean prefab, wave resource, water material, generated geometry, sun, and environment are inherited without overrides. Only the preview camera is reframed, its free-look input is removed, and the ship and menu are added. The camera follows the sampled ship height and maintains at least six metres of clearance above its local sampled sea surface. The decorative ship samples the existing ocean height field for heave, pitch, and roll.
 
 Play opens Single Player, Multiplayer, and Local. These modes remain preview placeholders. Ship color changes the visible model. Settings demonstrate key rebinding and inline graphics/display selection; these are session-only UI values, not persistent game settings or live graphics changes. Back and Escape replace pages rather than opening modal dialogs. The preview uses system fonts (DIN Condensed/Gill Sans on macOS); bundle a licensed font before cross-platform release.

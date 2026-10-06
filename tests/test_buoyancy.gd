@@ -52,7 +52,7 @@ func _check_water_pose() -> void:
 
 
 func _check_ship_floats() -> void:
-	var level: Node3D = load("res://scenes/gym_test_scene.tscn").instantiate()
+	var level: Node3D = load("res://scenes/bouyancy_test_scene.tscn").instantiate()
 	root.add_child(level)
 	var ship: RigidBody3D = level.get_node("FillerShip")
 	var buoyancy: Buoyancy = ship.get_node("Buoyancy")
@@ -69,7 +69,7 @@ func _check_ship_floats() -> void:
 
 
 func _check_ship_stays_seated_in_swell() -> void:
-	var level: Node3D = load("res://scenes/gym_test_scene.tscn").instantiate()
+	var level: Node3D = load("res://scenes/bouyancy_test_scene.tscn").instantiate()
 	root.add_child(level)
 	var ship: RigidBody3D = level.get_node("FillerShip")
 	var buoyancy: Buoyancy = ship.get_node("Buoyancy")

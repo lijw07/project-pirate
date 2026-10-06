@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" path="res://assets/third_party/kenney_pirate_kit/Models/GLB format/ship-pirate-medium.glb" id="1_model"]
 [ext_resource type="Script" path="res://scripts/ocean/buoyancy.gd" id="2_buoyancy"]
+[ext_resource type="Script" path="res://scripts/ships/ship_movement.gd" id="3_movement"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hull"]
 size = Vector3(4, 2.4, 9)
@@ -11,6 +12,7 @@ mass = 12000.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.5, 0)
 can_sleep = false
+linear_damp_mode = 1
 
 [node name="Model" parent="." instance=ExtResource("1_model")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
@@ -41,3 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, 3)
 
 [node name="Probe5" type="Marker3D" parent="Buoyancy"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 3)
+
+[node name="ShipMovement" type="Node" parent="." node_paths=PackedStringArray("buoyancy")]
+script = ExtResource("3_movement")
+buoyancy = NodePath("../Buoyancy")

@@ -1,5 +1,11 @@
 extends Node3D
-## Review scene. Ocean, sun, and environment come from water_test_scene.tscn.
+## Shared Harbor Sign interface for the main-menu preview and pause overlay.
+
+signal pause_started
+signal pause_finished
+
+@export var pause_overlay := false
+@export_file("*.tscn") var main_menu_scene := "res://scenes/main_menu_preview.tscn"
 
 const CREAM := Color("f3e3c5")
 const INK := Color("17374e")
@@ -12,10 +18,13 @@ const HOVER_SELECTION := preload("res://assets/ui/harbor_sign/hover.svg")
 const COLORS := [Color("c47b43"), Color("387c87"), Color("953e45"), Color("52673b"), Color("49435f")]
 const COLOR_NAMES := ["Timber", "Ocean", "Crimson", "Moss", "Midnight"]
 
-@onready var ocean: Ocean = $Ocean
-@onready var camera: Camera3D = $FreeLookCamera
+@onready var ocean := get_node_or_null("Ocean") as Ocean
+@onready var camera := get_node_or_null("FreeLookCamera") as Camera3D
 var ship: Node3D
 var ui: Control
+var ui_layer: CanvasLayer
+var pause_open := false
+var previous_mouse_mode := Input.MOUSE_MODE_VISIBLE
 var display_font: SystemFont
 var body_font: SystemFont
 var current_page := "main"
@@ -33,33 +42,42 @@ var bindings := {"Raise sails": "W", "Lower sails": "S", "Steer left": "A", "Ste
 var settings_values := {"Quality preset": 2, "Shadows": 1, "Anti-aliasing": 2, "Display mode": 0, "Resolution": 1, "Vertical sync": 1}
 
 func _ready() -> void:
-	get_window().title = "Project Pirate — Harbor Sign Preview"
+	if not pause_overlay:
+		get_window().title = "Project Pirate — Harbor Sign Preview"
 	get_window().content_scale_size = Vector2i(1440, 900)
 	get_window().content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
 	get_window().content_scale_aspect = Window.CONTENT_SCALE_ASPECT_EXPAND
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	display_font = SystemFont.new()
 	display_font.font_names = PackedStringArray(["DIN Condensed", "sans-serif"])
 	display_font.font_weight = 700
 	body_font = SystemFont.new()
 	body_font.font_names = PackedStringArray(["Gill Sans", "sans-serif"])
-	ship = SHIP.instantiate()
-	ship.name = "MenuShip"
-	ship.position = Vector3(5, 0, 0)
-	add_child(ship)
-	camera.current = true
-	camera.fov = 45.0
-	camera.far = 5000.0
-	# Run after the inherited ocean advances its wave clock.
-	process_priority = 1
-	update_ship_and_camera()
-	var layer := CanvasLayer.new()
-	add_child(layer)
+	if not pause_overlay:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		ship = SHIP.instantiate()
+		ship.name = "MenuShip"
+		ship.position = Vector3(5, 0, 0)
+		add_child(ship)
+		camera.current = true
+		camera.fov = 45.0
+		camera.far = 5000.0
+		# Run after the inherited ocean advances its wave clock.
+		process_priority = 1
+		update_ship_and_camera()
+	else:
+		process_mode = Node.PROCESS_MODE_ALWAYS
+		set_process(false)
+	ui_layer = CanvasLayer.new()
+	ui_layer.layer = 100
+	add_child(ui_layer)
 	ui = Control.new()
 	ui.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	layer.add_child(ui)
+	ui_layer.add_child(ui)
 	get_viewport().size_changed.connect(resize_board)
-	show_main()
+	if pause_overlay:
+		ui.hide()
+	else:
+		show_main()
 
 func _process(_delta: float) -> void:
 	update_ship_and_camera()
@@ -79,6 +97,18 @@ func update_ship_and_camera() -> void:
 	camera.look_at(Vector3(0, height + 3.3, 0))
 
 func _input(event: InputEvent) -> void:
+	if pause_overlay:
+		if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ESCAPE and not is_instance_valid(pending_binding):
+			if not pause_open:
+				open_pause()
+			elif current_page == "pause":
+				resume_game()
+			else:
+				go_back()
+			get_viewport().set_input_as_handled()
+			return
+		if not pause_open:
+			return
 	# Let Godot resolve hover after it has transformed and dispatched the event.
 	if event is InputEventMouseMotion and not event.relative.is_zero_approx():
 		pointer_navigation = true
@@ -109,7 +139,7 @@ func queue_pointer_sync() -> void:
 
 func sync_pointer_focus() -> void:
 	pointer_sync_queued = false
-	if not pointer_navigation:
+	if not pointer_navigation or (pause_overlay and not pause_open):
 		return
 	var hovered := get_viewport().gui_get_hovered_control()
 	while hovered and not hovered is Button:
@@ -147,10 +177,62 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		go_back()
 
 func go_back() -> void:
-	if current_page == "mode":
+	if pause_overlay:
+		show_pause()
+	elif current_page == "mode":
 		show_play()
 	elif current_page != "main":
 		show_main()
+
+func open_pause() -> void:
+	if pause_open or get_tree().paused:
+		return
+	previous_mouse_mode = Input.mouse_mode
+	pause_open = true
+	get_tree().paused = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	pointer_navigation = false
+	ui.show()
+	show_pause()
+	pause_started.emit()
+
+func resume_game() -> void:
+	if not pause_open:
+		return
+	clear_page("closed")
+	ui.hide()
+	pause_open = false
+	get_tree().paused = false
+	Input.mouse_mode = previous_mouse_mode
+	pause_finished.emit()
+
+func show_pause() -> void:
+	clear_page("pause")
+	var shade := ColorRect.new()
+	shade.color = Color(0.025, 0.06, 0.09, 0.40)
+	ui.add_child(shade)
+	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	board()
+	text("PAUSED", Vector2(125, 256), Vector2(437, 94), 78)
+	menu_button("RESUME", 376, resume_game, true, 44, 155, 376, 64)
+	menu_button("SETTINGS", 458, show_settings, false, 40, 155, 376, 64)
+	menu_button("MAIN MENU", 540, return_to_main_menu, false, 40, 155, 376, 64)
+	menu_button("QUIT", 622, func(): get_tree().quit(), false, 40, 155, 376, 64)
+
+func return_to_main_menu() -> void:
+	# Validate before ending the paused session so a missing destination can recover.
+	var destination := load(main_menu_scene) as PackedScene
+	if destination == null:
+		push_error("Cannot open main menu: " + main_menu_scene)
+		return
+	resume_game()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	get_tree().change_scene_to_packed(destination)
+
+func _exit_tree() -> void:
+	if pause_overlay and pause_open:
+		get_tree().paused = false
+		Input.mouse_mode = previous_mouse_mode
 
 func clear_page(page: String) -> void:
 	pending_binding = null

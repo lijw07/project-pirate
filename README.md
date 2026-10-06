@@ -27,7 +27,19 @@ Open `project.godot` in Godot 4.7.
 | Scene | What it shows | How to open |
 | --- | --- | --- |
 | `scenes/water_test_scene.tscn` | Deep-sea toon ocean with massive swells | Open it and press F6 |
-| `scenes/gym_test_scene.tscn` | Filler ship floating on the ocean, for tuning ship movement | Open it and press F6 |
+| `scenes/bouyancy_test_scene.tscn` | Filler ship floating on the ocean, for tuning buoyancy | Open it and press F6 |
+| `scenes/ship_movement_test_scene.tscn` | Sail the filler ship through deep swells with the overhead camera and a speed/heading readout | Open it and press F6 |
+
+### Sailing (ship movement test scene)
+
+| Input | Action |
+| --- | --- |
+| W / Up | Raise sails one level (3 levels) |
+| S / Down | Lower sails one level; at a stop, selects reverse |
+| A / D or Left / Right | Hold to turn the rudder further left / right; release and it holds that angle. Ease it back near the middle and it snaps to centre |
+| Mouse wheel or pinch | Zoom |
+
+Speeds, acceleration, drag, keel grip and steering are tuned on the `ShipMovement` node of `prefabs/filler_ship.tscn`.
 
 ### Free-look camera (test scenes)
 
@@ -47,7 +59,7 @@ Folders and files use snake_case and are grouped by file type.
 | --- | --- |
 | `scenes/` | Playable and test scenes |
 | `prefabs/` | Reusable scenes instanced into other scenes: ocean, ships |
-| `scripts/` | GDScript, grouped by system (`scripts/ocean/`, `scripts/camera/`) |
+| `scripts/` | GDScript, grouped by system (`scripts/ocean/`, `scripts/ships/`, `scripts/camera/`, `scripts/ui/`) |
 | `shaders/` | Shader code |
 | `materials/` | Material resources |
 | `resources/` | Data resources: wave presets (`resources/waves/`), environments (`resources/environments/`) |
@@ -63,6 +75,8 @@ Each test exits with the number of failed checks.
 ```
 godot --headless -s res://tests/test_ocean.gd
 godot --headless -s res://tests/test_buoyancy.gd
+godot --headless -s res://tests/test_ship_movement.gd
+godot --headless -s res://tests/test_overhead_camera.gd
 ```
 
 ## Credits
