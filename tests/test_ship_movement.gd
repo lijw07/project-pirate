@@ -27,6 +27,7 @@ func _initialize() -> void:
 	_check(await _sails_through_deep_sea(), "ship stays in the water at full speed through deep swells")
 	_check(await _movement_scene_wires_player(), "movement scene wires input, camera and HUD to the ship")
 	_check(await _player_actions_drive_ship(), "sail and steer actions drive the player ship")
+	_check(await _rudder_steps_hold_their_angle(), "rudder notches stay within limits and hold their angle")
 	print("ship movement test failures: ", failures)
 	quit(failures)
 
@@ -124,7 +125,7 @@ func _right_rudder_turns_clockwise() -> bool:
 	movement.set_sail_level(2)
 	await _simulate(12.0)
 	var start_heading := movement.heading_degrees()
-	movement.steer(1.0)
+	movement.set_rudder_level(movement.rudder_steps)
 	await _simulate(6.0)
 	var turned := _turned_degrees(movement, start_heading)
 	print("  turned %.1f degrees" % turned)
@@ -134,7 +135,7 @@ func _right_rudder_turns_clockwise() -> bool:
 
 func _steering_weak_when_stopped() -> bool:
 	var movement := await _spawn_ship()
-	movement.steer(1.0)
+	movement.set_rudder_level(movement.rudder_steps)
 	await _simulate(4.0)
 	var yaw_rate := rad_to_deg(absf(_ship(movement).angular_velocity.y))
 	var limit := movement.max_turn_rate_degrees * movement.minimum_steerage * 1.5
@@ -148,7 +149,7 @@ func _heels_gently_in_turn() -> bool:
 	var ship := _ship(movement)
 	movement.set_sail_level(movement.highest_sail_level())
 	await _simulate(20.0)
-	movement.steer(1.0)
+	movement.set_rudder_level(movement.rudder_steps)
 	var steepest_heel := 0.0
 	for second in 10:
 		await _simulate(1.0)
@@ -188,7 +189,7 @@ func _reverse_steering_flips() -> bool:
 	movement.set_sail_level(ShipMovement.REVERSE_LEVEL)
 	await _simulate(12.0)
 	var start_heading := movement.heading_degrees()
-	movement.steer(1.0)
+	movement.set_rudder_level(movement.rudder_steps)
 	await _simulate(5.0)
 	var turned := _turned_degrees(movement, start_heading)
 	print("  turned %.1f degrees while reversing" % turned)
@@ -206,7 +207,7 @@ func _sails_through_deep_sea() -> bool:
 	var airborne_ticks := 0
 	var total_speed := 0.0
 	for tick in ticks:
-		movement.steer(1.0 if (tick / 600) % 2 == 1 else 0.0)
+		movement.set_rudder_level(movement.rudder_steps if (tick / 600) % 2 == 1 else 0)
 		await physics_frame
 		total_speed += movement.forward_speed()
 		if movement.buoyancy.submerged_fraction == 0.0:
@@ -241,15 +242,32 @@ func _player_actions_drive_ship() -> bool:
 		await _tap(&"sail_raise")
 	await _tap(&"sail_lower")
 	var raised_twice_lowered_once := movement.sail_level == 1
-	Input.action_press(&"steer_right")
-	await _simulate(1.0)
-	var rudder_right := movement.rudder > 0.9
-	Input.action_release(&"steer_right")
-	await _simulate(1.0)
-	var rudder_centred := is_zero_approx(movement.rudder)
-	print("  sail level %d, rudder %.2f after release" % [movement.sail_level, movement.rudder])
+	for press in 2:
+		await _tap(&"steer_right")
+	await _tap(&"steer_left")
+	var one_notch_right := movement.rudder_level == 1
+	await _simulate(2.0)
+	var rudder_held := movement.rudder > 0.0 and is_equal_approx(movement.rudder, movement.rudder_angle())
+	print("  sail level %d, rudder level %d, rudder %.2f after release" % [movement.sail_level, movement.rudder_level, movement.rudder])
 	level.free()
-	return raised_twice_lowered_once and rudder_right and rudder_centred
+	return raised_twice_lowered_once and one_notch_right and rudder_held
+
+
+func _rudder_steps_hold_their_angle() -> bool:
+	var movement := await _spawn_ship()
+	movement.set_sail_level(2)
+	for press in movement.rudder_steps + 2:
+		movement.turn_rudder_right()
+	var hard_right := movement.rudder_level == movement.rudder_steps
+	await _simulate(10.0)
+	var still_hard_right := is_equal_approx(movement.rudder, 1.0)
+	for press in movement.rudder_steps * 2 + 2:
+		movement.turn_rudder_left()
+	var hard_left := movement.rudder_level == -movement.rudder_steps
+	await _simulate(3.0)
+	var swung_left := is_equal_approx(movement.rudder, -1.0)
+	_despawn(movement)
+	return hard_right and still_hard_right and hard_left and swung_left
 
 
 func _tap(action: StringName) -> void:
