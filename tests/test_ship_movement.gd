@@ -27,7 +27,7 @@ func _initialize() -> void:
 	_check(await _sails_through_deep_sea(), "ship stays in the water at full speed through deep swells")
 	_check(await _movement_scene_wires_player(), "movement scene wires input, camera and HUD to the ship")
 	_check(await _player_actions_drive_ship(), "sail and steer actions drive the player ship")
-	_check(await _rudder_steps_hold_their_angle(), "rudder notches stay within limits and hold their angle")
+	_check(await _rudder_follows_held_steering(), "held steering grows the rudder, release keeps it, and it snaps to centre")
 	print("ship movement test failures: ", failures)
 	quit(failures)
 
@@ -125,7 +125,7 @@ func _right_rudder_turns_clockwise() -> bool:
 	movement.set_sail_level(2)
 	await _simulate(12.0)
 	var start_heading := movement.heading_degrees()
-	movement.set_rudder_level(movement.rudder_steps)
+	movement.set_rudder(1.0)
 	await _simulate(6.0)
 	var turned := _turned_degrees(movement, start_heading)
 	print("  turned %.1f degrees" % turned)
@@ -135,7 +135,7 @@ func _right_rudder_turns_clockwise() -> bool:
 
 func _steering_weak_when_stopped() -> bool:
 	var movement := await _spawn_ship()
-	movement.set_rudder_level(movement.rudder_steps)
+	movement.set_rudder(1.0)
 	await _simulate(4.0)
 	var yaw_rate := rad_to_deg(absf(_ship(movement).angular_velocity.y))
 	var limit := movement.max_turn_rate_degrees * movement.minimum_steerage * 1.5
@@ -149,7 +149,7 @@ func _heels_gently_in_turn() -> bool:
 	var ship := _ship(movement)
 	movement.set_sail_level(movement.highest_sail_level())
 	await _simulate(20.0)
-	movement.set_rudder_level(movement.rudder_steps)
+	movement.set_rudder(1.0)
 	var steepest_heel := 0.0
 	for second in 10:
 		await _simulate(1.0)
@@ -189,7 +189,7 @@ func _reverse_steering_flips() -> bool:
 	movement.set_sail_level(ShipMovement.REVERSE_LEVEL)
 	await _simulate(12.0)
 	var start_heading := movement.heading_degrees()
-	movement.set_rudder_level(movement.rudder_steps)
+	movement.set_rudder(1.0)
 	await _simulate(5.0)
 	var turned := _turned_degrees(movement, start_heading)
 	print("  turned %.1f degrees while reversing" % turned)
@@ -207,7 +207,7 @@ func _sails_through_deep_sea() -> bool:
 	var airborne_ticks := 0
 	var total_speed := 0.0
 	for tick in ticks:
-		movement.set_rudder_level(movement.rudder_steps if (tick / 600) % 2 == 1 else 0)
+		movement.set_rudder(1.0 if (tick / 600) % 2 == 1 else 0.0)
 		await physics_frame
 		total_speed += movement.forward_speed()
 		if movement.buoyancy.submerged_fraction == 0.0:
@@ -242,32 +242,35 @@ func _player_actions_drive_ship() -> bool:
 		await _tap(&"sail_raise")
 	await _tap(&"sail_lower")
 	var raised_twice_lowered_once := movement.sail_level == 1
-	for press in 2:
-		await _tap(&"steer_right")
-	await _tap(&"steer_left")
-	var one_notch_right := movement.rudder_level == 1
+	Input.action_press(&"steer_right")
+	await _simulate(0.5)
+	var after_short_hold := movement.rudder
+	await _simulate(0.5)
+	var after_longer_hold := movement.rudder
+	Input.action_release(&"steer_right")
 	await _simulate(2.0)
-	var rudder_held := movement.rudder > 0.0 and is_equal_approx(movement.rudder, movement.rudder_angle())
-	print("  sail level %d, rudder level %d, rudder %.2f after release" % [movement.sail_level, movement.rudder_level, movement.rudder])
+	var kept := movement.rudder
+	print("  rudder %.2f after 0.5 s, %.2f after 1 s, %.2f 2 s after release" % [after_short_hold, after_longer_hold, kept])
 	level.free()
-	return raised_twice_lowered_once and one_notch_right and rudder_held
+	return raised_twice_lowered_once and after_short_hold > 0.0 and after_longer_hold > after_short_hold and is_equal_approx(kept, after_longer_hold)
 
 
-func _rudder_steps_hold_their_angle() -> bool:
+func _rudder_follows_held_steering() -> bool:
 	var movement := await _spawn_ship()
-	movement.set_sail_level(2)
-	for press in movement.rudder_steps + 2:
-		movement.turn_rudder_right()
-	var hard_right := movement.rudder_level == movement.rudder_steps
-	await _simulate(10.0)
-	var still_hard_right := is_equal_approx(movement.rudder, 1.0)
-	for press in movement.rudder_steps * 2 + 2:
-		movement.turn_rudder_left()
-	var hard_left := movement.rudder_level == -movement.rudder_steps
-	await _simulate(3.0)
-	var swung_left := is_equal_approx(movement.rudder, -1.0)
+	var time_to_full_lock := 1.0 / movement.rudder_turn_rate
+	for tick in roundi((time_to_full_lock + 1.0) * Engine.physics_ticks_per_second):
+		movement.turn_rudder(1.0, 1.0 / Engine.physics_ticks_per_second)
+	var stops_at_full_lock := is_equal_approx(movement.rudder, 1.0)
+	movement.settle_rudder()
+	var full_lock_kept := is_equal_approx(movement.rudder, 1.0)
+	movement.set_rudder(movement.rudder_center_snap * 0.5)
+	movement.settle_rudder()
+	var snapped_to_centre := is_zero_approx(movement.rudder)
+	movement.set_rudder(-0.5)
+	movement.settle_rudder()
+	var half_left_kept := is_equal_approx(movement.rudder, -0.5)
 	_despawn(movement)
-	return hard_right and still_hard_right and hard_left and swung_left
+	return stops_at_full_lock and full_lock_kept and snapped_to_centre and half_left_kept
 
 
 func _tap(action: StringName) -> void:

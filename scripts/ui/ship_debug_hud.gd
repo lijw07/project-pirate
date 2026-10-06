@@ -2,7 +2,7 @@ class_name ShipDebugHud
 extends Label
 
 const KNOTS_PER_METER_PER_SECOND := 1.944
-const CONTROLS := "W / S  raise / lower sails (S at a stop reverses)\nA / D  turn the rudder one notch (it holds its angle)\nScroll or pinch  zoom"
+const CONTROLS := "W / S  raise / lower sails (S at a stop reverses)\nA / D  hold to turn the rudder further (it holds its angle when released)\nScroll or pinch  zoom"
 
 @export var movement: ShipMovement
 
@@ -25,10 +25,10 @@ func _sail_label() -> String:
 
 
 func _rudder_label() -> String:
-	if movement.rudder_level == 0:
+	if is_zero_approx(movement.rudder):
 		return "centred"
-	var side := "right" if movement.rudder_level > 0 else "left"
-	return "%d / %d %s" % [absi(movement.rudder_level), movement.rudder_steps, side]
+	var side := "right" if movement.rudder > 0.0 else "left"
+	return "%d%% %s" % [roundi(absf(movement.rudder) * 100.0), side]
 
 
 func _knots(meters_per_second: float) -> float:

@@ -36,7 +36,7 @@ Open `project.godot` in Godot 4.7.
 | --- | --- |
 | W / Up | Raise sails one level (3 levels) |
 | S / Down | Lower sails one level; at a stop, selects reverse |
-| A / D or Left / Right | Turn the rudder one notch left / right (3 notches each way); it holds its angle until you tap again |
+| A / D or Left / Right | Hold to turn the rudder further left / right; release and it holds that angle. Ease it back near the middle and it snaps to centre |
 | Mouse wheel or pinch | Zoom |
 
 Speeds, acceleration, drag, keel grip and steering are tuned on the `ShipMovement` node of `prefabs/filler_ship.tscn`.

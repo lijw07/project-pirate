@@ -2,7 +2,6 @@ class_name ShipMovement
 extends Node
 
 signal sail_level_changed(level: int)
-signal rudder_level_changed(level: int)
 
 const REVERSE_LEVEL := -1
 const STOPPED_LEVEL := 0
@@ -23,15 +22,14 @@ const REVERSING_SPEED_THRESHOLD := -0.5
 @export_range(0.0, 5.0, 0.05, "suffix:m") var keel_depth := 0.3
 
 @export_group("Steering")
-@export_range(1, 10) var rudder_steps := 3
+@export_range(0.05, 5.0, 0.05, "suffix:1/s") var rudder_turn_rate := 0.6
+@export_range(0.0, 0.5, 0.01) var rudder_center_snap := 0.08
 @export_range(1.0, 90.0, 0.5, "suffix:deg/s") var max_turn_rate_degrees := 22.0
 @export_range(0.1, 30.0, 0.1, "suffix:m/s") var full_steerage_speed := 5.0
 @export_range(0.0, 1.0, 0.01) var minimum_steerage := 0.15
 @export_range(0.1, 10.0, 0.1, "suffix:1/s") var turn_responsiveness := 2.0
-@export_range(0.1, 10.0, 0.1, "suffix:1/s") var rudder_speed := 2.0
 
 var sail_level := STOPPED_LEVEL
-var rudder_level := 0
 var rudder := 0.0
 var thrust := 0.0
 
@@ -44,7 +42,6 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	rudder = move_toward(rudder, rudder_angle(), rudder_speed * delta)
 	thrust = move_toward(thrust, _drag_at(target_speed()), thrust_change_rate * delta)
 	var grip := _water_grip()
 	if grip <= 0.0:
@@ -70,24 +67,17 @@ func set_sail_level(level: int) -> void:
 	sail_level_changed.emit(sail_level)
 
 
-func turn_rudder_right() -> void:
-	set_rudder_level(rudder_level + 1)
+func turn_rudder(direction: float, delta: float) -> void:
+	set_rudder(rudder + signf(direction) * rudder_turn_rate * delta)
 
 
-func turn_rudder_left() -> void:
-	set_rudder_level(rudder_level - 1)
+func set_rudder(angle: float) -> void:
+	rudder = clampf(angle, -1.0, 1.0)
 
 
-func set_rudder_level(level: int) -> void:
-	var clamped := clampi(level, -rudder_steps, rudder_steps)
-	if clamped == rudder_level:
-		return
-	rudder_level = clamped
-	rudder_level_changed.emit(rudder_level)
-
-
-func rudder_angle() -> float:
-	return float(rudder_level) / rudder_steps
+func settle_rudder() -> void:
+	if absf(rudder) < rudder_center_snap:
+		rudder = 0.0
 
 
 func lowest_sail_level() -> int:
