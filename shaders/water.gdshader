@@ -2,6 +2,7 @@ shader_type spatial;
 render_mode blend_mix, depth_draw_always, cull_back, world_vertex_coords;
 
 #define MAX_WAVES 8
+#include "res://shaders/ship_wake.gdshaderinc"
 
 global uniform float ocean_time;
 global uniform vec3 ocean_focus;
@@ -128,6 +129,7 @@ void vertex() {
 	}
 	offset *= wave_fade;
 	VERTEX += offset;
+	wake_world = VERTEX.xz;
 	NORMAL = normalize(mix(vec3(0.0, 1.0, 0.0), normalize(cross(tangent_z, tangent_x)), wave_fade));
 	height_ratio = offset.y / wave_height_sigma;
 	foam_fade = smoothstep(foam_fade_max, foam_fade_min, focus_distance);
@@ -169,7 +171,9 @@ void fragment() {
 	float shore = 1.0 - clamp(depth / shore_foam_depth, 0.0, 1.0);
 	float foam = max(crisp(1.0 + foam_edge_softness - crest, noise), crisp(1.0 + foam_edge_softness - shore, noise));
 
-	ALBEDO = mix(water, foam_color, foam);
+	vec2 wake = ribbon_wake(wake_world);
+	water = mix(water, vec3(0.48, 0.79, 0.90), wake.y);
+	ALBEDO = mix(water, foam_color, max(foam, wake.x));
 	ROUGHNESS = 1.0;
 	SPECULAR = 0.0;
 	METALLIC = 0.0;

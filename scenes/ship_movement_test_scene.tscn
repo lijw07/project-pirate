@@ -1,39 +1,47 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cetirp2uw7qv7"]
 
 [ext_resource type="PackedScene" path="res://prefabs/ocean.tscn" id="1_ocean"]
 [ext_resource type="Environment" uid="uid://dcwhk7c3s6lj3" path="res://resources/environments/sea_environment.tres" id="2_environment"]
 [ext_resource type="PackedScene" path="res://prefabs/filler_ship.tscn" id="3_ship"]
-[ext_resource type="Script" path="res://scripts/ships/ship_player_input.gd" id="4_input"]
-[ext_resource type="Script" path="res://scripts/camera/overhead_camera.gd" id="5_camera"]
-[ext_resource type="Script" path="res://scripts/ui/ship_debug_hud.gd" id="6_hud"]
+[ext_resource type="Script" uid="uid://blraal6tkfawu" path="res://scripts/ships/ship_player_input.gd" id="4_input"]
+[ext_resource type="Script" uid="uid://cuekd4xlnhdgj" path="res://scripts/camera/overhead_camera.gd" id="5_camera"]
+[ext_resource type="Script" uid="uid://cl8k608pqkctm" path="res://scripts/ui/ship_debug_hud.gd" id="6_hud"]
+[ext_resource type="Script" path="res://scripts/ships/ship_wake.gd" id="7_wake"]
 
-[node name="ShipMovementTestScene" type="Node3D"]
+[node name="ShipMovementTestScene" type="Node3D" unique_id=713593206]
 
-[node name="Ocean" parent="." instance=ExtResource("1_ocean")]
+[node name="Ocean" parent="." unique_id=1591455137 instance=ExtResource("1_ocean")]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="ShipWake" type="Node" parent="." node_paths=PackedStringArray("ocean", "movement")]
+script = ExtResource("7_wake")
+ocean = NodePath("../Ocean")
+movement = NodePath("../PlayerShip/ShipMovement")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2101152249]
 environment = ExtResource("2_environment")
 
-[node name="Sun" type="DirectionalLight3D" parent="."]
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1476735028]
 transform = Transform3D(0.8660254, -0.40957603, 0.28678823, 0, 0.57357645, 0.81915206, -0.5, -0.7094065, 0.49673176, 0, 10, 0)
 shadow_enabled = true
 
-[node name="PlayerShip" parent="." instance=ExtResource("3_ship")]
+[node name="PlayerShip" parent="." unique_id=2052231138 instance=ExtResource("3_ship")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
 
-[node name="PlayerInput" type="Node" parent="PlayerShip" node_paths=PackedStringArray("movement")]
+[node name="PlayerInput" type="Node" parent="PlayerShip" unique_id=2069449034 node_paths=PackedStringArray("movement")]
 script = ExtResource("4_input")
 movement = NodePath("../ShipMovement")
 
-[node name="OverheadCamera" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, 0, 0, 0.64278764, 0.76604444, 0, -0.76604444, 0.64278764, 0, 46, 38.6)
+[node name="OverheadCamera" type="Camera3D" parent="." unique_id=349751759 node_paths=PackedStringArray("target")]
+transform = Transform3D(0.90630776, -0.42261827, 0, 0.2716538, 0.5825634, 0.76604444, -0.3237444, -0.69427204, 0.64278764, 0, 46, 38.6)
 current = true
+fov = 50.0
 script = ExtResource("5_camera")
 target = NodePath("../PlayerShip")
+min_distance = 50.0
 
-[node name="Hud" type="CanvasLayer" parent="."]
+[node name="Hud" type="CanvasLayer" parent="." unique_id=1825049571]
 
-[node name="ShipDebugHud" type="Label" parent="Hud" node_paths=PackedStringArray("movement")]
+[node name="ShipDebugHud" type="Label" parent="Hud" unique_id=302725362 node_paths=PackedStringArray("movement")]
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 416.0
