@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/bouyancy_test_scene.tscn" id="1_game"]
+[ext_resource type="PackedScene" path="res://prefabs/ui/pause_menu.tscn" id="2_pause"]
+[ext_resource type="Script" path="res://scripts/ui/pause_menu_preview.gd" id="3_preview"]
+
+[node name="PauseMenuPreview" instance=ExtResource("1_game")]
+script = ExtResource("3_preview")
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_pause")]

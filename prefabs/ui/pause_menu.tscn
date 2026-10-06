@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/harbor_sign_menu.gd" id="1_menu"]
+
+[node name="PauseMenu" type="Node3D"]
+process_mode = 3
+script = ExtResource("1_menu")
+pause_overlay = true

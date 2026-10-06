@@ -31,8 +31,6 @@ group_uniforms;
 group_uniforms ToonLighting;
 uniform float light_band : hint_range(-1.0, 1.0) = 0.15;
 uniform float band_softness : hint_range(0.0, 0.5) = 0.05;
-uniform float glint_size : hint_range(0.0, 0.2) = 0.02;
-uniform float glint_strength : hint_range(0.0, 2.0) = 0.5;
 group_uniforms;
 
 group_uniforms Whitecaps;
@@ -181,7 +179,4 @@ void fragment() {
 void light() {
 	float lit = smoothstep(light_band - band_softness, light_band + band_softness, dot(NORMAL, LIGHT));
 	DIFFUSE_LIGHT += mix(shadow_tint, vec3(1.0), lit) * LIGHT_COLOR * ATTENUATION / PI;
-	float facing = dot(NORMAL, normalize(LIGHT + VIEW));
-	float glint = smoothstep(1.0 - glint_size - 0.004, 1.0 - glint_size + 0.004, facing);
-	SPECULAR_LIGHT += glint * lit * glint_strength * LIGHT_COLOR * ATTENUATION / PI;
 }
