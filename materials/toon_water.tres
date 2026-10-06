@@ -1,16 +1,52 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ix4pyhc6lpmv"]
 
-[ext_resource type="Shader" path="res://shaders/water.gdshader" id="1_shader"]
-[ext_resource type="Texture2D" path="res://assets/third_party/boujie_water/foam_2.png" id="2_foam"]
+[ext_resource type="Shader" uid="uid://bnlwect116ysf" path="res://shaders/water.gdshader" id="1_shader"]
+[ext_resource type="Texture2D" uid="uid://cy4xp8e5qrqib" path="res://assets/third_party/boujie_water/foam_2.png" id="2_foam"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_shader")
+shader_parameter/trough_color = Color(0.13, 0.5, 0.8, 1)
+shader_parameter/swell_color = Color(0.2, 0.6, 0.855, 1)
+shader_parameter/crest_color = Color(0.2, 0.6, 0.855, 1)
+shader_parameter/pattern_color = Color(0.75, 0.9, 0.98, 1)
+shader_parameter/shallow_color = Color(0.518, 0.757, 0.914, 1)
+shader_parameter/foam_color = Color(0.97, 0.99, 1, 1)
+shader_parameter/shadow_tint = Color(0.62, 0.72, 0.9, 1)
+shader_parameter/trough_band = -0.5
+shader_parameter/crest_band = 0.6
+shader_parameter/color_band_softness = 0.08
+shader_parameter/pattern_density = 0.7
+shader_parameter/pattern_threshold = 0.94
+shader_parameter/pattern_strength = 0.3
+shader_parameter/light_band = 0.65
+shader_parameter/band_softness = 0.05
+shader_parameter/glint_size = 0.004
+shader_parameter/glint_strength = 0.35
 shader_parameter/foam_noise = ExtResource("2_foam")
 shader_parameter/foam_noise_scale = 45.0
 shader_parameter/foam_edge_softness = 0.06
-shader_parameter/trough_color = Color(0.15, 0.5, 0.78, 1)
-shader_parameter/crest_color = Color(0.22, 0.62, 0.86, 1)
-shader_parameter/glint_size = 0.004
-shader_parameter/glint_strength = 0.35
-shader_parameter/light_band = 0.65
+shader_parameter/whitecap_strength = 1.0
+shader_parameter/wave_height_sigma = 1.0
+shader_parameter/whitecap_start_sigma = 1.0
+shader_parameter/whitecap_full_sigma = 1.8
+shader_parameter/shore_foam_depth = 1.2
+shader_parameter/shallow_depth = 5.0
+shader_parameter/vertex_wave_fade_min = 0.0
+shader_parameter/vertex_wave_fade_max = 0.0
+shader_parameter/foam_fade_min = 0.0
+shader_parameter/foam_fade_max = 0.0
+shader_parameter/WaveCount = 0
+shader_parameter/WaveSteepnesses = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/WaveAmplitudes = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/WaveDirectionsDegrees = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/WaveFrequencies = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/WaveSpeeds = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/WavePhases = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/UVWaveCount = 0
+shader_parameter/UVWaveSteepnesses = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/UVWaveAmplitudes = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/UVWaveDirectionsDegrees = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/UVWaveFrequencies = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/UVWaveSpeeds = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/UVWavePhases = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
