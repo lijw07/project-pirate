@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/water_test_scene.tscn" id="1_test"]
+[ext_resource type="Script" path="res://scripts/ui/harbor_sign_menu.gd" id="2_menu"]
+
+[node name="HarborSignMenu" instance=ExtResource("1_test")]
+script = ExtResource("2_menu")
+
+[node name="FreeLookCamera" parent="." index="3"]
+script = null
