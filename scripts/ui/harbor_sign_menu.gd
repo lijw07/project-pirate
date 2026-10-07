@@ -11,12 +11,12 @@ const CREAM := Color("f3e3c5")
 const INK := Color("17374e")
 const GOLD := Color("d9b457")
 const HOVER := Color("a4dfe3")
-const SHIP := preload("res://assets/third_party/kenney_pirate_kit/Models/GLB format/ship-pirate-large.glb")
+const COSMETIC_SHIP := preload("res://scripts/ships/cosmetics/cosmetic_ship.gd")
+const CUSTOMIZATION_PANEL := preload("res://scripts/ui/ship_customization_panel.gd")
 const BOARD := preload("res://assets/ui/harbor_sign/sign_board.png")
+const BOARD_FACE := preload("res://shaders/harbor_sign_face.gdshader")
 const SELECTION := preload("res://assets/ui/harbor_sign/selection.svg")
 const HOVER_SELECTION := preload("res://assets/ui/harbor_sign/hover.svg")
-const COLORS := [Color("c47b43"), Color("387c87"), Color("953e45"), Color("52673b"), Color("49435f")]
-const COLOR_NAMES := ["Timber", "Ocean", "Crimson", "Moss", "Midnight"]
 
 @onready var ocean := get_node_or_null("Ocean") as Ocean
 @onready var camera := get_node_or_null("FreeLookCamera") as Camera3D
@@ -28,7 +28,13 @@ var previous_mouse_mode := Input.MOUSE_MODE_VISIBLE
 var display_font: SystemFont
 var body_font: SystemFont
 var current_page := "main"
-var selected_color := 0
+var workshop: ShipCustomizationPanel
+var workshop_original: Dictionary = {}
+var orbit_yaw := 2.47
+var orbit_pitch := 0.30
+var orbit_distance := 28.0
+var orbit_target := Vector3(0, 4, 0)
+var open_sea_waves: OceanWaveSet
 var settings_tab := 0
 var pending_binding: Button
 var menu_buttons: Array[Button] = []
@@ -37,13 +43,13 @@ var active_settings_button: Button
 var pointer_navigation := false
 var pointer_sync_queued := false
 var sign_art: NinePatchRect
-var paint_materials: Array[ShaderMaterial] = []
 var bindings := {"Raise sails": "W", "Lower sails": "S", "Steer left": "A", "Steer right": "D", "Free ship": "R"}
 var settings_values := {"Quality preset": 2, "Shadows": 1, "Anti-aliasing": 2, "Display mode": 0, "Resolution": 1, "Vertical sync": 1}
 
 func _ready() -> void:
+	get_window().gui_embed_subwindows = true
 	if not pause_overlay:
-		get_window().title = "Project Pirate — Harbor Sign Preview"
+		get_window().title = "Project Pirate — Harbor"
 	get_window().content_scale_size = Vector2i(1440, 900)
 	get_window().content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
 	get_window().content_scale_aspect = Window.CONTENT_SCALE_ASPECT_EXPAND
@@ -54,8 +60,9 @@ func _ready() -> void:
 	body_font.font_names = PackedStringArray(["Gill Sans", "sans-serif"])
 	if not pause_overlay:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		ship = SHIP.instantiate()
+		ship = COSMETIC_SHIP.new()
 		ship.name = "MenuShip"
+		ship.wind_source = get_node_or_null("WindEffects")
 		ship.position = Vector3(5, 0, 0)
 		add_child(ship)
 		camera.current = true
@@ -91,12 +98,25 @@ func update_ship_and_camera() -> void:
 	var up := Vector3(-slope_x, 1, -slope_z).normalized()
 	ship.position.y = height - 0.5
 	ship.basis = Basis(Quaternion(Vector3.UP, up)) * Basis(Vector3.UP, -0.58)
+	if current_page == "customization":
+		var distance := orbit_distance
+		if is_instance_valid(workshop) and workshop.section == "Flags":
+			var viewport_size := get_viewport().get_visible_rect().size
+			distance *= maxf(1.0, (viewport_size.y / maxf(1.0, viewport_size.x - 620.0)) / (900.0 / 820.0))
+		var right := Vector3(cos(orbit_yaw), 0, -sin(orbit_yaw))
+		var shift := 620.0 / get_viewport().get_visible_rect().size.y * distance * tan(deg_to_rad(camera.fov * 0.5))
+		var target := ship.to_global(orbit_target) - right * shift
+		camera.position = target + Vector3(sin(orbit_yaw) * cos(orbit_pitch), sin(orbit_pitch), cos(orbit_yaw) * cos(orbit_pitch)) * distance
+		camera.position.y = maxf(camera.position.y, surface.height_at(Vector2(camera.position.x, camera.position.z)) + 1.5)
+		camera.look_at(target)
+		return
 	# Match the ship's heave, keeping its waterline framed during the large test swells.
 	var camera_surface := surface.height_at(Vector2(16, 27))
 	camera.position = Vector3(16, maxf(height + 10, camera_surface + 6), 27)
 	camera.look_at(Vector3(0, height + 3.3, 0))
 
 func _input(event: InputEvent) -> void:
+	if current_page == "customization": return
 	if pause_overlay:
 		if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ESCAPE and not is_instance_valid(pending_binding):
 			if not pause_open:
@@ -139,7 +159,8 @@ func queue_pointer_sync() -> void:
 
 func sync_pointer_focus() -> void:
 	pointer_sync_queued = false
-	if not pointer_navigation or (pause_overlay and not pause_open):
+	if not is_inside_tree(): return
+	if current_page == "customization" or not pointer_navigation or (pause_overlay and not pause_open):
 		return
 	var hovered := get_viewport().gui_get_hovered_control()
 	while hovered and not hovered is Button:
@@ -177,6 +198,9 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		go_back()
 
 func go_back() -> void:
+	if current_page == "customization":
+		close_customization(false)
+		return
 	if pause_overlay:
 		show_pause()
 	elif current_page == "mode":
@@ -250,6 +274,9 @@ func clear_page(page: String) -> void:
 func board() -> void:
 	sign_art = NinePatchRect.new()
 	sign_art.texture = BOARD
+	var face_material := ShaderMaterial.new()
+	face_material.shader = BOARD_FACE
+	sign_art.material = face_material
 	# Preserve the skull, beam and lower bevel; stretch only the blank middle.
 	sign_art.patch_margin_top = 450
 	sign_art.patch_margin_bottom = 420
@@ -367,76 +394,63 @@ func show_play() -> void:
 func show_mode(mode: String) -> void:
 	clear_page("mode")
 	page_header(mode.to_upper())
-	text("Coming aboard soon", Vector2(135, 402), Vector2(420, 60), 33)
-	text("This mode is not connected in the preview.", Vector2(139, 478), Vector2(413, 90), 22, CREAM, false)
+	if mode == "Single Player":
+		text("Take your ship for a sail", Vector2(135, 380), Vector2(420, 60), 32)
+		menu_button("SAILING TEST", 462, start_cosmetic_sailing_test, true, 40, 155, 376, 64)
+		text("Your saved appearance comes aboard.", Vector2(139, 548), Vector2(413, 70), 22, CREAM, false)
+	else:
+		text("Coming aboard soon", Vector2(135, 402), Vector2(420, 60), 33)
+		text("This mode is not connected in the preview.", Vector2(139, 478), Vector2(413, 90), 22, CREAM, false)
 
 func show_customization() -> void:
 	clear_page("customization")
-	page_header("YOUR SHIP")
-	text("HULL COLOR", Vector2(140, 369), Vector2(413, 48), 32)
-	for i in COLORS.size():
-		var swatch := Button.new()
-		swatch.position = Vector2(155 + i * 78, 439)
-		swatch.size = Vector2(62, 62)
-		swatch.tooltip_text = COLOR_NAMES[i]
-		for state in ["normal", "hover", "pressed"]:
-			var style := StyleBoxFlat.new()
-			style.bg_color = COLORS[i]
-			style.border_color = CREAM if selected_color == i else GOLD
-			style.set_border_width_all(4 if selected_color == i or state != "normal" else 1)
-			swatch.add_theme_stylebox_override(state, style)
-		swatch.set_meta("rest_style", swatch.get_theme_stylebox("normal"))
-		swatch.set_meta("highlight", swatch.get_theme_stylebox("hover"))
-		swatch.set_meta("pressed_highlight", swatch.get_theme_stylebox("pressed"))
-		swatch.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
-		swatch.set_meta("color_index", i)
-		swatch.pressed.connect(func(): select_color(i))
-		swatch.focus_entered.connect(func(): set_highlight(swatch))
-		swatch.mouse_entered.connect(func():
-			if pointer_navigation: queue_pointer_sync())
-		swatch.mouse_exited.connect(func():
-			if pointer_navigation: queue_pointer_sync())
-		ui.add_child(swatch)
-		menu_buttons.append(swatch)
-		set_highlight(highlighted_button)
-		if selected_color == i:
-			swatch.grab_focus()
-	text(COLOR_NAMES[selected_color], Vector2(135, 517), Vector2(424, 49), 37).name = "ColorName"
-	text("Sails, flags & more to come", Vector2(135, 582), Vector2(424, 45), 22, CREAM, false)
+	board()
+	# A sheltered inspection berth prevents deep-sea swells from hiding close-ups.
+	open_sea_waves = ocean.wave_set
+	var sheltered := open_sea_waves.duplicate(true) as OceanWaveSet
+	for wave in sheltered.height_waves: wave.steepness *= 0.018
+	sheltered.whitecap_strength *= 0.2
+	ocean.wave_set = sheltered
+	inspect_ship("Full ship")
+	workshop = CUSTOMIZATION_PANEL.new()
+	workshop_original = ship.appearance.duplicate(true)
+	workshop.draft = workshop_original.duplicate(true)
+	workshop.appearance_changed.connect(ship.apply)
+	workshop.finished.connect(close_customization)
+	workshop.inspect_requested.connect(inspect_ship)
+	workshop.orbit_requested.connect(func(delta: Vector2):
+		orbit_yaw -= delta.x * 0.008
+		orbit_pitch = clampf(orbit_pitch + delta.y * 0.006, 0.02, 1.3))
+	workshop.zoom_requested.connect(func(amount: float): orbit_distance = clampf(orbit_distance + amount * 1.2, 7, 42))
+	ui.add_child(workshop)
 
-func select_color(index: int) -> void:
-	selected_color = index
-	apply_paint()
-	ui.get_node("ColorName").text = COLOR_NAMES[index]
-	for item in menu_buttons:
-		if item.has_meta("color_index"):
-			var selected: bool = item.get_meta("color_index") == index
-			var rest: StyleBoxFlat = item.get_meta("rest_style")
-			rest.border_color = CREAM if selected else GOLD
-			rest.set_border_width_all(4 if selected else 1)
-	set_highlight(get_viewport().gui_get_focus_owner() as Button)
+func close_customization(saved: bool) -> void:
+	if open_sea_waves: ocean.wave_set = open_sea_waves
+	ship.apply(workshop.draft if saved else workshop_original)
+	show_main()
 
-func collect_paint_materials(node: Node) -> void:
-	if node is MeshInstance3D:
-		for index in node.mesh.get_surface_count():
-			var original := node.get_active_material(index) as StandardMaterial3D
-			if original and original.albedo_texture:
-				var shader := Shader.new()
-				shader.code = "shader_type spatial; uniform sampler2D palette : source_color; uniform vec4 paint : source_color; uniform float amount; void fragment(){vec4 c=texture(palette,UV); float mask=step(c.g*1.22,c.r)*step(c.b*1.18,c.g)*step(0.2,c.r); vec3 painted=paint.rgb*(0.6+dot(c.rgb,vec3(0.299,0.587,0.114))*0.75); ALBEDO=mix(c.rgb,painted,mask*amount); ROUGHNESS=0.9;}"
-				var material := ShaderMaterial.new()
-				material.shader = shader
-				material.set_shader_parameter("palette", original.albedo_texture)
-				node.set_surface_override_material(index, material)
-				paint_materials.append(material)
-	for child in node.get_children():
-		collect_paint_materials(child)
+func inspect_ship(view: String) -> void:
+	# Local bow is +Z. Cosmetic assembly follows the same harbor rotation as the hull.
+	var presets := {
+		"Full ship": [Vector3(0, 4, 0), 32.0, 2.47, 0.38],
+		"Bow": [Vector3(0, 2.8, 5.8), 11.0, 0.65, 0.18],
+		"Stern": [Vector3(0, 3.6, -5.5), 13.0, 2.55, 0.3],
+		"Deck": [Vector3(0, 3.2, 0), 24.0, 2.5, 1.05],
+		"Sails": [Vector3(0, 5.8, -1), 20.0, 0.6, 0.2],
+		"Secondary sail": [Vector3(0, 6.1, -5.3), 14.0, 2.4, 0.15],
+		"Flags": [Vector3(0, 7.5, -0.6), 25.0, 1.48, 0.12],
+		"main flag": [Vector3(0, 9.5, -0.5), 10.0, 1.5, 0.1],
+		"fore flag": [Vector3(0, 6.4, 3.8), 9.0, 1.5, 0.1],
+		"aft flag": [Vector3(0, 8.9, -5.5), 10.0, 1.5, 0.1]
+	}
+	var selected: Array = presets.get(view, presets["Full ship"])
+	orbit_target = selected[0]
+	orbit_distance = selected[1]
+	orbit_yaw = selected[2] - 0.58
+	orbit_pitch = selected[3]
 
-func apply_paint() -> void:
-	if paint_materials.is_empty():
-		collect_paint_materials(ship)
-	for material in paint_materials:
-		material.set_shader_parameter("paint", COLORS[selected_color])
-		material.set_shader_parameter("amount", 0.0 if selected_color == 0 else 1.0)
+func start_cosmetic_sailing_test() -> void:
+	get_tree().change_scene_to_file("res://scenes/cosmetic_sailing_test.tscn")
 
 func show_settings() -> void:
 	clear_page("settings")

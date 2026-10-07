@@ -1,0 +1,320 @@
+{
+  "status": "approved_for_integration",
+  "scope": "Cosmetics only. Armor, cannons and functional equipment belong to in-game progression and are excluded.",
+  "reference_ship": "assets/third_party/kenney_pirate_kit/Models/GLB format/ship-pirate-large.glb",
+  "reference_sha256": "7c3959e0f039a13e5294904282ddc678dfc442fb8b055555cc45eae7a0d2adf8",
+  "coordinates": "Blender Z-up; exported GLB uses Y-up and aligns with the existing unscaled ship.",
+  "animation_loop_seconds": 2.6666666666666665,
+  "modules": [
+    {
+      "id": "pennants",
+      "name": "Swallowtail pennants",
+      "slot": "mast_flags",
+      "animated": true,
+      "triangles": 288,
+      "file": "pennants.glb",
+      "sha256": "643464b90479a17646758db3b4db9cb536e6b6f60c59f2466a4edc13181b310d"
+    },
+    {
+      "id": "pennants_square",
+      "name": "Square flags",
+      "slot": "mast_flags",
+      "animated": true,
+      "triangles": 288,
+      "file": "pennants_square.glb",
+      "sha256": "db8f05ce22926e3340be173b7d41be78f7dae43fd92ebd5b9a560e710112fd39"
+    },
+    {
+      "id": "pennants_pointed",
+      "name": "Pointed pennants",
+      "slot": "mast_flags",
+      "animated": true,
+      "triangles": 288,
+      "file": "pennants_pointed.glb",
+      "sha256": "fb152aab2454b3486c69f7c31ebbf7e6b1b98227d30b22e2877d90f39c49394e"
+    },
+    {
+      "id": "pennants_streamer",
+      "name": "Long streamers",
+      "slot": "mast_flags",
+      "animated": true,
+      "triangles": 288,
+      "file": "pennants_streamer.glb",
+      "sha256": "27e11901a6d991035146c85a18898529a768c2a87a380a39e75133c427e6754e"
+    },
+    {
+      "id": "lanterns",
+      "name": "Swaying stern lanterns",
+      "slot": "stern_corners",
+      "animated": true,
+      "triangles": 952,
+      "file": "lanterns.glb",
+      "sha256": "3619f6b100692e5c169070fc453fdee52b84cf33d822da557c28c93b4b12e28f"
+    },
+    {
+      "id": "gull",
+      "name": "Gilded gull figurehead",
+      "slot": "figurehead",
+      "animated": false,
+      "triangles": 344,
+      "file": "gull.glb",
+      "sha256": "57411de9b01b1cfd517a84b9c41152980eb7ed0c471a2e329f8e928dcfed6cee"
+    },
+    {
+      "id": "serpent",
+      "name": "Sea serpent figurehead",
+      "slot": "figurehead",
+      "animated": false,
+      "triangles": 292,
+      "file": "serpent.glb",
+      "sha256": "af8720f8dde22bb8069ab1f78371812cd669c4f86ddb531388a593baa9f4d80c"
+    },
+    {
+      "id": "kraken",
+      "name": "Kraken crest",
+      "slot": "stern_trophy",
+      "animated": false,
+      "triangles": 788,
+      "file": "kraken.glb",
+      "sha256": "fefa5cc30365a4e4f3fb7d613f4a848f5e79264134fa9f9b5b38a9e7afac7d71"
+    },
+    {
+      "id": "leviathan",
+      "name": "Leviathan trophy",
+      "slot": "stern_trophy",
+      "animated": false,
+      "triangles": 533,
+      "file": "leviathan.glb",
+      "sha256": "7bd0f5cd6553faa95d3b1dc50835f8236b15a5b0198fcf31a95c54de7c544022"
+    },
+    {
+      "id": "banners",
+      "name": "Stern silk banners",
+      "slot": "stern_banners",
+      "animated": true,
+      "triangles": 184,
+      "file": "banners.glb",
+      "sha256": "740ae29b2312a552880148f1aa42649982eea1bf7014eba8f64e08a445c1ad71"
+    },
+    {
+      "id": "bunting",
+      "name": "Harbor bunting",
+      "slot": "aft_bunting",
+      "animated": true,
+      "triangles": 255,
+      "file": "bunting.glb",
+      "sha256": "caba35f8101aa2022a4e3448debc502757bd7424a0c261f78644ffca5cf7cc31"
+    },
+    {
+      "id": "tassels",
+      "name": "Braided rail trim",
+      "slot": "side_trim",
+      "animated": true,
+      "triangles": 3440,
+      "file": "tassels.glb",
+      "sha256": "05b3bf7b14dc3c3e78b1b1773bc4df169077bbbe9a5d79c9340cf882faa90b98"
+    },
+    {
+      "id": "lion",
+      "name": "Golden lion figurehead",
+      "slot": "figurehead",
+      "animated": false,
+      "triangles": 280,
+      "file": "lion.glb",
+      "sha256": "fd3fee6a31ab8aed97d0509f16bb0ecd24045ba7e0b36f0f32eb608a99d8e740"
+    },
+    {
+      "id": "nautilus",
+      "name": "Nautilus carving",
+      "slot": "figurehead",
+      "animated": false,
+      "triangles": 1076,
+      "file": "nautilus.glb",
+      "sha256": "5350e324e384af966f37fe6c71ea9e0e51cd8ec764261cf599b036e71b61e2e2"
+    },
+    {
+      "id": "cobalt_lamps",
+      "name": "Cobalt glass lanterns",
+      "slot": "stern_corners",
+      "animated": true,
+      "triangles": 552,
+      "file": "cobalt_lamps.glb",
+      "sha256": "294b7d8d41be3154af181835eddfbe168cb8a6997fc90f7f2bbe478b990a741a"
+    },
+    {
+      "id": "paper_lamps",
+      "name": "Festival paper lanterns",
+      "slot": "stern_corners",
+      "animated": true,
+      "triangles": 1512,
+      "file": "paper_lamps.glb",
+      "sha256": "829d6a065b1cb7e12de13042d4e0a5339c2a0a85197778d9ae03b523c3acb444"
+    },
+    {
+      "id": "compass_crest",
+      "name": "Compass rose crest",
+      "slot": "stern_trophy",
+      "animated": false,
+      "triangles": 264,
+      "file": "compass_crest.glb",
+      "sha256": "f1fab5a5013b620147b591bc2d225c58cc8de33ba1a8f4610807984b069a30dc"
+    },
+    {
+      "id": "sun_crest",
+      "name": "Sunburst crest",
+      "slot": "stern_trophy",
+      "animated": false,
+      "triangles": 328,
+      "file": "sun_crest.glb",
+      "sha256": "c3eb15ec97c833cd04ecfd8063525ccdbe5f3c49068b1a7f9e3b060fc046cf2a"
+    },
+    {
+      "id": "chest",
+      "name": "Keepsake chest",
+      "slot": "deck_prop",
+      "animated": false,
+      "triangles": 180,
+      "file": "chest.glb",
+      "sha256": "be010c3e506ff5e97ae32d64b55ebc23434a6afc5b9ff76e553a5ed4c15af568"
+    },
+    {
+      "id": "crates",
+      "name": "Stacked painted crates",
+      "slot": "deck_prop",
+      "animated": false,
+      "triangles": 184,
+      "file": "crates.glb",
+      "sha256": "328b391d741a2413a474fc4154fe66b0d0256592e4325e334c44c1c6d3334543"
+    },
+    {
+      "id": "rope_coil",
+      "name": "Coiled mooring rope",
+      "slot": "deck_prop",
+      "animated": false,
+      "triangles": 1468,
+      "file": "rope_coil.glb",
+      "sha256": "61b755633e3d6a835f92c33a14c47932c3e1f90ec0060366547cfe9436ed981d"
+    },
+    {
+      "id": "flowers",
+      "name": "Wildflower planter",
+      "slot": "deck_prop",
+      "animated": false,
+      "triangles": 448,
+      "file": "flowers.glb",
+      "sha256": "f76192259a3bccc3e8b29ce5ceea7e2ed5af48ad09d1bc0a25d9b48f08e8c246"
+    },
+    {
+      "id": "bottles",
+      "name": "Bottle collection",
+      "slot": "deck_prop",
+      "animated": false,
+      "triangles": 296,
+      "file": "bottles.glb",
+      "sha256": "9a81eb529c8626745b6bea4ecee35e7ef8ad81802ae1d45cca9784e192bfe6c2"
+    },
+    {
+      "id": "books",
+      "name": "Travel journals",
+      "slot": "deck_prop",
+      "animated": false,
+      "triangles": 136,
+      "file": "books.glb",
+      "sha256": "ee6bdd002a972781c6ce0ea2bd4d414a468f29bfff0fe5b4afaf6ca2c773cff5"
+    },
+    {
+      "id": "barrel",
+      "name": "Painted keepsake barrel",
+      "slot": "deck_prop",
+      "animated": false,
+      "triangles": 856,
+      "file": "barrel.glb",
+      "sha256": "89fb07dc7d69323081eaa334d9647060cceb6edc169093c810f8207d07a86711"
+    },
+    {
+      "id": "cushions",
+      "name": "Captain\u2019s cushions",
+      "slot": "deck_prop",
+      "animated": false,
+      "triangles": 128,
+      "file": "cushions.glb",
+      "sha256": "cd765c9ed4f10b84913c81d691d755c483664f9e271fec1335e5a5f5ea7f00a3"
+    },
+    {
+      "id": "main_sail",
+      "name": "Main Sail \u00b7 square",
+      "slot": "main_sail",
+      "animated": true,
+      "triangles": 1320,
+      "file": "main_sail.glb",
+      "sha256": "f2db8771e7ab9404533784e1617e6c3dbc1733e9aaee6f4275e6030d6dab402d"
+    },
+    {
+      "id": "main_sail_swallowtail",
+      "name": "Main Sail \u00b7 swallowtail",
+      "slot": "main_sail",
+      "animated": true,
+      "triangles": 1236,
+      "file": "main_sail_swallowtail.glb",
+      "sha256": "e48afdd2c74177d75bd3f5f725959688c22e2cfbec49cf6b0122d8413744a4d8"
+    },
+    {
+      "id": "main_sail_pointed",
+      "name": "Main Sail \u00b7 pointed",
+      "slot": "main_sail",
+      "animated": true,
+      "triangles": 1236,
+      "file": "main_sail_pointed.glb",
+      "sha256": "1f7727b2d6f00f19ca3d358a27be1f6bc0f10a2973a522e304750688f8b9e3b8"
+    },
+    {
+      "id": "main_sail_streamer",
+      "name": "Main Sail \u00b7 streamer",
+      "slot": "main_sail",
+      "animated": true,
+      "triangles": 1236,
+      "file": "main_sail_streamer.glb",
+      "sha256": "0b8535c1702b99ccd38c252f63b7750bd91bf527ee8fd28c32009b6d8461274d"
+    },
+    {
+      "id": "secondary_sail",
+      "name": "Secondary Sail \u00b7 square",
+      "slot": "secondary_sail",
+      "animated": true,
+      "triangles": 1320,
+      "file": "secondary_sail.glb",
+      "sha256": "1c856a39b0ac01b706086aeff738c49bc533a6410afea8f2f55bf028083edc71"
+    },
+    {
+      "id": "secondary_sail_swallowtail",
+      "name": "Secondary Sail \u00b7 swallowtail",
+      "slot": "secondary_sail",
+      "animated": true,
+      "triangles": 1236,
+      "file": "secondary_sail_swallowtail.glb",
+      "sha256": "57014a67fa2f11322e04bd7e648232340327f624e0d9974003e9081f0f8fd8b6"
+    },
+    {
+      "id": "secondary_sail_pointed",
+      "name": "Secondary Sail \u00b7 pointed",
+      "slot": "secondary_sail",
+      "animated": true,
+      "triangles": 1236,
+      "file": "secondary_sail_pointed.glb",
+      "sha256": "cf4fbca30dc846970f311355d0cdf50d761137cd124086a95f3b9cc48c6c0a4d"
+    },
+    {
+      "id": "secondary_sail_streamer",
+      "name": "Secondary Sail \u00b7 streamer",
+      "slot": "secondary_sail",
+      "animated": true,
+      "triangles": 1236,
+      "file": "secondary_sail_streamer.glb",
+      "sha256": "eae7640c8c1fe62346a77532961b89c8b5ffa2a94dcf38cd2c2c159db18fd379"
+    }
+  ],
+  "reference_review_edit": "Wooden bowsprit separated for figurehead replacement, bow cloth given an alternate clearance shape, and wood divided into paint regions; original source asset unchanged.",
+  "approval": "User approved the completed customization workshop on 2026-10-06: This is looking great, lets work on adding in this feature.",
+  "derived_reference_sha256": "2b115ba1f7091f9cd652a86ce503eb077075b57dd6587aaf5549c91e5283d720",
+  "provenance": "Cosmetic models and paint designs authored locally for Project Pirate. Reference ship derived from Kenney Pirate Kit (CC0), original retained unchanged."
+}
