@@ -10,6 +10,7 @@ Working now:
 - **Buoyancy**: ships float, pitch and roll on the waves; hull masks keep water off the decks.
 - **Ship movement**: sail levels, reverse, speed-dependent steering and heeling in turns.
 - **Ship wakes**: moving ships leave a spreading V-shaped wake with small ripples, a churned trail and bow foam that grow with speed.
+- **Wind visual test**: directional air trails and a fluttering pennant, with calm, breeze, strong wind and gust presets.
 - **Camera**: overhead player camera that follows the ship at a fixed angle and zooms.
 - **Stuck recovery**: if the ship is wedged against land, a prompt offers to free it.
 - **Pirate assets**: islands, harbors, ships, modules and props as collidable Godot scenes.
@@ -29,6 +30,13 @@ Open `project.godot` in Godot 4.7.
 | `scenes/water_test_scene.tscn` | Deep-sea toon ocean with massive swells | Open it and press F6 |
 | `scenes/bouyancy_test_scene.tscn` | Filler ship floating on the ocean, for tuning buoyancy | Open it and press F6 |
 | `scenes/ship_movement_test_scene.tscn` | Sail the filler ship through deep swells with the overhead camera and a speed/heading readout | Open it and press F6 |
+| `scenes/wind_test_scene.tscn` | Approved wind effects over the shared ocean, with a floating ship and direction controls | Open it and press F6 |
+
+### Wind visual test
+
+Use **1–4** or the buttons to change wind presets, and the slider to change the direction air blows toward. **Space** pauses, **V** toggles trails, **right-drag** orbits, the **mouse wheel** zooms, and **R** resets the camera, direction and preset. The controls scale to the window size.
+
+The reusable `WindEffects` node lives in `scripts/wind/wind_effects.gd`. This scene tests appearance only: it animates a floating ship for reference and applies no wind forces to sailing or waves.
 
 ### Sailing (ship movement test scene)
 
@@ -73,6 +81,7 @@ Folders and files use snake_case and are grouped by file type.
 Each test exits with the number of failed checks.
 
 ```
+godot --headless -s res://tests/test_wind_effects.gd
 godot --headless -s res://tests/test_ocean.gd
 godot --headless -s res://tests/test_buoyancy.gd
 godot --headless -s res://tests/test_ship_movement.gd

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/ship_movement_test_scene.tscn" id="1_test"]
+[ext_resource type="Script" path="res://scripts/ships/cosmetics/cosmetic_ship.gd" id="2_visual"]
+[ext_resource type="PackedScene" path="res://prefabs/ui/pause_menu.tscn" id="3_pause"]
+
+[ext_resource type="Script" path="res://scripts/wind/wind_effects.gd" id="4_wind"]
+
+[node name="CosmeticSailingTest" instance=ExtResource("1_test")]
+
+[node name="Model" parent="PlayerShip" index="0"]
+visible = false
+
+[node name="CosmeticShip" type="Node3D" parent="PlayerShip" node_paths=PackedStringArray("wind_source")]
+position = Vector3(0, -0.6, 0)
+scale = Vector3(0.72, 0.72, 0.72)
+script = ExtResource("2_visual")
+wind_source = NodePath("../../WindEffects")
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_pause")]
+
+[node name="ReturnHint" type="Label" parent="Hud"]
+offset_left = 16.0
+offset_top = 186.0
+offset_right = 480.0
+offset_bottom = 220.0
+text = "Cosmetic sailing test · Esc for harbor menu"
+
+[node name="WindEffects" type="Node3D" parent="."]
+script = ExtResource("4_wind")
