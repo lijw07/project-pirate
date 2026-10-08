@@ -1,0 +1,42 @@
+{
+  "title": "The Blackwater Crew",
+  "bpm": 108,
+  "meter": "6/8",
+  "bars": 48,
+  "duration_seconds": 80.0,
+  "sample_rate": 44100,
+  "seed": 7102027,
+  "provenance": "Original shanty composition rendered with macOS built-in General MIDI instruments. System sound bank is not redistributed. UI cues use original procedural synthesis.",
+  "files": {
+    "music/harbor_of_rivals.wav": {
+      "seconds": 80.0,
+      "peak_dbfs": -2.047458174191171,
+      "rms_dbfs": -17.675148949653202,
+      "sha256": "0854a79e3b5dd42fa57a6d351b8964ac75431ed07bfc9c6f776b66d625df64ad"
+    },
+    "ui/hover.wav": {
+      "seconds": 0.10498866213151928,
+      "peak_dbfs": -15.749154375911623,
+      "rms_dbfs": -25.513728213905686,
+      "sha256": "a96645f04db7f7c6b8774fff63912922e7ceb825d8840fedf43f0ea66e911267"
+    },
+    "ui/click.wav": {
+      "seconds": 0.21,
+      "peak_dbfs": -6.982325592303519,
+      "rms_dbfs": -16.776799241167236,
+      "sha256": "61b22700c02ac819da2b40de9349fb28b131c012b9094df9a11717a70c075d41"
+    },
+    "ui/back.wav": {
+      "seconds": 0.3,
+      "peak_dbfs": -9.425016927144261,
+      "rms_dbfs": -18.920641317779076,
+      "sha256": "f51112f68bb50f0037cbd3ba2411ec54f8b31e9b0e2c5746a20d5b774bf80ef0"
+    },
+    "ui/confirm.wav": {
+      "seconds": 0.48,
+      "peak_dbfs": -6.617006487531192,
+      "rms_dbfs": -18.586660590077216,
+      "sha256": "d1cf3bee03f3b4c5374fb7a7e40d2d2e779ca0aa517ef4d5cf41823b7a430d03"
+    }
+  }
+}

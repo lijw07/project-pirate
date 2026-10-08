@@ -78,6 +78,12 @@ Folders and files use snake_case and are grouped by file type.
 
 ## Tests
 
+### Menu audio
+
+The main menu plays **The Blackwater Crew**, an original looping pirate shanty with accordion, fiddle, plucked strings, and deck percussion. Hover, keyboard navigation, clicks, back/cancel, and successful ship saves have matching cues, including in the pause menu. Music continues across menu pages and fades out when sailing starts. **Settings → Audio** saves separate Music and Effects levels. See `assets/audio/README.md` for the score, source tools, and provenance.
+
+Run the audio integration checks with `godot --headless -s res://tests/test_menu_audio.gd`; omit `--headless` to also verify output through the native audio mixer.
+
 Each test exits with the number of failed checks.
 
 ```

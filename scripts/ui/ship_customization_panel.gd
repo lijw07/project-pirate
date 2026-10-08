@@ -212,6 +212,9 @@ func _button(caption: String, action: Callable) -> Button:
 	b.text = caption
 	b.custom_minimum_size.y = 32
 	b.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	var audio := get_node_or_null("/root/MenuAudio")
+	if audio:
+		audio.bind_button(b, &"" if caption == "Save & return" else (&"back" if caption == "Cancel" else &"click"))
 	b.pressed.connect(action)
 	return b
 
@@ -440,7 +443,10 @@ func _build_content() -> void:
 func _save() -> void:
 	_finish_ship_name(true, false)
 	var error := ShipAppearance.save(draft, save_path)
-	if error == OK: finished.emit(true)
+	if error == OK:
+		var audio := get_node_or_null("/root/MenuAudio")
+		if audio: audio.play_cue(&"confirm")
+		finished.emit(true)
 	else: status.text = "Could not save. Your changes are still here. Try again."
 
 func _preview_input(event: InputEvent) -> void:
@@ -496,6 +502,8 @@ func _input(event: InputEvent) -> void:
 	if not event is InputEventKey or not event.pressed or event.echo: return
 	var focused := get_viewport().gui_get_focus_owner()
 	if focused is LineEdit or focused is TextEdit: return
+	var audio := get_node_or_null("/root/MenuAudio")
+	if audio: audio.navigation_ms = Time.get_ticks_msec()
 	if event.keycode in [KEY_Q, KEY_E]:
 		var categories := tabs.keys()
 		var direction := -1 if event.keycode == KEY_Q else 1

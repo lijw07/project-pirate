@@ -20,6 +20,8 @@ const HOVER_SELECTION := preload("res://assets/ui/harbor_sign/hover.svg")
 
 @onready var ocean := get_node_or_null("Ocean") as Ocean
 @onready var camera := get_node_or_null("FreeLookCamera") as Camera3D
+@onready var audio := get_node("/root/MenuAudio")
+@onready var controls := get_node("/root/ControlSettings")
 var ship: Node3D
 var ui: Control
 var ui_layer: CanvasLayer
@@ -37,13 +39,13 @@ var orbit_target := Vector3(0, 4, 0)
 var open_sea_waves: OceanWaveSet
 var settings_tab := 0
 var pending_binding: Button
+var editing_audio_slider: HSlider
 var menu_buttons: Array[Button] = []
 var highlighted_button: Button
 var active_settings_button: Button
 var pointer_navigation := false
 var pointer_sync_queued := false
 var sign_art: NinePatchRect
-var bindings := {"Raise sails": "W", "Lower sails": "S", "Steer left": "A", "Steer right": "D", "Free ship": "R"}
 var settings_values := {"Quality preset": 2, "Shadows": 1, "Anti-aliasing": 2, "Display mode": 0, "Resolution": 1, "Vertical sync": 1}
 
 func _ready() -> void:
@@ -85,6 +87,7 @@ func _ready() -> void:
 		ui.hide()
 	else:
 		show_main()
+		audio.start_menu_music()
 
 func _process(_delta: float) -> void:
 	update_ship_and_camera()
@@ -117,11 +120,15 @@ func update_ship_and_camera() -> void:
 
 func _input(event: InputEvent) -> void:
 	if current_page == "customization": return
+	if handle_audio_slider_input(event):
+		get_viewport().set_input_as_handled()
+		return
 	if pause_overlay:
 		if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ESCAPE and not is_instance_valid(pending_binding):
 			if not pause_open:
 				open_pause()
 			elif current_page == "pause":
+				audio.play_cue(&"back")
 				resume_game()
 			else:
 				go_back()
@@ -140,8 +147,8 @@ func _input(event: InputEvent) -> void:
 		pointer_navigation = false
 	if is_instance_valid(pending_binding) and event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode != KEY_ESCAPE:
-			bindings[pending_binding.get_meta("action")] = OS.get_keycode_string(event.keycode)
-		pending_binding.text = bindings[pending_binding.get_meta("action")]
+			controls.rebind(pending_binding.get_meta("action"), event)
+		pending_binding.text = controls.key_label(pending_binding.get_meta("action"))
 		pending_binding.add_theme_font_size_override("font_size", 36)
 		pending_binding = null
 		get_viewport().set_input_as_handled()
@@ -151,6 +158,41 @@ func _input(event: InputEvent) -> void:
 		if event.keycode in directions:
 			move_focus(directions[event.keycode])
 			get_viewport().set_input_as_handled()
+
+func handle_audio_slider_input(event: InputEvent) -> bool:
+	if current_page != "settings" or settings_tab != 3 or not event is InputEventKey or not event.pressed:
+		return false
+	var focused := get_viewport().gui_get_focus_owner() as HSlider
+	if focused == null or not ui.is_ancestor_of(focused): return false
+	if event.keycode in [KEY_ENTER, KEY_KP_ENTER, KEY_SPACE]:
+		if not event.echo:
+			pointer_navigation = false
+			if editing_audio_slider == focused:
+				finish_audio_adjustment()
+			else:
+				editing_audio_slider = focused
+				focused.self_modulate = GOLD
+				focused.get_meta("value_label").add_theme_color_override("font_color", GOLD)
+			audio.play_cue(&"click")
+		return true
+	if editing_audio_slider != focused: return false
+	if event.keycode == KEY_ESCAPE:
+		if not event.echo:
+			finish_audio_adjustment()
+			audio.play_cue(&"back")
+		return true
+	var steps := {KEY_A: -1, KEY_LEFT: -1, KEY_S: -1, KEY_DOWN: -1, KEY_D: 1, KEY_RIGHT: 1, KEY_W: 1, KEY_UP: 1}
+	if event.keycode in steps:
+		focused.value += focused.step * steps[event.keycode]
+		return true
+	if event.keycode == KEY_TAB: finish_audio_adjustment()
+	return false
+
+func finish_audio_adjustment() -> void:
+	if is_instance_valid(editing_audio_slider):
+		editing_audio_slider.self_modulate = Color.WHITE
+		editing_audio_slider.get_meta("value_label").add_theme_color_override("font_color", CREAM)
+	editing_audio_slider = null
 
 func queue_pointer_sync() -> void:
 	if not pointer_sync_queued:
@@ -163,6 +205,9 @@ func sync_pointer_focus() -> void:
 	if current_page == "customization" or not pointer_navigation or (pause_overlay and not pause_open):
 		return
 	var hovered := get_viewport().gui_get_hovered_control()
+	if hovered is Slider:
+		set_highlight(null)
+		return
 	while hovered and not hovered is Button:
 		hovered = hovered.get_parent_control()
 	var target := hovered as Button
@@ -179,6 +224,7 @@ func sync_pointer_focus() -> void:
 	set_highlight(target)
 
 func move_focus(direction: Side) -> void:
+	audio.navigation_ms = Time.get_ticks_msec()
 	var focused := get_viewport().gui_get_focus_owner()
 	var target: Control
 	if focused:
@@ -198,6 +244,8 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		go_back()
 
 func go_back() -> void:
+	if current_page != "main" and current_page != "pause":
+		audio.play_cue(&"back")
 	if current_page == "customization":
 		close_customization(false)
 		return
@@ -211,6 +259,7 @@ func go_back() -> void:
 func open_pause() -> void:
 	if pause_open or get_tree().paused:
 		return
+	audio.play_cue(&"click")
 	previous_mouse_mode = Input.mouse_mode
 	pause_open = true
 	get_tree().paused = true
@@ -240,8 +289,7 @@ func show_pause() -> void:
 	text("PAUSED", Vector2(125, 256), Vector2(437, 94), 78)
 	menu_button("RESUME", 376, resume_game, true, 44, 155, 376, 64)
 	menu_button("SETTINGS", 458, show_settings, false, 40, 155, 376, 64)
-	menu_button("MAIN MENU", 540, return_to_main_menu, false, 40, 155, 376, 64)
-	menu_button("QUIT", 622, func(): get_tree().quit(), false, 40, 155, 376, 64)
+	menu_button("QUIT", 540, return_to_main_menu, false, 40, 155, 376, 64)
 
 func return_to_main_menu() -> void:
 	# Validate before ending the paused session so a missing destination can recover.
@@ -254,11 +302,14 @@ func return_to_main_menu() -> void:
 	get_tree().change_scene_to_packed(destination)
 
 func _exit_tree() -> void:
+	if not pause_overlay and is_instance_valid(audio):
+		audio.stop_menu_music()
 	if pause_overlay and pause_open:
 		get_tree().paused = false
 		Input.mouse_mode = previous_mouse_mode
 
 func clear_page(page: String) -> void:
+	finish_audio_adjustment()
 	pending_binding = null
 	menu_buttons.clear()
 	highlighted_button = null
@@ -329,6 +380,8 @@ func menu_button(value: String, y: float, action: Callable, primary := false, fo
 		if pointer_navigation: queue_pointer_sync())
 	item.mouse_exited.connect(func():
 		if pointer_navigation: queue_pointer_sync())
+	# Back is emitted by go_back so Escape and clicking share a single cue.
+	audio.bind_button(item, &"" if value.contains("BACK") else &"click")
 	item.pressed.connect(action)
 	ui.add_child(item)
 	menu_buttons.append(item)
@@ -376,7 +429,7 @@ func show_main() -> void:
 	menu_button("PLAY", 400, show_play, true, 48, 155, 376, 64)
 	menu_button("SHIP CUSTOMIZATION", 474, show_customization, false, 35, 155, 376, 64)
 	menu_button("SETTINGS", 548, show_settings, false, 40, 155, 376, 64)
-	menu_button("QUIT", 622, func(): get_tree().quit(), false, 40, 155, 376, 64)
+	menu_button("QUIT", 622, audio.quit_game, false, 40, 155, 376, 64)
 
 func page_header(title: String) -> void:
 	board()
@@ -460,25 +513,25 @@ func show_settings() -> void:
 	background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	board()
 	text("SETTINGS", Vector2(125, 256), Vector2(437, 94), 70)
-	var tabs := ["CONTROLS", "GRAPHICS", "RESOLUTION"]
+	var tabs := ["CONTROLS", "GRAPHICS", "RESOLUTION", "AUDIO"]
 	for i in tabs.size():
-		var tab := menu_button(tabs[i], 362 + i * 92, func(): settings_tab = i; show_settings(), i == settings_tab)
+		var tab := menu_button(tabs[i], 352 + i * 70, func(): settings_tab = i; show_settings(), i == settings_tab, 40, 145, 396, 64)
 		if i == settings_tab:
 			active_settings_button = tab
 	menu_button("‹  BACK", 640, go_back, false, 32, 193, 300, 64)
 	text(tabs[settings_tab], Vector2(672, 121), Vector2(688, 90), 66, CREAM, true, false)
 	match settings_tab:
 		0:
-			var actions := bindings.keys()
+			var actions: Array = controls.ACTIONS.keys()
 			for i in actions.size():
 				var action: String = actions[i]
 				text(action, Vector2(672, 289 + i * 84), Vector2(430, 65), 26, CREAM, false, false)
-				var key := menu_button(bindings[action], 290 + i * 84, func(): pass, false, 36, 1177, 158, 64)
+				var key := menu_button(controls.key_label(controls.ACTIONS[action]), 290 + i * 84, func(): pass, false, 36, 1177, 158, 64)
 				style_setting_button(key)
-				key.set_meta("action", action)
+				key.set_meta("action", controls.ACTIONS[action])
 				key.pressed.connect(func():
 					if is_instance_valid(pending_binding):
-						pending_binding.text = bindings[pending_binding.get_meta("action")]
+						pending_binding.text = controls.key_label(pending_binding.get_meta("action"))
 						pending_binding.add_theme_font_size_override("font_size", 36)
 					pending_binding = key
 					key.add_theme_font_size_override("font_size", 21)
@@ -492,7 +545,61 @@ func show_settings() -> void:
 			choice_row("Display mode", ["Windowed", "Borderless", "Fullscreen"], 290)
 			choice_row("Resolution", ["1280 × 720", "1920 × 1080", "2560 × 1440"], 412)
 			choice_row("Vertical sync", ["Off", "On"], 534)
-	text("Preview choices are kept for this session only.", Vector2(672, 818), Vector2(688, 40), 20, Color("abbcc1"), false, false)
+		3:
+			audio_row("Music", "Music", 310)
+			audio_row("Effects", "SFX", 445)
+			wire_audio_navigation()
+	var settings_hint := "Preview choices are kept for this session only."
+	if settings_tab == 0: settings_hint = "Keybindings are saved automatically."
+	if settings_tab == 3: settings_hint = "Audio levels are saved automatically."
+	text(settings_hint, Vector2(672, 818), Vector2(688, 40), 20, Color("abbcc1"), false, false)
+
+func audio_row(caption: String, bus: String, y: float) -> void:
+	text(caption, Vector2(672, y), Vector2(430, 60), 30, CREAM, false, false)
+	var percent := text("%d%%" % roundi(audio.levels[bus] * 100), Vector2(1240, y), Vector2(100, 60), 28, CREAM, false)
+	var slider := HSlider.new()
+	slider.name = bus + "Volume"
+	slider.position = Vector2(680, y + 68)
+	slider.size = Vector2(640, 36)
+	slider.max_value = 100
+	slider.step = 5
+	slider.value = audio.levels[bus] * 100
+	slider.focus_mode = Control.FOCUS_ALL
+	slider.set_meta("value_label", percent)
+	slider.focus_exited.connect(func():
+		if editing_audio_slider == slider: finish_audio_adjustment())
+	slider.focus_entered.connect(func():
+		set_highlight(null)
+		audio.hover_control(slider, true))
+	slider.mouse_entered.connect(func(): audio.hover_control(slider, false))
+	slider.value_changed.connect(func(value: float):
+		audio.set_volume(bus, value / 100.0)
+		percent.text = "%d%%" % roundi(value)
+		if bus == "SFX" and Time.get_ticks_msec() - audio.last_hover_ms > 90:
+			audio.last_hover_ms = Time.get_ticks_msec()
+			audio.play_cue(&"hover"))
+	ui.add_child(slider)
+
+func wire_audio_navigation() -> void:
+	var music_slider := ui.get_node("MusicVolume") as HSlider
+	var effects_slider := ui.get_node("SFXVolume") as HSlider
+	var back: Button = menu_buttons.back()
+	# Until explicitly activated, sliders are navigated just like menu buttons.
+	for item in menu_buttons:
+		item.focus_neighbor_right = item.get_path_to(effects_slider if item == back else music_slider)
+	for slider in [music_slider, effects_slider]:
+		slider.focus_neighbor_left = slider.get_path_to(active_settings_button)
+		slider.focus_neighbor_right = slider.get_path_to(active_settings_button)
+	music_slider.focus_neighbor_top = music_slider.get_path_to(active_settings_button)
+	music_slider.focus_neighbor_bottom = music_slider.get_path_to(effects_slider)
+	effects_slider.focus_neighbor_top = effects_slider.get_path_to(music_slider)
+	effects_slider.focus_neighbor_bottom = effects_slider.get_path_to(back)
+	active_settings_button.focus_next = active_settings_button.get_path_to(music_slider)
+	music_slider.focus_previous = music_slider.get_path_to(active_settings_button)
+	music_slider.focus_next = music_slider.get_path_to(effects_slider)
+	effects_slider.focus_previous = effects_slider.get_path_to(music_slider)
+	effects_slider.focus_next = effects_slider.get_path_to(back)
+	back.focus_previous = back.get_path_to(effects_slider)
 
 func choice_row(key: String, values: Array, y: float) -> void:
 	text(key, Vector2(672, y), Vector2(310, 80), 28, CREAM, false, false)

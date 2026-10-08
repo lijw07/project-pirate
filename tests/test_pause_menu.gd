@@ -45,6 +45,7 @@ func run() -> void:
 		root.warp_mouse(button("RESUME").get_global_rect().get_center())
 		await process_frame
 	check(paused and menu.pause_open and menu.ui.visible, "Escape opens pause")
+	check(menu.menu_buttons.size() == 3 and button("MAIN MENU") == null and button("QUIT") != null, "pause offers only Resume, Settings and Quit")
 	check(Input.mouse_mode == Input.MOUSE_MODE_VISIBLE, "pause releases the mouse")
 	var ocean: Ocean = level.get_node("Ocean")
 	var ship: RigidBody3D = level.get_node("FillerShip")
@@ -92,10 +93,10 @@ func run() -> void:
 	await key(KEY_ENTER)
 	check(not paused and not menu.pause_open, "Resume button works with Enter")
 	await key(KEY_ESCAPE)
-	button("MAIN MENU").grab_focus()
+	button("QUIT").grab_focus()
 	await key(KEY_ENTER)
 	await process_frame
-	check(not paused and current_scene.scene_file_path == "res://scenes/main_menu_preview.tscn", "Main Menu changes scenes without leaving the tree paused")
-	check(Input.mouse_mode == Input.MOUSE_MODE_VISIBLE, "Main Menu keeps the pointer visible")
+	check(not paused and current_scene.scene_file_path == "res://scenes/main_menu_preview.tscn", "Quit returns to the main menu without leaving the tree paused")
+	check(Input.mouse_mode == Input.MOUSE_MODE_VISIBLE, "Quit keeps the pointer visible on the main menu")
 	print("PAUSE MENU FAILURES: ", failures)
 	quit(failures)

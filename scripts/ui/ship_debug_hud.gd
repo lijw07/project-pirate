@@ -2,9 +2,9 @@ class_name ShipDebugHud
 extends Label
 
 const KNOTS_PER_METER_PER_SECOND := 1.944
-const CONTROLS := "W / S  raise / lower sails (S at a stop reverses)\nA / D  hold to turn the rudder further (it holds its angle when released)\nScroll or pinch  zoom"
 
 @export var movement: ShipMovement
+@onready var controls := get_node("/root/ControlSettings")
 
 
 func _process(_delta: float) -> void:
@@ -14,7 +14,9 @@ func _process(_delta: float) -> void:
 		"Heading  %03d°" % (roundi(movement.heading_degrees()) % 360),
 		"Rudder  %s" % _rudder_label(),
 		"",
-		CONTROLS,
+		"%s / %s  raise / lower sails (%s at a stop reverses)" % [controls.key_label(&"sail_raise"), controls.key_label(&"sail_lower"), controls.key_label(&"sail_lower")],
+		"%s / %s  hold to turn the rudder further (it holds its angle when released)" % [controls.key_label(&"steer_left"), controls.key_label(&"steer_right")],
+		"Scroll or pinch  zoom",
 	])
 
 
